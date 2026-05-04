@@ -21,10 +21,10 @@ El objetivo principal es diseñar y montar un sistema de notificaciones en tiemp
 | # | Objetivo específico | Capítulo asociado |
 |---|---|---|
 | 1 | Sacar adelante la disciplina de requisitos: apuntar bien qué se necesita a nivel técnico y funcional para que la comunicación en tiempo real funcione, echando un ojo al stack formado por React, Vite y WebSockets. | Capítulo 2: disciplina de requisitos y estado del arte. |
-| 2 | Hacer la disciplina de análisis y diseño: definir una arquitectura por módulos que incluya el gestor de la conexión, cómo se guarda el estado y el diseño de la interfaz que verá el usuario. | Capítulo 3: Aanálisis y diseño. |
+| 2 | Hacer la disciplina de análisis y diseño: definir una arquitectura por módulos que incluya el gestor de la conexión, cómo se guarda el estado y el diseño de la interfaz que verá el usuario. | Capítulo 3: Análisis y diseño. |
 | 3 | Sacar un producto mínimo viable (MVP): una aplicación que funcione, que sepa recibir notificaciones, procesarlas y mostrarlas de manera visual, de forma reutilizable y sin que consuma más de la cuenta. | Capítulo 4: presentación de la solución e implementación. |
 | 4 | Hacer pruebas de rendimiento para comparar este sistema en tiempo real con otro basado en el polling de toda la vida, fijándonos en la latencia y en lo que consume de recursos. | Capítulo 4: pruebas y validación. |
-| 5 | Dejar documentado el componente de notificaciones para que se pueda volver a usar en otros proyectos con React con solo tocar un par de ajustes. | Capítulo 5: conclusiones / discusión de resultados / recomendaciones / futuras líneas de actuación. |
+| 5 | Dejar documentado el componente de notificaciones para que se pueda volver a usar en otros proyectos con React con solo modificar lo justo. | Capítulo 5: conclusiones / discusión de resultados / recomendaciones / futuras líneas de actuación. |
 
 ---
 
