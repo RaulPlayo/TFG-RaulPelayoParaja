@@ -22,4 +22,4 @@ Una vez que tenemos identificadas las clases, las agrupamos en paquetes lógicos
 
 ---
 
-[Anterior: 4.3 Análisis de Clases](../4.3_Analisis_Clases/README.md) | [Siguiente: 4.5 Diseño de la Arquitectura](../4.5_Diseno_Arquitectura/README.md)
+[Anterior: 4.3 Análisis de Clases](../4.3_Analisis_Clases/README.md) | [Siguiente: 4.5 Diseño de la Arquitectura](../4.5_Diseño_Arquitectura/README.md)
