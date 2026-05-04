@@ -6,7 +6,7 @@
 
 La solución sugerida en este trabajo es el diseño y la implementación de un sistema de notificaciones en tiempo real que consta de dos componentes principales: una aplicación cliente construida en React, que recibe los eventos y los muestra al usuario inmediatamente; y un servidor backend, que se encarga de gestionar la información y generar dichos eventos.
 
-La supresión del modelo de actualización manual es el comienzo del diseño. El sistema sostiene una conexión activa con el servidor en vez de que el usuario tenga que refrescar la página o hacer clic en un botón para ver los datos más recientes. Esta conexión se implementa mediante el protocolo WebSocket.
+La eliminación del modelo de actualización manual es el comienzo del diseño. El sistema sostiene una conexión activa con el servidor en vez de que el usuario tenga que refrescar la página o hacer clic en un botón para ver los datos más recientes. Esta conexión se implementa mediante el protocolo WebSocket.
 
 ---
 
