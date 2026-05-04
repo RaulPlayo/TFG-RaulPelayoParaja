@@ -98,7 +98,7 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo alternativo A | Si el mensaje recibido tiene un formato inválido o está incompleto, el sistema descarta el evento y registra un error en el log sin que el resto del sistema deje de funcionar. |
 | Postcondiciones | El historial de notificaciones tiene una nueva entrada. La notificación está marcada como no leída. El usuario puede verla en la interfaz. |
 
-![CU03](../../imagenes/cu-03.png)
+
 
 
 ---
@@ -115,8 +115,6 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo principal | 1. El responsable accede a la interfaz de la aplicación. 2. El sistema muestra la lista de notificaciones guardadas en el historial. 3. Cada notificación muestra su título, descripción, marca de tiempo y estado (leída/no leída). 4. Las notificaciones no leídas se distinguen visualmente de las que ya están leídas. |
 | Flujo alternativo A | Si el historial está vacío, el sistema muestra un mensaje informativo diciendo que no hay notificaciones. |
 | Postcondiciones | El usuario puede ver el estado actual de todas sus notificaciones. |
-
-![CU04](../../imagenes/cu-04.png)
 
 
 ---
