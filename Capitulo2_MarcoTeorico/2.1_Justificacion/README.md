@@ -1,4 +1,4 @@
-# 2.1 Justificacion
+# 2.1 Justificación
 
 [Volver al capitulo 2](../README.md) | [Volver al indice principal](../../README.md)
 
