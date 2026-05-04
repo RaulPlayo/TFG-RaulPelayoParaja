@@ -1,6 +1,6 @@
 # 2.2 Estado del Arte
 
-[Volver al capítulo 2](./Capitulo2_MarcoTeorico) | [Volver al índice principal](../README.md)
+[Volver al capítulo 2](../README.md) | [Volver al índice principal](../../README.md)
 
 ## 2.2.1 La evolución de la comunicación en la web
 Para entender el estado actual de la comunicación en tiempo real en la web, es necesario hacer un recorrido por su evolución histórica. Cada etapa ha respondido a necesidades concretas y ha sentado las bases de la siguiente.
