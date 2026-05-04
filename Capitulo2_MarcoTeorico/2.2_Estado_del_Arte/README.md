@@ -27,7 +27,7 @@ El ecosistema actual de desarrollo frontend está dominado por tres grandes fram
 * **Socket.io:** Es la biblioteca más popular para la implementación de WebSockets. No es solo un *wrapper*: incorpora soporte para salas (*rooms*), reconexión automática, *namespaces* y *fallback* para navegadores antiguos. *Nota: En este proyecto se ha optado por la API nativa para evitar dependencias.*
 * **Vite vs Webpack:** En el ámbito de las herramientas de construcción, Vite se ha consolidado como la opción preferida por su rapidez frente al tradicional Webpack, especialmente en combinación con React y Vue.
 
-> ![Gráfico de popularidad](imagenes/popularidad_frameworks.png)
+> ![Gráfico de popularidad](../../imagenes/grafica.png)
 > *Gráfico de popularidad de React VS Vue.js VS Angular.*
 
 ## 2.2.3 Diferenciación del proyecto
