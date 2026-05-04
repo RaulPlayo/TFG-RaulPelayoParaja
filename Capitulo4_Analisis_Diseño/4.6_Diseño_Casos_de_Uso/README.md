@@ -56,4 +56,4 @@ Participan `Dashboard`, `useAuth`, `AuthService`, `websocket.service` y `App`. E
 
 ---
 
-[Anterior: 4.5 Diseño de la Arquitectura](../4.5_Diseno_Arquitectura/README.md) | [Siguiente: 4.7 Diseño de Clases](../4.7_Diseno_Clases/README.md)
+[Anterior: 4.5 Diseño de la Arquitectura](../4.5_Diseño_Arquitectura/README.md) | [Siguiente: 4.7 Diseño de Clases](../4.7_Diseño_Clases/README.md)
