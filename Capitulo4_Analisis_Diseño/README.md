@@ -1,4 +1,4 @@
-# Capitulo 4 - Analisis y Diseno
+# Capitulo 4 - Analisis y Diseño
 
 [Volver al índice principal](../README.md)
 
