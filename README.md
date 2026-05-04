@@ -1,7 +1,11 @@
 # Diseño y desarrollo de un sistema modular de notificaciones mediante React y WebSockets
 
-### Hola, soy Raúl Pelayo Paraja y este es mi repositorio de GitHub en que subiré toda la información sobre mi Trabajo de fin de grado.
- 
+---
+
+### Hola, soy Raúl Pelayo Paraja y este es mi repositorio de GitHub en el que subiré toda la información sobre mi Trabajo de fin de grado.
+
+---
+
 ## Resumen
  
 El presente Trabajo Fin de Grado consiste en la creación de un sistema web que permite la actualización en tiempo real de documentos almacenados en base de datos, evitando la recarga manual de la página por parte del usuario.
