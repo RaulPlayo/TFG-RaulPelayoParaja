@@ -16,7 +16,7 @@ Este caso de uso hace que solo el personal autorizado pueda acceder al panel de 
 - `App`: permitir o denegar el acceso a la zona principal.
 - `LoginForm`: recoger el usuario y la contraseña.
 
-![CU01](../../blob/main/imagenes/login.png)
+![CU01](../../imagenes/login.png)
 
 ---
 
@@ -45,7 +45,7 @@ Es el caso de uso central del sistema. Después de establecer la conexión, el c
 - `NotificationsContainer`: mostrar las notificaciones activas y el historial.
 - `NotificationItem`: representar cada aviso de forma individual.
 
-![](../../blob/main/imagenes/iniciar.png) ![](../../blob/main/imagenes/operario.png) ![](../../blob/main/imagenes/scrap.png)
+![](../../imagenes/iniciar.png) ![](../../imagenes/operario.png) ![](../../imagenes/scrap.png)
 
 
 ---
@@ -61,7 +61,7 @@ Este caso de uso permite al administrador revisar todas las notificaciones que s
 - `useWebSocket`: proporcionar el estado del historial.
 - `NotificationsContainer`: mostrar la lista completa de eventos.
 
-![](../../blob/main/imagenes/historial.png)
+![](../../imagenes/historial.png)
 
 
 ---
@@ -103,7 +103,7 @@ Este caso de uso amplía el sistema de notificaciones añadiendo una vía para r
 - `ChatPanel`: escribir y mostrar la conversación.
 - `ChatContext`: guardar los mensajes, los adjuntos y los destinatarios.
 
-![](../../blob/main/imagenes/chat.png)
+![](../../imagenes/chat.png)
 
 
 ---
