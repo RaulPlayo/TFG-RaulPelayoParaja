@@ -15,9 +15,6 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Responsable del centro de control | La persona que accede a la aplicación web desde el navegador. Consulta las notificaciones que llegan, las marca como leídas, las borra cuando le parece oportuno y también puede contactar con otros operarios mediante el chat. |
 | Operario del servidor de Soincon | La persona que trabaja con EMI Suite 4.0 de Soincon y hace operaciones sobre los documentos del sistema (crear o modificar registros). No interactúa directamente con la aplicación de este TFG, pero sus acciones son el origen de los eventos que provocan las notificaciones que recibe el responsable. |
 
-![Diagrama de casos de uso](../../imagenes/diagramaCasosDeUso.png)
-
-
 ---
 
 ## 3.2.2 Encontrar casos de uso
@@ -32,6 +29,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | CU-06 | Eliminar notificación | Responsable | El responsable borra una notificación concreta del historial. |
 | CU-07 | Enviar mensaje de incidencia | Responsable | El responsable envía un mensaje a uno o varios operarios para avisarles de una incidencia, y puede adjuntar una notificación recibida para dar contexto. |
 | CU-08 | Cerrar sesión | Responsable | Cuando termina el trabajo, el responsable cierra su sesión en la aplicación. |
+
+![Diagrama de casos de uso](../../imagenes/diagramaCasosDeUso.png)
 
 ---
 
@@ -65,9 +64,6 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo alternativo | Si las credenciales son incorrectas o el usuario no tiene permisos, el sistema muestra el mensaje "Acceso restringido al personal autorizado". |
 | Postcondiciones | El administrador tiene acceso al sistema y puede usar todas sus funciones. |
 
-<!-- IMAGEN: Pantalla real de inicio de sesion de la aplicacion -->
-<!-- Insertar imagen: ../../imagenes/cu01_login_real.png -->
-
 ---
 
 ### CU-02: Modificar documento en EMI Suite
@@ -84,8 +80,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo alternativo A | Si en el momento de la modificación no hay ningún cliente conectado por WebSocket, el evento se emite igual pero no lo recibe nadie. No ocurre ningún error. |
 | Postcondiciones | El documento se ha creado o modificado en EMI Suite 4.0. Se ha emitido un evento WebSocket. Los clientes que estaban conectados han recibido la notificación correspondiente. |
 
-<!-- IMAGEN: Diagrama de flujo de CU-02 -->
-<!-- Insertar imagen: ../../imagenes/cu02_flujo.png -->
+![CU02](../../imagenes/cu-02.png)
+
 
 ---
 
@@ -102,8 +98,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo alternativo A | Si el mensaje recibido tiene un formato inválido o está incompleto, el sistema descarta el evento y registra un error en el log sin que el resto del sistema deje de funcionar. |
 | Postcondiciones | El historial de notificaciones tiene una nueva entrada. La notificación está marcada como no leída. El usuario puede verla en la interfaz. |
 
-<!-- IMAGEN: Diagrama de flujo de CU-03 -->
-<!-- Insertar imagen: ../../imagenes/cu03_flujo.png -->
+![CU03](../../imagenes/cu-03.png)
+
 
 ---
 
@@ -120,8 +116,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo alternativo A | Si el historial está vacío, el sistema muestra un mensaje informativo diciendo que no hay notificaciones. |
 | Postcondiciones | El usuario puede ver el estado actual de todas sus notificaciones. |
 
-<!-- IMAGEN: Diagrama de flujo de CU-04 y pantalla real del historial -->
-<!-- Insertar imagen: ../../imagenes/cu04_historial.png -->
+![CU04](../../imagenes/cu-04.png)
+
 
 ---
 
@@ -168,8 +164,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo principal | 1. El usuario abre el chat. 2. El usuario selecciona uno o varios operarios como destinatarios. 3. El usuario escribe el mensaje de incidencia. 4. Si quiere, el usuario selecciona una notificación del historial para adjuntarla al mensaje. 5. El usuario envía el mensaje. 6. El sistema registra el mensaje y lo entrega a los operarios seleccionados. 7. Los operarios pueden ver el mensaje en su interfaz correspondiente. |
 | Postcondiciones | La incidencia queda registrada y enviada a los operarios seleccionados. |
 
-<!-- IMAGEN: Diagrama de flujo de CU-07 -->
-<!-- Insertar imagen: ../../imagenes/cu07_flujo.png -->
+![CU07](../../imagenes/cu-07.png)
+
 
 ---
 
