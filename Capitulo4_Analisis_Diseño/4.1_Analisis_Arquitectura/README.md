@@ -35,8 +35,8 @@ Desde el punto de vista de la implementación, el frontend hecho en React concen
 - Se centraliza la gestión de la conexión y de las notificaciones en servicios y hooks específicos para que sea más fácil de mantener.
 - Se mantiene la idea del canal REST en la arquitectura porque el sistema está pensado para convivir con servicios corporativos tradicionales, aunque en la versión actual esa parte esté parcialmente simulada.
 
-<!-- IMAGEN: Diagrama de arquitectura general del sistema (LoginForm, Dashboard, useAuth/AuthService, useWebSocket/WS Service, NotificationsContainer, ChatPanel, LocalStorage, API REST Servicios EMI Suite, Broker WebSocket/STOMP, EMI Suite/Sistema corporativo) -->
-<!-- Insertar imagen: ../../imagenes/arquitectura_general.png -->
+![DiagramaArquitectura](../../imagenes/diagramaArquitectura+.png)
+
 
 ---
 
