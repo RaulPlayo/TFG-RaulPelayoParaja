@@ -1,8 +1,8 @@
-## 2.2 Estado del Arte
+# 2.2 Estado del Arte
 
 [Volver al capítulo 2](#) | [Volver al índice principal](#)
 
-### 2.2.1 La evolución de la comunicación en la web
+## 2.2.1 La evolución de la comunicación en la web
 Para entender el estado actual de la comunicación en tiempo real en la web, es necesario hacer un recorrido por su evolución histórica. Cada etapa ha respondido a necesidades concretas y ha sentado las bases de la siguiente.
 
 En los primeros años de la web, entre mediados de los 90 y principios de los 2000, las páginas eran fundamentalmente estáticas. El modelo de uso era simple: el usuario navegaba a una URL, el servidor devolvía un documento HTML y el navegador lo mostraba. No había actualización automática de contenidos, y cualquier cambio requería recargar la página completa. En este contexto, la latencia no era un problema porque no había expectativa de inmediatez.
@@ -15,7 +15,7 @@ El gran punto de inflexión llegó con la estandarización de HTML5 y la introdu
 
 Aplicaciones como Slack, Discord, Trello, Notion o Figma han popularizado el uso de WebSockets como base de su arquitectura en tiempo real. Slack, por ejemplo, utiliza WebSockets para la entrega instantánea de mensajes y notificaciones a sus más de 20 millones de usuarios activos diarios. Discord maneja millones de conexiones WebSocket simultáneas para la comunicación de voz, texto y estado en sus servidores.
 
-### 2.2.2 Tecnologías y métodos actuales
+## 2.2.2 Tecnologías y métodos actuales
 El ecosistema actual de desarrollo frontend está dominado por tres grandes frameworks y librerías basadas en componentes:
 
 * **React:** Desarrollado por Meta, es actualmente la opción más popular. Su principal fortaleza es la flexibilidad: React se describe a sí mismo como una librería, no como un *framework*, lo que significa que solo se ocupa de la capa de vista y deja al desarrollador la libertad de elegir cómo gestionar el estado, el enrutamiento y las peticiones de red. React ha apostado en los últimos años por los componentes funcionales y los *hooks* como modelo principal de desarrollo, simplificando considerablemente el código.
@@ -30,7 +30,7 @@ El ecosistema actual de desarrollo frontend está dominado por tres grandes fram
 > ![Gráfico de popularidad](imagenes/popularidad_frameworks.png)
 > *Gráfico de popularidad de React VS Vue.js VS Angular.*
 
-### 2.2.3 Diferenciación del proyecto
+## 2.2.3 Diferenciación del proyecto
 Este proyecto no pretende competir con Slack o con Discord. El objetivo es demostrar que se puede construir un sistema de notificaciones en tiempo real funcional con tecnologías accesibles y sin montar una infraestructura enorme. Por eso se eligió **React + Vite + WebSockets** y no soluciones más pesadas como Angular.
 
 Se diferencia de otros trabajos académicos en:
@@ -38,12 +38,12 @@ Se diferencia de otros trabajos académicos en:
 2.  **Modularidad:** El énfasis está en crear un componente que pueda añadirse fácilmente a otros proyectos.
 3.  **Ligereza:** La elección deliberada de la API nativa de WebSockets en lugar de Socket.io.
 
-### 2.2.4 Proyectos y trabajos similares
+## 2.2.4 Proyectos y trabajos similares
 La mayoría de trabajos académicos se enfocan en chats, demostrando que la comunicación bidireccional es factible, pero rara vez tratan sobre componentes reutilizables. 
 
 Existen librerías de código abierto como `react-use-websocket` o `use-socket.io` que gestionan la conexión, pero no ofrecen una interfaz visual. Por otro lado, plataformas como **Knock** o **Novu** ofrecen notificaciones como servicio (NaaS), pero son soluciones de terceros que pueden implicar costes y dependencias externas.
 
-### 2.2.5 Por qué podría servir este TFG en Soincon
+## 2.2.5 Por qué podría servir este TFG en Soincon
 **Soincon** (Guarnizo, Cantabria) se dedica a la integración de sistemas e industria 4.0. Su plataforma **EMI Suite 4.0** es un sistema MES-MOM que monitoriza plantas productivas en tiempo real.
 
 El problema que resuelve este TFG es crítico para ellos: actualmente, un responsable de planta suele enterarse de eventos críticos recargando la página o esperando una consulta periódica. Un componente de notificaciones basado en WebSockets permitiría:
