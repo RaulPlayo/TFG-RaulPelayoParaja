@@ -1,6 +1,6 @@
 # Diseño y desarrollo de un sistema modular de notificaciones mediante React y WebSockets
- 
----
+
+### Hola, soy Raúl Pelayo Paraja y este es mi repositorio de GitHub en que subiré toda la información sobre mi Trabajo de fin de grado.
  
 ## Resumen
  
@@ -10,7 +10,6 @@ Para ello, se utiliza una API de la empresa Soincon que gestiona las operaciones
  
 El proyecto abarca el diseño de la arquitectura, el backend y el frontend, además de pruebas para medir el rendimiento y facilidad de uso, comparando el comportamiento en tiempo real frente a un sistema tradicional basado en polling.
  
-**Palabras clave:** WebSockets, instantáneo, comunicación, facilidad, cambios.
  
 ---
  
