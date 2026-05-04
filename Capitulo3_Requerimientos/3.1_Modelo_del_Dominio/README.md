@@ -30,9 +30,9 @@ El usuario puede interactuar con las notificaciones de tres formas: puede verlas
 La cadena de conceptos **documento -> evento -> notificación -> responsable** es el núcleo del dominio del sistema y el hilo que conecta todos los casos de uso que se explican en los apartados siguientes.
 
 
-![Modelo del dominio](../../blob/main/imagenes/modeloDelDominio.png)
+![Modelo del dominio](../../imagenes/modeloDelDominio.png)
 
-![Diagrama de objetos](../../blob/main/imagenes/diagramaObjetos.png)
+![Diagrama de objetos](../../imagenes/diagramaObjetos.png)
 
 
 ---
@@ -52,9 +52,9 @@ La conexión WebSocket puede estar en tres estados: **Desconectado**, **Conectan
 - Si se pierde la red o el servidor se cierra, vuelve a **Desconectado**.
 - Cuando el usuario cierra la aplicación, se cierra la conexión de forma ordenada y se llega al estado final.
 
-![Diagrama de objetos](../../blob/main/imagenes/diagramaEstadosConexion.png)
+![Diagrama de objetos](../../imagenes/diagramaEstadosConexion.png)
 
-![Diagrama de objetos](../../blob/main/imagenes/diagramaEstadosNotificacion.png)
+![Diagrama de objetos](../../imagenes/diagramaEstadosNotificacion.png)
 
 ### Diagrama de estados: Ciclo de vida de la Notificación
 
