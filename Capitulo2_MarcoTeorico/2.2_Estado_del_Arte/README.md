@@ -55,4 +55,4 @@ El problema que resuelve este TFG es crítico para ellos: actualmente, un respon
 Al ser modular, su integración en EMI Suite no requeriría reescribir código existente, sino simplemente configurarlo y conectarlo al servidor.
 
 ---
-**Anterior:** [2.1 Justificación](../2.1_Justificacion/README.md) | **Siguiente:** [2.3 Solución Propuesta](/2.3_Solucion_Propuesta/README.md)
+**Anterior:** [2.1 Justificación](../2.1_Justificacion/README.md) | **Siguiente:** [2.3 Solución Propuesta](../2.3_Solucion_Propuesta/README.md)
