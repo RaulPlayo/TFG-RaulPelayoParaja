@@ -68,17 +68,18 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 
 ### CU-02: Modificar documento en EMI Suite
 
-| Campo | Descripción |
-|---|---|
-| Identificador | CU-02 |
-| Nombre | Modificar documento en EMI Suite |
-| Actor principal | Operador |
-| Actor secundario | Responsable (a él le llega la notificación) |
-| Descripción | El operador crea o modifica un documento en EMI Suite 4.0. Esta acción hace que el servidor emita automáticamente un evento WebSocket hacia todos los clientes que estén conectados en ese momento. |
-| Precondiciones | El operador tiene acceso a EMI Suite 4.0. Al menos un cliente tiene la conexión WebSocket activa. |
-| Flujo principal | 1. El operador entra en EMI Suite 4.0 y busca o crea el documento. 2. Hace los cambios que necesita y los guarda. 3. La API de Soincon registra el cambio en la base de datos. 4. El servidor detecta la operación de escritura y construye un mensaje de evento. 5. El servidor lanza el evento por el canal WebSocket a todos los clientes conectados. 6. Los clientes reciben el evento y procesan la notificación (CU-03). |
-| Flujo alternativo A | Si en el momento de la modificación no hay ningún cliente conectado por WebSocket, el evento se emite igual pero no lo recibe nadie. No ocurre ningún error. |
-| Postcondiciones | El documento se ha creado o modificado en EMI Suite 4.0. Se ha emitido un evento WebSocket. Los clientes que estaban conectados han recibido la notificación correspondiente. |
+| Campo               | Descripción                                                                                                                                                                                                 |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Identificador**   | CU-02                                                                                                                                                                                                       |
+| **Nombre**          | Modificar documento en EMI Suite                                                                                                                                                                            |
+| **Actor principal** | Operador                                                                                                                                                                                                    |
+| **Actor secundario**| Responsable (a él le llega la notificación)                                                                                                                                                                |
+| **Descripción**     | El operador accede a EMI Suite 4.0 para crear un documento nuevo o modificar uno existente. Cuando confirma y guarda la operación, el sistema registra el cambio y desencadena automáticamente la emisión de un evento WebSocket hacia los clientes conectados. |
+| **Precondiciones**  | El operador tiene acceso autorizado a EMI Suite 4.0. El sistema EMI Suite y la API de Soincon están operativos. Puede haber uno o varios clientes con conexión WebSocket activa.                           |
+| **Flujo principal** | 1. El operador accede a EMI Suite 4.0.<br>2. El operador localiza un documento existente o crea uno nuevo.<br>3. El operador realiza los cambios necesarios en el documento.<br>4. El operador guarda los cambios.<br>5. La API de Soincon registra la operación en la base de datos.<br>6. El servidor detecta la operación de escritura y genera un mensaje de evento con el tipo de cambio, el identificador del documento afectado y una descripción.<br>7. El servidor emite el evento a través del canal WebSocket a todos los clientes conectados.<br>8. Los clientes conectados reciben el evento y procesan la notificación correspondiente (CU-03). |
+| **Flujo alternativo A** | Si en el momento de la emisión no hay ningún cliente conectado mediante WebSocket, el servidor genera el evento igualmente, pero no es recibido por ningún cliente. La operación de creación o modificación del documento no se ve afectada. |
+| **Flujo alternativo B** | Si el operador no guarda los cambios realizados, no se registra ninguna operación en la base de datos y no se emite ningún evento WebSocket.                                                                 |
+| **Postcondiciones** | El documento ha sido creado o modificado en EMI Suite 4.0 y los cambios han quedado almacenados. Se ha generado y emitido un evento WebSocket asociado a la operación. Si existen clientes conectados, estos han recibido la notificación correspondiente. |
 
 ![CU02](../../imagenes/cu-02.png)
 
