@@ -30,6 +30,7 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | CU-07 | Enviar mensaje de incidencia | Responsable | El responsable envía un mensaje a uno o varios operarios para avisarles de una incidencia, y puede adjuntar una notificación recibida para dar contexto. |
 | CU-08 | Cerrar sesión | Responsable | Cuando termina el trabajo, el responsable cierra su sesión en la aplicación. |
 
+![Diagrama de casos de uso](../../imagenes/diagramaCasosDeUso.png)
 
 ---
 
