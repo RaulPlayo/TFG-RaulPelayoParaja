@@ -30,7 +30,7 @@ El usuario puede interactuar con las notificaciones de tres formas: puede verlas
 La cadena de conceptos **documento -> evento -> notificación -> responsable** es el núcleo del dominio del sistema y el hilo que conecta todos los casos de uso que se explican en los apartados siguientes.
 
 
-![Modelo del dominio](../../imagenes/modeloDelDominio.png)
+![Modelo del dominio](../../imagenes/modeloDominio.svg)
 
 ![Diagrama de objetos](../../imagenes/diagramaObjetos.png)
 
