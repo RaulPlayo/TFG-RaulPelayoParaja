@@ -56,6 +56,13 @@ La conexión WebSocket puede estar en tres estados: **Desconectado**, **Conectan
 
 ![Diagrama de objetos](../../imagenes/diagramaEstadosNotificacion.png)
 
+---
+
+## 3.1.4 Diagrama de clases
+
+![Diagrama de clases](../../imagenes/diagramaClases.svg)
+---
+
 ### Diagrama de estados: Ciclo de vida de la Notificación
 
 La notificación puede estar en dos estados: **NoLeída** (`leida = false`) y **Leída** (`leida = true`).
