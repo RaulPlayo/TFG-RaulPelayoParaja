@@ -4,7 +4,6 @@
 
 ---
 
-![Modelo del dominio](../../imagenes/modeloDominio.svg)
 
 
 ## 3.1.1 Glosario de términos
