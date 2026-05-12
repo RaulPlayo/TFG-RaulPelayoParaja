@@ -6,8 +6,20 @@
 
 ![Modelo del dominio](../../imagenes/modeloDominio.svg)
 
+## 3.1.1 Descripción del modelo de dominio
 
-## 3.1.1 Glosario de términos
+El sistema parte de que existen documentos que se manejan a través de la API de Soincon. Se pueden crear o modificar estos documentos, y en cada una de esas acciones el servidor genera un evento que explica qué ha cambiado y qué documento se ha alterado. Ese evento se le manda, a través de la conexión WebSocket, a todos los clientes que estén conectados en ese momento. Cuando el cliente recibe el evento, lo convierte en un aviso visual que se añade al historial de notificaciones y aparece en la interfaz del usuario.
+
+El usuario puede interactuar con las notificaciones de tres formas: puede verlas cuando llegan, puede marcarlas como leídas para indicar que ya las ha procesado, y puede borrarlas cuando ya no le hacen falta. Además, el usuario puede ver en todo momento el estado de la conexión WebSocket para saber si el sistema está recibiendo eventos o si hay algún problema de conexión.
+
+La cadena de conceptos **documento -> evento -> notificación -> responsable** es el núcleo del dominio del sistema y el hilo que conecta todos los casos de uso que se explican en los apartados siguientes.
+
+
+
+![Diagrama de objetos](../../imagenes/diagramaObjetos.png)
+
+
+## 3.1.2 Glosario de términos
 
 | Término | Definición |
 |---|---|
@@ -24,20 +36,6 @@
 
 ---
 
-## 3.1.2 Descripción del modelo de dominio
-
-El sistema parte de que existen documentos que se manejan a través de la API de Soincon. Se pueden crear o modificar estos documentos, y en cada una de esas acciones el servidor genera un evento que explica qué ha cambiado y qué documento se ha alterado. Ese evento se le manda, a través de la conexión WebSocket, a todos los clientes que estén conectados en ese momento. Cuando el cliente recibe el evento, lo convierte en un aviso visual que se añade al historial de notificaciones y aparece en la interfaz del usuario.
-
-El usuario puede interactuar con las notificaciones de tres formas: puede verlas cuando llegan, puede marcarlas como leídas para indicar que ya las ha procesado, y puede borrarlas cuando ya no le hacen falta. Además, el usuario puede ver en todo momento el estado de la conexión WebSocket para saber si el sistema está recibiendo eventos o si hay algún problema de conexión.
-
-La cadena de conceptos **documento -> evento -> notificación -> responsable** es el núcleo del dominio del sistema y el hilo que conecta todos los casos de uso que se explican en los apartados siguientes.
-
-
-
-![Diagrama de objetos](../../imagenes/diagramaObjetos.png)
-
-
----
 
 ## 3.1.3 Diagrama de estados
 
