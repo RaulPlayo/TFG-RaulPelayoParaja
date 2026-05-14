@@ -1,6 +1,6 @@
 # 4.1 Análisis de la Arquitectura
 
-[Volver al capítulo 4](../README.md) | [Volver al índice principal](../../README.md)
+[Volver al capítulo 3](../README.md) | [Volver al índice principal](../../README.md)
 
 ---
 
