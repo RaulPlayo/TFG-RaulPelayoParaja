@@ -1,6 +1,6 @@
 # 4.3 Análisis de Clases
 
-[Volver al capítulo 4](../README.md) | [Volver al índice principal](../../README.md)
+[Volver al capítulo 3](../README.md) | [Volver al índice principal](../../README.md)
 
 ---
 
