@@ -1,6 +1,6 @@
 # 4.8 Diseño de Paquetes
 
-[Volver al capítulo 4](../README.md) | [Volver al índice principal](../../README.md)
+[Volver al capítulo 3](../README.md) | [Volver al índice principal](../../README.md)
 
 ---
 
