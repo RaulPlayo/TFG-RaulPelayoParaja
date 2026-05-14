@@ -1,6 +1,6 @@
 # 2.5 Alcance del Trabajo
 
-[Volver al capítulo 2](../README.md) | [Volver al índice principal](../../README.md)
+[Volver al capítulo 1](../README.md) | [Volver al índice principal](../../README.md)
 
 ---
 
