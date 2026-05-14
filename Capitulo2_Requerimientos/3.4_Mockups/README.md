@@ -1,6 +1,6 @@
 # 3.4 Mockups de la Aplicación
 
-[Volver al capítulo 3](../README.md) | [Volver al índice principal](../../README.md)
+[Volver al capítulo 2](../README.md) | [Volver al índice principal](../../README.md)
 
 ---
 
@@ -65,4 +65,4 @@ Panel de chat integrado con:
 
 ---
 
-[Anterior: 3.3 Requisitos No Funcionales](../3.3_Requisitos_No_Funcionales/README.md) | [Siguiente: Capítulo 4 - Análisis y Diseño](../../Capitulo4_Analisis_Diseno/README.md)
+[Anterior: 3.3 Requisitos No Funcionales](../3.3_Requisitos_No_Funcionales/README.md) | [Siguiente: Capítulo 3 - Análisis y Diseño](../../Capitulo3_Analisis_Diseño/README.md)
