@@ -1,4 +1,4 @@
-# Capitulo 3 - Requerimientos y Requisitos
+# Capitulo 2 - Requerimientos y Requisitos
 
 [Volver al indice principal](../README.md)
 
@@ -15,4 +15,4 @@ En este capitulo se representan los conceptos más relevantes del sistema y las 
 
 ---
 
-[Anterior: Capitulo 2](../Capitulo2_MarcoTeorico/README.md) | [Siguiente: 3.1 Modelo del Dominio](./3.1_Modelo_del_Dominio/README.md)
+[Anterior: Capitulo 1](../Capitulo2_MarcoTeorico/README.md) | [Siguiente: 3.1 Modelo del Dominio](./3.1_Modelo_del_Dominio/README.md)
