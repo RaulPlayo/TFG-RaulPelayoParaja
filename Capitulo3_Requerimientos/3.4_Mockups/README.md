@@ -12,7 +12,7 @@ En este apartado se enseñan los mockups del diseño de la aplicación, uno para
 
 Interfaz sencilla de autenticación. Tiene el título "Acceso al panel de control", una descripción que dice que el acceso solo es para personal autorizado, un campo de usuario, un campo de contraseña y un botón de "Iniciar sesión".
 
-![Mockup1](../../imagenes/IMG_0510.jpg)
+![Mockup1](../../imagenes/MOCK1.jpg)
 
 ---
 
@@ -24,7 +24,7 @@ Vista principal de la aplicación después de autenticarse. Contiene:
 - Sección "Simulación de eventos" con botones para lanzar eventos de prueba: "Iniciar Proceso", "Nuevo Material", "Aviso recibido", "Operario añadido".
 - Zona de notificaciones emergentes en la esquina inferior derecha, con el formato: tipo de aviso, mensaje corto e ID del documento con la marca de tiempo.
 
-![Mockup2](../../imagenes/IMG_0511.jpg)
+![Mockup2](../../imagenes/MOCK2.jpg)
 
 
 ---
@@ -37,7 +37,7 @@ Panel lateral o ventana emergente que muestra el historial completo de notificac
 - Lista de tarjetas de notificación ordenadas por hora, cada una con: título, ID del documento y marca de tiempo.
 - Botón "Cerrar" en la parte de abajo.
 
-![Mockup3](../../imagenes/IMG_0514.jpg)
+![Mockup3](../../imagenes/MOCK3.jpg)
 
 
 ---
@@ -46,7 +46,7 @@ Panel lateral o ventana emergente que muestra el historial completo de notificac
 
 Vista de una tarjeta de notificación con dos acciones posibles: "Marcar como leída" (cuando todavía no se ha leído) y "Leída" (cuando ya se ha procesado), junto a un botón "Eliminar" en cada tarjeta.
 
-![Mockup4](../../imagenes/IMG_0512.jpg)
+![Mockup4](../../imagenes/MOCK4.jpg)
 
 
 ---
@@ -60,7 +60,7 @@ Panel de chat integrado con:
 - Campo de texto para escribir el mensaje.
 - Botón "Adjuntar notificación" y botón "Enviar".
 
-![Mockup5](../../imagenes/IMG_0513.jpg)
+![Mockup5](../../imagenes/MOCK5.jpg)
 
 
 ---
