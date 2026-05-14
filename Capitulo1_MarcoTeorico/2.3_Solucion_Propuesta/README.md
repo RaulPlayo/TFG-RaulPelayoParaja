@@ -1,6 +1,6 @@
 # 2.3 Solución Propuesta
 
-[Volver al capítulo 2](../README.md) | [Volver al índice principal](../../README.md)
+[Volver al capítulo 1](../README.md) | [Volver al índice principal](../../README.md)
 
 ---
 
