@@ -1,6 +1,6 @@
 # 2.1 Justificación
 
-[Volver al capitulo 2](../README.md) | [Volver al indice principal](../../README.md)
+[Volver al capitulo 1](../README.md) | [Volver al indice principal](../../README.md)
 
 ---
 
