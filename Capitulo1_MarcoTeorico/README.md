@@ -1,4 +1,4 @@
-# Capitulo 2 - Marco Teorico
+# Capitulo 1 - Marco Teorico
 
 [Volver al indice principal](../README.md)
 
