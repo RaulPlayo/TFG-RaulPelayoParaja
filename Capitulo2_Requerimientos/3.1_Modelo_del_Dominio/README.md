@@ -1,6 +1,6 @@
 # 3.1 Modelo del Dominio
 
-[Volver al capítulo 3](../README.md) | [Volver al índice principal](../../README.md)
+[Volver al capítulo 2](../README.md) | [Volver al índice principal](../../README.md)
 
 ---
 
@@ -71,4 +71,4 @@ La notificación puede estar en dos estados: **NoLeída** (`leida = false`) y **
 ![Diagrama de clases](../../imagenes/diagramaClases.svg)
 ---
 
-[Anterior: Capítulo 3 (intro)](../README.md) | [Siguiente: 3.2 Disciplina de Requisitos](../3.2_Disciplina_de_Requisitos/README.md)
+[Anterior: Capítulo 2 (intro)](../README.md) | [Siguiente: 3.2 Disciplina de Requisitos](../3.2_Disciplina_de_Requisitos/README.md)
