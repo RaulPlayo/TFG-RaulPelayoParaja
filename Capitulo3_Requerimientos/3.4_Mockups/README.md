@@ -8,7 +8,7 @@ En este apartado se enseñan los mockups del diseño de la aplicación, uno para
 
 ---
 
-## MockUp 1 - Pantalla de inicio de sesión (CU-01)
+## MockUp 1 - Pantalla de inicio de sesión
 
 Interfaz sencilla de autenticación. Tiene el título "Acceso al panel de control", una descripción que dice que el acceso solo es para personal autorizado, un campo de usuario, un campo de contraseña y un botón de "Iniciar sesión".
 
@@ -16,7 +16,7 @@ Interfaz sencilla de autenticación. Tiene el título "Acceso al panel de contro
 
 ---
 
-## MockUp 2 - Panel principal (CU-03/04/05/06/07/08)
+## MockUp 2 - Panel principal
 
 Vista principal de la aplicación después de autenticarse. Contiene:
 
@@ -29,7 +29,7 @@ Vista principal de la aplicación después de autenticarse. Contiene:
 
 ---
 
-## MockUp 3 - Pantalla del historial (CU-04)
+## MockUp 3 - Pantalla del historial 
 
 Panel lateral o ventana emergente que muestra el historial completo de notificaciones. Contiene:
 
@@ -42,7 +42,7 @@ Panel lateral o ventana emergente que muestra el historial completo de notificac
 
 ---
 
-## MockUp 4 - Marcar notificación como leída (CU-05)
+## MockUp 4 - Marcar notificación como leída
 
 Vista de una tarjeta de notificación con dos acciones posibles: "Marcar como leída" (cuando todavía no se ha leído) y "Leída" (cuando ya se ha procesado), junto a un botón "Eliminar" en cada tarjeta.
 
@@ -51,7 +51,7 @@ Vista de una tarjeta de notificación con dos acciones posibles: "Marcar como le
 
 ---
 
-## MockUp 5 - Ventana del chat y selector de destinatario (CU-07)
+## MockUp 5 - Ventana del chat y selector de destinatario 
 
 Panel de chat integrado con:
 
