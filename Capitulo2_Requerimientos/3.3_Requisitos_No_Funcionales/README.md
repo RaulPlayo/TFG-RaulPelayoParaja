@@ -1,6 +1,6 @@
 # 3.3 Requisitos No Funcionales
 
-[Volver al capítulo 3](../README.md) | [Volver al índice principal](../../README.md)
+[Volver al capítulo 2](../README.md) | [Volver al índice principal](../../README.md)
 
 ---
 
