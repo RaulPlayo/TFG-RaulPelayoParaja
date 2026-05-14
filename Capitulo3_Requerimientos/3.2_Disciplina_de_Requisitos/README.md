@@ -87,6 +87,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo alternativo B | Si el operador no guarda los cambios realizados, no se registra ninguna operación en la base de datos y no se emite ningún evento WebSocket. |
 | Postcondiciones | El operario ha sido creado, editado o eliminado en el sistema. Se ha emitido un evento WebSocket que el Responsable ha recibido como notificación. |
 
+![Gestionar operarios](../../imagenes/GestionarOperarios.png)
+
 ---
 
 ### CU-03: Gestionar herramientas
@@ -105,6 +107,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo principal – eliminar | 1. El Operario selecciona una herramienta. <br>2. Confirma la eliminación. <br>3. El sistema elimina el registro y emite un evento WebSocket (CU-06). |
 | Flujo alternativo A | Si en el momento de la emisión no hay ningún cliente conectado mediante WebSocket, el servidor genera el evento igualmente, pero no es recibido por ningún cliente. No se produce ningún error. |
 | Postcondiciones | La herramienta ha sido creada, editada o eliminada. Se ha emitido un evento WebSocket que el Responsable ha recibido como notificación. |
+
+![Gestionar herramientas](../../imagenes/GestionarHerramientas.png)
 
 ---
 
@@ -159,6 +163,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo alternativo A | Si el formato del mensaje recibido no es válido o está incompleto, el sistema descarta el evento y registra un error en el log sin interrumpir el funcionamiento del resto del sistema. |
 | Postcondiciones | El historial de notificaciones contiene una nueva entrada. La notificación está marcada como no leída. El usuario puede verla en la interfaz. |
 
+![Recibir notificaciones](../../imagenes/RecibirNotif.png)
+
 ---
 
 ### CU-07: Consultar historial de notificaciones
@@ -173,6 +179,8 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 | Flujo principal | 1. El responsable accede a la interfaz de la aplicación. <br>2. El sistema muestra la lista de notificaciones almacenadas en el historial. <br>3. Cada notificación muestra su título, descripción, marca de tiempo y estado (leída/no leída). <br>4. Las notificaciones no leídas se distinguen visualmente de las ya leídas. |
 | Flujo alternativo A | Si el historial está vacío, el sistema muestra un mensaje informativo indicando que no hay notificaciones. |
 | Postcondiciones | El usuario puede ver el estado actual de todas sus notificaciones. |
+
+![Consultar historial](../../imagenes/ConsultarHistorial.png)
 
 ---
 
