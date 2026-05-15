@@ -203,18 +203,30 @@ Además, fuera de los casos de uso, hay un **indicador de conexión**, en el que
 
 ## 3.2.6 Estructurar casos de uso
 
-| ID | Nombre | Actor principal | Incluye | Extiende a |
-|---|---|---|---|---|
+| ID | Nombre | Actor | Incluye | Extiende a |
+|----|--------|-------|---------|-------------|
 | CU-01 | Iniciar sesión | Responsable | — | — |
-| CU-02 | Gestionar operarios | Operador | CU-06 | — |
-| CU-03 | Gestionar herramientas | Operador | CU-06 | — |
-| CU-04 | Gestionar incidencias | Operador | CU-06 | — |
-| CU-05 | Gestionar actividades | Operador | CU-06 | — |
-| CU-06 | Recibir notificación en tiempo real | Responsable | — | — |
-| CU-07 | Consultar historial de notificaciones | Responsable | — | — |
-| CU-08 | Marcar notificación como leída | Responsable | — | CU-07 |
-| CU-09 | Eliminar notificación | Responsable | — | CU-07 |
-| CU-10 | Enviar mensaje de incidencia | Responsable | CU-07 (si se adjunta una notificación del historial) | — |
-| CU-11 | Cerrar sesión | Responsable | — | — |
+| CU-02 | Crear Herramienta | Operario | CU-18 | — |
+| CU-03 | Consultar Herramientas | Operario | — | — |
+| CU-04 | Editar Herramienta | Operario | CU-18 | — |
+| CU-05 | Eliminar Herramienta | Operario | CU-18 | — |
+| CU-06 | Crear Incidencia | Operario | CU-18 | — |
+| CU-07 | Consultar Incidencias | Operario | — | — |
+| CU-08 | Editar Incidencia | Operario | CU-18 | — |
+| CU-09 | Eliminar Incidencia | Operario | CU-18 | — |
+| CU-10 | Crear Actividad | Operario | CU-18 | — |
+| CU-11 | Consultar Actividades | Operario | — | — |
+| CU-12 | Editar Actividad | Operario | CU-18 | — |
+| CU-13 | Eliminar Actividad | Operario | CU-18 | — |
+| CU-14 | Crear Operario | Operario | CU-18 | — |
+| CU-15 | Consultar Operarios | Operario | — | — |
+| CU-16 | Editar Operario | Operario | CU-18 | — |
+| CU-17 | Eliminar Operario | Operario | CU-18 | — |
+| CU-18 | Recibir notificación en tiempo real | Responsable | — | — |
+| CU-19 | Consultar historial de notificaciones | Responsable | — | — |
+| CU-20 | Marcar notificación como leída | Responsable | — | CU-19 |
+| CU-21 | Eliminar notificación | Responsable | — | CU-19 |
+| CU-22 | Enviar mensaje de incidencia | Responsable | CU-19 (opcional) | — |
+| CU-23 | Cerrar sesión | Responsable | — | — |
 
 [Anterior: 3.1 Modelo del Dominio](../3.1_Modelo_del_Dominio/README.md) | [Siguiente: 3.3 Requisitos No Funcionales](../3.3_Requisitos_No_Funcionales/README.md)
