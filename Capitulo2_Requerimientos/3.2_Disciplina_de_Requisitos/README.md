@@ -19,115 +19,128 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 
 ## 3.2.2 Encontrar casos de uso
 
-| ID | Nombre | Actor principal | Descripción |
-|---|---|---|---|
-| CU-01 | Iniciar sesión | Responsable | El administrador mete sus credenciales para entrar al sistema. Solo los usuarios con rol de administrador pueden acceder. |
-| CU-02 | Gestionar operarios | Operador | El operario puede crear, consultar, editar y eliminar operarios del sistema. Cada operación genera una notificación en tiempo real.  |
-| CU-03 | Gestionar herramientas | Operador | El operario puede crear, consultar, editar y eliminar herramientas de la planta. Cada operación genera una notificación en tiempo real.  |
-| CU-04 | Gestionar incidencias | Operador | El operario puede crear, consultar, editar y eliminar incidencias registradas en la planta. Cada operación genera una notificación en tiempo real.  |
-| CU-05 | Gestionar actividades | Operador | El operario puede crear, consultar, editar y eliminar actividades asignadas en la planta. Cada operación genera una notificación en tiempo real. |
-| CU-06 | Recibir notificación en tiempo real | Responsable | El sistema recibe el evento que ha lanzado el servidor y lo muestra como notificación al usuario de forma automática, sin que él tenga que hacer nada. |
-| CU-07 | Consultar historial de notificaciones | Responsable | El responsable puede ver la lista de todas las notificaciones que han llegado durante la sesión activa. |
-| CU-08 | Marcar notificación como leída | Responsable | El responsable indica que ya ha visto y procesado una notificación concreta. |
-| CU-19 | Eliminar notificación | Responsable | El responsable borra una notificación concreta del historial. |
-| CU-10 | Enviar mensaje de incidencia | Responsable | El responsable envía un mensaje a uno o varios operarios para avisarles de una incidencia, y puede adjuntar una notificación recibida para dar contexto. |
-| CU-11 | Cerrar sesión | Responsable | Cuando termina el trabajo, el responsable cierra su sesión en la aplicación. |
+### Casos de uso
 
-![Diagrama de casos de uso](../../imagenes/diagramaCasosDeUso.png)
+| ID | Nombre | Actor principal| Descripción breve |
+|----|--------|-------|-------------------|
+| CU-01 | Iniciar sesión | Responsable | El Responsable introduce credenciales para acceder al sistema. |
+| CU-02 | Crear Herramienta | Operario | El Operario registra una nueva herramienta en el sistema. Genera notificación. |
+| CU-03 | Consultar Herramientas | Operario | El Operario consulta la lista de herramientas registradas. |
+| CU-04 | Editar Herramienta | Operario | El Operario modifica los datos de una herramienta existente. Genera notificación. |
+| CU-05 | Eliminar Herramienta | Operario | El Operario elimina una herramienta del sistema. Genera notificación. |
+| CU-06 | Crear Incidencia | Operario | El Operario registra una nueva incidencia en la planta. Genera notificación. |
+| CU-07 | Consultar Incidencias | Operario | El Operario consulta la lista de incidencias registradas. |
+| CU-08 | Editar Incidencia | Operario | El Operario actualiza el estado o los datos de una incidencia. Genera notificación. |
+| CU-09 | Eliminar Incidencia | Operario | El Operario elimina una incidencia resuelta. Genera notificación. |
+| CU-10 | Crear Actividad | Operario | El Operario registra una nueva actividad en la planta. Genera notificación. |
+| CU-11 | Consultar Actividades | Operario | El Operario consulta la lista de actividades registradas. |
+| CU-12 | Editar Actividad | Operario | El Operario modifica los datos de una actividad existente. Genera notificación. |
+| CU-13 | Eliminar Actividad | Operario | El Operario elimina una actividad completada. Genera notificación. |
+| CU-14 | Crear Operario | Operario | El Operario registra un nuevo operario en el sistema. Genera notificación. |
+| CU-15 | Consultar Operarios | Operario | El Operario consulta la lista de operarios registrados. |
+| CU-16 | Editar Operario | Operario | El Operario modifica los datos de un operario existente. Genera notificación. |
+| CU-17 | Eliminar Operario | Operario | El Operario elimina un operario del sistema. Genera notificación. |
+| CU-18 | Recibir notificación en tiempo real | Responsable | El sistema muestra automáticamente al Responsable una notificación cuando el Operario realiza una operación de escritura. |
+| CU-19 | Consultar historial de notificaciones | Responsable | El Responsable visualiza todas las notificaciones recibidas en la sesión activa. |
+| CU-20 | Marcar notificación como leída | Responsable | El Responsable indica que ya ha procesado una notificación concreta. |
+| CU-21 | Eliminar notificación | Responsable | El Responsable elimina una notificación del historial. |
+| CU-22 | Enviar mensaje de incidencia | Responsable | El Responsable envía un mensaje a un operario, pudiendo adjuntar una notificación del historial. |
+| CU-23 | Cerrar sesión | Responsable | El Responsable cierra su sesión activa en la aplicación. |
+
+### Casos de uso del actor Responsable
+
+![Diagrama de casos de uso](../../imagenes/diagramaCasosDeUso1.svg)
+
+### Casos de uso del actor Operario
+
+![Diagrama de casos de uso](../../imagenes/diagramaCasosDeUso2.png)
+
 
 ---
 
 ## 3.2.3 Priorizar casos de uso
 
 | ID | Nombre | Prioridad | Justificación |
-|---|---|---|---|
-| CU-01 | Iniciar sesión | Alta | Sin autenticación no hay acceso al sistema. |
-| CU-02 – CU-05 | Gestionar operarios, herramientas, incidencias y actividades | Alta | Son las entidades centrales del sistema. Las incidencias son el principal origen de notificaciones y el motivo de uso del chat. |
-| CU-06 | Recibir notificación en tiempo real | Alta | Es el caso de uso central del proyecto. El sistema existe para este propósito. |
-| CU-07 | Consultar historial de notificaciones | Alta | El responsable necesita poder ver las notificaciones recibidas para que el sistema sea útil. |
-| CU-08 | Marcar notificación como leída | Media | Mejora la usabilidad del sistema pero no es imprescindible para el funcionamiento básico. |
-| CU-09 | Eliminar notificación | Media | Permite al responsable gestionar su historial pero no afecta al flujo principal. |
-| CU-10 | Enviar mensaje de incidencia mediante chat | Media | Mejora la gestión de incidencias permitiendo comunicación directa entre usuarios y operarios, pero el sistema de notificaciones en tiempo real funciona sin este chat. |
-| CU-11 | Cerrar sesión | Media | Permite al usuario cerrar la sesión. Una vez cerrada, se renuevan las notificaciones que lleguen y el contador de ellas se pone en 0. |
-
+|----|--------|-----------|----------------|
+| CU-01 | Iniciar sesión | **Alta** | Puerta de entrada al sistema. Sin autenticación no es posible acceder a nada. |
+| CU-06 | Crear Incidencia | **Alta** | Es la operación más crítica y frecuente. Las incidencias son el principal motivo de notificación y de uso del chat. |
+| CU-18 | Recibir notificación en tiempo real | **Alta** | Caso de uso central del proyecto. El sistema existe para este propósito. |
+| CU-19 | Consultar historial de notificaciones | **Alta** | El Responsable necesita ver las notificaciones para que el sistema tenga utilidad. |
+| CU-07 | Consultar Incidencias | **Alta** | Necesario para que el Operario pueda gestionar el estado de las incidencias activas. |
+| CU-08 | Editar Incidencia | **Alta** | Permite actualizar el estado de una incidencia, lo que genera notificación inmediata al Responsable. |
+| CU-02 | Crear Herramienta | **Media** | Necesario para el control de recursos, pero de menor urgencia que las incidencias. |
+| CU-04 | Editar Herramienta | **Media** | Permite actualizar el estado de una herramienta. |
+| CU-05 | Eliminar Herramienta | **Media** | Permite limpiar recursos obsoletos. |
+| CU-03 | Consultar Herramientas | **Media** | Necesario para la gestión básica de herramientas. |
+| CU-09 | Eliminar Incidencia | **Media** | Permite cerrar incidencias resueltas. |
+| CU-10 | Crear Actividad | **Media** | Necesario para la planificación operativa de la planta. |
+| CU-11 | Consultar Actividades | **Media** | Necesario para el seguimiento de actividades en curso. |
+| CU-12 | Editar Actividad | **Media** | Permite actualizar el estado o asignación de una actividad. |
+| CU-13 | Eliminar Actividad | **Media** | Permite cerrar actividades completadas. |
+| CU-14 | Crear Operario | **Media** | Necesario para dar de alta nuevas personas en el sistema. |
+| CU-15 | Consultar Operarios | **Media** | Necesario para la gestión del equipo de planta. |
+| CU-16 | Editar Operario | **Media** | Permite actualizar datos de un operario existente. |
+| CU-20 | Marcar notificación como leída | **Media** | Mejora la usabilidad del historial pero no es crítico para el flujo principal. |
+| CU-21 | Eliminar notificación | **Media** | Permite gestionar el historial pero no afecta al flujo principal. |
+| CU-22 | Enviar mensaje de incidencia | **Media** | Añade valor comunicativo pero el sistema de notificaciones funciona sin él. |
+| CU-17 | Eliminar Operario | **Baja** | Operación poco frecuente y con mayor riesgo de impacto en datos asociados. |
+| CU-23 | Cerrar sesión | **Baja** | Importante para la seguridad pero no afecta al flujo principal de uso. |
 ---
 
 ## 3.2.4 Detallar casos de uso
 
-### CU-01: Iniciar sesión
+### CU-02: Crear herramienta
 
 | Campo | Descripción |
-|---|---|
-| Identificador | CU-01 |
-| Nombre | Iniciar sesión. |
-| Actor principal | Responsable |
-| Descripción | El administrador introduce sus credenciales (usuario y contraseña) para acceder a la aplicación. El sistema solo permite el acceso a usuarios con rol de administrador. |
-| Precondiciones | La aplicación está disponible y accesible desde el navegador. El usuario dispone de credenciales de administrador válidas. |
-| Flujo principal | 1. El usuario accede a la página de inicio de sesión. <br>2. El usuario introduce su nombre de usuario y contraseña. <br>3. El sistema verifica que las credenciales corresponden a un administrador. <br>4. El sistema inicia la sesión y redirige al administrador al panel principal. |
-| Flujo alternativo | Si las credenciales son incorrectas o el usuario no tiene permisos, el sistema muestra el mensaje “Acceso restringido al personal autorizado”. |
-| Postcondiciones | El administrador tiene acceso al sistema y puede interactuar con todas sus funcionalidades. |
+|-------|-------------|
+| **Identificador** | CU-02 |
+| **Nombre** | Crear Herramienta |
+| **Actor principal** | Operario |
+| **Actor secundario** | Responsable (recibe la notificación resultante) |
+| **Descripción** | El Operario registra una nueva herramienta en EMI Suite 4.0. El sistema almacena los datos y emite automáticamente un evento WebSocket que el Responsable recibe como notificación. |
+| **Precondiciones** | El Operario tiene acceso a EMI Suite. Al menos un Responsable tiene la conexión WebSocket activa. |
+| **Flujo principal** | 1. El Operario accede al módulo de herramientas. 2. Selecciona la opción de nueva herramienta. 3. Rellena los datos: nombre, tipo, estado y ubicación. 4. Confirma el registro. 5. El sistema almacena la herramienta y emite un evento WebSocket (CU-18). |
+| **Flujo alternativo A** | Si algún campo obligatorio está vacío, el sistema muestra un aviso y no permite confirmar hasta completarlo. |
+| **Flujo alternativo B** | Si no hay ningún Responsable conectado, el evento se emite igualmente pero no es recibido. No se produce error. |
+| **Postcondiciones** | La herramienta queda registrada en el sistema. El Responsable ha recibido la notificación correspondiente. |
+
+
+![DIAGRAMA CREAR HERRAMIENTA](../../imagenes/CrearHerramienta.png)
 
 ---
 
-### CU-02: Gestionar operarios
+### CU-09: Eliminar Incidencia
 
 | Campo | Descripción |
-|---|---|
-| Identificador | CU-02 |
-| Nombre | Gestionar operarios |
-| Actor principal | Operador |
-| Actor secundario | Responsable (le llega la notificación). |
-| Descripción | El operario puede crear, consultar, editar y eliminar operarios del sistema a través de EMI Suite 4.0. Cualquier operación de escritura (crear, editar, eliminar) genera automáticamente un evento WebSocket que el responsable recibe como notificación en tiempo real. |
-| Precondiciones | El Operario tiene acceso a EMI Suite 4.0. Al menos un Responsable tiene la conexión WebSocket activa. |
-| Flujo principal - crear | 1. El Operario accede al módulo de operarios en EMI Suite. <br>2. Selecciona la opción de crear nuevo operario. <br>3. Confirma la creación. <br>4. El sistema registra el nuevo operario y emite un evento WebSocket (CU-06). |
-| Flujo principal – consultar | 1. El Operario accede al módulo de operarios. <br>2. El sistema muestra la lista de operarios registrados. <br>3. El Operario puede filtrar o buscar por nombre o rol. |
-| Flujo principal – editar | 1. El Operario selecciona un operario de la lista. <br>2. Modifica los datos necesarios. <br>3. Confirma los cambios. <br>4. El sistema actualiza el registro y emite un evento WebSocket (CU-06). |
-| Flujo principal – eliminar | 1. El Operario selecciona un operario de la lista. <br>2. Selecciona la opción de eliminar. <br>3. El sistema solicita confirmación. <br>4. El Operario confirma. <br>5. El sistema elimina el registro y emite un evento WebSocket (CU-06). |
-| Flujo alternativo A | Si en el momento de la emisión no hay ningún cliente conectado mediante WebSocket, el servidor genera el evento igualmente, pero no es recibido por ningún cliente. La operación de creación o modificación del documento no se ve afectada. |
-| Flujo alternativo B | Si el operador no guarda los cambios realizados, no se registra ninguna operación en la base de datos y no se emite ningún evento WebSocket. |
-| Postcondiciones | El operario ha sido creado, editado o eliminado en el sistema. Se ha emitido un evento WebSocket que el Responsable ha recibido como notificación. |
+|-------|-------------|
+| **Identificador** | CU-09 |
+| **Nombre** | Eliminar Incidencia |
+| **Actor principal** | Operario |
+| **Actor secundario** | Responsable (recibe la notificación resultante) |
+| **Descripción** | El Operario elimina una incidencia ya resuelta del sistema. El sistema elimina el registro y emite un evento WebSocket. |
+| **Precondiciones** | Existe al menos una incidencia registrada. |
+| **Flujo principal** | 1. El Operario selecciona la incidencia resuelta. 2. El sistema solicita confirmación. 3. El Operario confirma. 4. El sistema elimina el registro y emite un evento WebSocket (CU-18). |
+| **Flujo alternativo A** | Si la incidencia tiene actividades asociadas aún activas, el sistema muestra un aviso antes de permitir la eliminación. |
+| **Postcondiciones** | La incidencia ha sido eliminada. El Responsable ha recibido la notificación. |
 
-![Gestionar operarios](../../imagenes/GestionarOperarios.png)
+![Eliminar incidencia](../../imagenes/EliminarIncidencia.png)
 
 ---
 
-### CU-03: Gestionar herramientas
+### CU-11: Consultar Actividades
 
 | Campo | Descripción |
-|---|---|
-| Identificador | CU-03 |
-| Nombre | Gestionar herramientas |
-| Actor principal | Operador |
-| Actor secundario | Responsable (le llega la notificación). |
-| Descripción | El operario puede crear, consultar, editar y eliminar herramientas de la planta a través de EMI Suite 4.0. Cualquier operación de escritura genera automáticamente un evento que el Responsable recibe como notificación en tiempo real. |
-| Precondiciones | El Operario tiene acceso a EMI Suite 4.0. Al menos un responsable tiene la conexión WebSocket activa. |
-| Flujo principal - crear | 1. El Operario accede al módulo de herramientas. <br>2. Selecciona crear nueva herramienta. <br>3. Rellena los datos (nombre, tipo, estado, ubicación). <br>4. Confirma. <br>5. El sistema registra la herramienta y emite un evento WebSocket (CU-06). |
-| Flujo principal – consultar | 1. El Operario accede al módulo de herramientas. <br>2. El sistema muestra la lista de herramientas con su estado actual. |
-| Flujo principal – editar | 1. El Operario selecciona una herramienta. <br>2. Modifica los datos (estado, ubicación, etc.). <br>3. Confirma. <br>4. El sistema actualiza el registro y emite un evento WebSocket (CU-06). |
-| Flujo principal – eliminar | 1. El Operario selecciona una herramienta. <br>2. Confirma la eliminación. <br>3. El sistema elimina el registro y emite un evento WebSocket (CU-06). |
-| Flujo alternativo A | Si en el momento de la emisión no hay ningún cliente conectado mediante WebSocket, el servidor genera el evento igualmente, pero no es recibido por ningún cliente. No se produce ningún error. |
-| Postcondiciones | La herramienta ha sido creada, editada o eliminada. Se ha emitido un evento WebSocket que el Responsable ha recibido como notificación. |
+|-------|-------------|
+| **Identificador** | CU-11 |
+| **Nombre** | Consultar Actividades |
+| **Actor principal** | Operario |
+| **Descripción** | El Operario visualiza la lista de actividades registradas, con su estado, asignación y fecha. Esta operación no genera notificaciones. |
+| **Precondiciones** | El Operario tiene acceso a EMI Suite. |
+| **Flujo principal** | 1. El Operario accede al módulo de actividades. 2. El sistema muestra la lista con descripción, operario asignado, fecha y estado. 3. El Operario puede filtrar por fecha, estado o asignación. |
+| **Flujo alternativo A** | Si no hay actividades registradas, el sistema muestra un mensaje informativo. |
+| **Postcondiciones** | El Operario puede ver el listado actualizado de actividades. No se generan notificaciones. |
 
-![Gestionar herramientas](../../imagenes/GestionarHerramientas.png)
-
----
-
-### CU-04: Gestionar incidencias
-
-| Campo | Descripción |
-|---|---|
-| Identificador | CU-04 |
-| Nombre | Gestionar incidencias |
-| Actor principal | Operador |
-| Actor secundario | Responsable (le llega la notificación). |
-| Descripción | El Operario puede crear, consultar, editar y eliminar incidencias registradas en la planta. |
-| Precondiciones | El Operario tiene acceso a EMI Suite 4.0. Al menos un Responsable tiene la conexión WebSocket activa. |
-| Flujo principal - crear | 1. El Operario accede al módulo de incidencias. <br>2. Selecciona crear nueva incidencia. <br>3. Rellena los datos (descripción, tipo, gravedad, herramienta o actividad afectada). <br>4. Confirma. <br>5. El sistema registra la incidencia y emite un evento WebSocket de tipo "advertencia" (CU-06). |
-| Flujo principal – consultar | 1. El Operario accede al módulo de incidencias. <br>2. El sistema muestra la lista de incidencias con su estado y gravedad. |
-| Flujo principal – editar | 1. El Operario selecciona una incidencia. <br>2. Modifica los datos. <br>3. Confirma. <br>4. El sistema actualiza la incidencia y emite un evento WebSocket (CU-06). |
-| Flujo principal – eliminar | 1. El Operario selecciona una incidencia resuelta. <br>2. Confirma la eliminación. <br>3. El sistema elimina el registro y emite un evento WebSocket (CU-06). |
-| Flujo alternativo A | Si en el momento de la emisión no hay ningún cliente conectado mediante WebSocket, el servidor genera el evento igualmente, pero no es recibido por ningún cliente. No aparecen errores. |
-| Postcondiciones | La incidencia ha sido creada, editada o eliminada. El Responsable ha recibido la notificación correspondiente. |
+![Consultar Actividades](../../imagenes/ConsultarActividades.png)
 
 ---
 
@@ -150,23 +163,6 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 
 ---
 
-### CU-06: Recibir notificaciones en tiempo real
-
-| Campo | Descripción |
-|---|---|
-| Identificador | CU-06 |
-| Nombre | Recibir notificación en tiempo real |
-| Actor principal | Responsable |
-| Descripción | El servidor de Soincon emite un evento a través del canal WebSocket cuando se produce un cambio en los datos de EMI Suite 4.0. El cliente recibe ese evento y lo transforma en una notificación visual que se muestra al usuario de forma automática. |
-| Precondiciones | La conexión WebSocket entre el cliente y el servidor está activa. |
-| Flujo principal | 1. El servidor detecta un cambio en los datos (creación o modificación de un documento). <br>2. El servidor construye un mensaje de evento con el tipo de cambio, el identificador del documento afectado y una descripción. <br>3. El servidor emite el evento a través del canal WebSocket. <br>4. El cliente recibe el mensaje a través de la conexión WebSocket activa. <br>5. El componente de notificaciones procesa el mensaje y crea una nueva notificación con título, descripción, tipo y marca de tiempo. <br>6. La notificación se añade al inicio del historial de notificaciones. <br>7. La interfaz se actualiza automáticamente mostrando la nueva notificación al usuario. |
-| Flujo alternativo A | Si el formato del mensaje recibido no es válido o está incompleto, el sistema descarta el evento y registra un error en el log sin interrumpir el funcionamiento del resto del sistema. |
-| Postcondiciones | El historial de notificaciones contiene una nueva entrada. La notificación está marcada como no leída. El usuario puede verla en la interfaz. |
-
-![Recibir notificaciones](../../imagenes/RecibirNotif.png)
-
----
-
 ### CU-07: Consultar historial de notificaciones
 
 | Campo | Descripción |
@@ -182,65 +178,6 @@ La disciplina de requisitos es el proceso en el que identificamos y describimos 
 
 ![Consultar historial](../../imagenes/ConsultarHistorial.png)
 
----
-
-### CU-08: Marcar notificación como leída
-
-| Campo | Descripción |
-|---|---|
-| Identificador | CU-08 |
-| Nombre | Marcar notificación como leída |
-| Actor principal | Responsable |
-| Descripción | El usuario marca una notificación concreta como leída para indicar que ya la ha visto y procesado, cambiando su estado visual en el historial. |
-| Precondiciones | Existe al menos una notificación en estado no leído en el historial. |
-| Flujo principal | 1. El usuario localiza la notificación que desea marcar como leída en el historial. <br>2. El usuario interactúa con el control correspondiente en esa notificación (botón o click). <br>3. El sistema actualiza el estado de la notificación a leída. <br>4. La interfaz refleja el cambio de estado visualmente de forma inmediata. |
-| Flujo alternativo A | Si la notificación ya estaba marcada como leída, el sistema no realiza ningún cambio. |
-| Postcondiciones | La notificación queda marcada como leída en el historial. Su apariencia visual refleja el nuevo estado. |
-
----
-
-### CU-09: Eliminar notificación
-
-| Campo | Descripción |
-|---|---|
-| Identificador | CU-09 |
-| Nombre | Eliminar notificación |
-| Actor principal | Responsable |
-| Descripción | El usuario elimina una notificación concreta del historial cuando ya no la necesita. |
-| Precondiciones | Existe al menos una notificación en el historial. |
-| Flujo principal | 1. El usuario localiza la notificación que desea eliminar en el historial. <br>2. El usuario interactúa con el control de eliminación de esa notificación. <br>3. El sistema elimina la notificación del historial. <br>4. La interfaz actualiza la lista de notificaciones mostrando el historial sin la notificación eliminada. |
-| Flujo alternativo A | Si tras la eliminación el historial queda vacío, el sistema muestra el mensaje de historial vacío descrito en CU-03. |
-| Postcondiciones | La notificación ya no aparece en el historial. El cambio es permanente durante la sesión activa. |
-
----
-
-### CU-10: Enviar mensaje de incidencia mediante chat
-
-| Campo | Descripción |
-|---|---|
-| Identificador | CU-10 |
-| Nombre | Enviar mensaje de incidencia mediante chat |
-| Actor principal | Responsable |
-| Actor secundario | Operario de Soincon |
-| Descripción | El usuario redacta un mensaje de incidencia y lo envía a uno o varios operarios de Soincon a través del chat integrado, pudiendo adjuntar una notificación recibida para aportar contexto sobre el evento que ha ocurrido. |
-| Precondiciones | El responsable tiene acceso a la interfaz del chat. Existe al menos un operario de Soincon disponible como destinatario. Opcionalmente, existe al menos una notificación en el historial para adjuntarla al mensaje. |
-| Flujo principal | 1. El usuario abre el chat. <br>2. El usuario selecciona uno o varios operarios destinatarios. <br>3. El usuario escribe el mensaje de incidencia. <br>4. El usuario, si lo desea, selecciona una notificación del historial para adjuntarla al mensaje. <br>5. El usuario envía el mensaje. <br>6. El sistema registra el mensaje y lo entrega a los operarios seleccionados. <br>7. Los operarios pueden visualizar el mensaje en su interfaz correspondiente. |
-| Postcondiciones | La incidencia queda registrada y enviada a los operarios seleccionados. Los operarios pueden consultar el contenido del mensaje y, si se adjuntó, la notificación asociada. |
-
----
-
-### CU-11: Cerrar sesión
-
-| Campo | Descripción |
-|---|---|
-| Identificador | CU-11 |
-| Nombre | Cerrar sesión |
-| Actor principal | Responsable |
-| Descripción | El Responsable cierra su sesión activa en la aplicación. El sistema elimina la sesión y redirige al usuario a la pantalla de inicio de sesión, impidiendo el acceso a cualquier funcionalidad sin volver a autenticarse. |
-| Precondiciones | El Responsable tiene una sesión activa iniciada en la aplicación. |
-| Flujo principal | 1. El Responsable pulsa el botón de cerrar sesión. <br>2. El sistema invalida la sesión activa del usuario. <br>3. El sistema cierra la conexión WebSocket asociada a esa sesión. <br>4. El sistema redirige al usuario a la pantalla de inicio de sesión. |
-| Flujo alternativo | Si se pierde la conexión con el servidor durante el cierre de sesión, el sistema elimina igualmente los datos de sesión locales y redirige al usuario a la pantalla de inicio de sesión. |
-| Postcondiciones | La sesión del Responsable ha sido eliminada. No es posible acceder a ninguna funcionalidad de la aplicación sin volver a iniciar sesión. La conexión WebSocket ha sido cerrada correctamente. |
 
 ---
 
