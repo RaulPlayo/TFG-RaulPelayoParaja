@@ -28,4 +28,4 @@ Segun el informe State of JavaScript 2023, React sigue siendo la libreria fronte
 
 ---
 
-[Siguiente: Capitulo 2 - Marco Teorico](../Capitulo2_MarcoTeorico/README.md)
+[Siguiente: Capitulo 1 - Marco Teorico](../Capitulo1_MarcoTeorico/README.md)
