@@ -4,10 +4,6 @@
 
 ---
 
-La disciplina de requisitos es el proceso en el que identificamos y describimos de forma clara lo que tiene que hacer el sistema. En este proyecto hemos seguido el enfoque de casos de uso, que es una técnica estándar en ingeniería del software para describir el sistema desde el punto de vista de quienes interactúan con él.
-
----
-
 ## 3.2.1 Actores del sistema
 
 | Actor | Descripción |
