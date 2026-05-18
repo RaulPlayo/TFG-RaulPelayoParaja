@@ -101,7 +101,7 @@
 | **Postcondiciones** | La herramienta queda registrada en el sistema. El Responsable ha recibido la notificación correspondiente. |
 
 
-![DIAGRAMA CREAR HERRAMIENTA](../../imagenes/CrearHerramienta.png)
+![DIAGRAMA CREAR HERRAMIENTA](../../imagenes/crearHerramienta.png)
 
 ---
 
@@ -119,7 +119,7 @@
 | **Flujo alternativo A** | Si la incidencia tiene actividades asociadas aún activas, el sistema muestra un aviso antes de permitir la eliminación. |
 | **Postcondiciones** | La incidencia ha sido eliminada. El Responsable ha recibido la notificación. |
 
-![Eliminar incidencia](../../imagenes/EliminarIncidencia.png)
+![Eliminar incidencia](../../imagenes/eliminarOperario.png)
 
 ---
 
@@ -136,7 +136,7 @@
 | **Flujo alternativo A** | Si no hay actividades registradas, el sistema muestra un mensaje informativo. |
 | **Postcondiciones** | El Operario puede ver el listado actualizado de actividades. No se generan notificaciones. |
 
-![Consultar Actividades](../../imagenes/ConsultarActividades.png)
+![Consultar Actividades](../../imagenes/consultarIncidencias.png)
 
 ---
 
