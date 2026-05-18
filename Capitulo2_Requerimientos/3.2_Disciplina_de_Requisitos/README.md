@@ -101,69 +101,50 @@
 | **Postcondiciones** | La herramienta queda registrada en el sistema. El Responsable ha recibido la notificación correspondiente. |
 
 
-![DIAGRAMA CREAR HERRAMIENTA](../../imagenes/crearHerramienta.png)
+![Crear herramienta](../../imagenes/crearHerramienta.png)
 
 ---
 
-### CU-09: Eliminar Incidencia
+### CU-17: Eliminar Operario
 
 | Campo | Descripción |
 |-------|-------------|
-| **Identificador** | CU-09 |
-| **Nombre** | Eliminar Incidencia |
+| **Identificador** | CU-17 |
+| **Nombre** | Eliminar Operario |
 | **Actor principal** | Operario |
 | **Actor secundario** | Responsable (recibe la notificación resultante) |
-| **Descripción** | El Operario elimina una incidencia ya resuelta del sistema. El sistema elimina el registro y emite un evento WebSocket. |
-| **Precondiciones** | Existe al menos una incidencia registrada. |
-| **Flujo principal** | 1. El Operario selecciona la incidencia resuelta. 2. El sistema solicita confirmación. 3. El Operario confirma. 4. El sistema elimina el registro y emite un evento WebSocket (CU-18). |
-| **Flujo alternativo A** | Si la incidencia tiene actividades asociadas aún activas, el sistema muestra un aviso antes de permitir la eliminación. |
-| **Postcondiciones** | La incidencia ha sido eliminada. El Responsable ha recibido la notificación. |
+| **Descripción** | El Operario elimina un operario del sistema cuando ya no forma parte del equipo. El sistema elimina el registro y emite un evento WebSocket. |
+| **Precondiciones** | Existe al menos un operario registrado. El Operario tiene permisos de administración. |
+| **Flujo principal** | 1. El Operario selecciona el operario a eliminar. 2. El sistema verifica si tiene actividades o incidencias activas asignadas. 3. El sistema solicita confirmación. 4. El Operario confirma. 5. El sistema elimina el registro y emite un evento WebSocket (CU-18). |
+| **Flujo alternativo A** | Si el Operario cancela, el sistema no realiza ninguna acción. |
+| **Postcondiciones** | El operario ha sido eliminado. El Responsable ha recibido la notificación. |
 
-![Eliminar incidencia](../../imagenes/eliminarOperario.png)
+![Eliminar operario](../../imagenes/eliminarOperario.png)
 
 ---
 
-### CU-11: Consultar Actividades
+### CU-07: Consultar Incidencias
 
 | Campo | Descripción |
 |-------|-------------|
-| **Identificador** | CU-11 |
-| **Nombre** | Consultar Actividades |
+| **Identificador** | CU-07 |
+| **Nombre** | Consultar Incidencias |
 | **Actor principal** | Operario |
-| **Descripción** | El Operario visualiza la lista de actividades registradas, con su estado, asignación y fecha. Esta operación no genera notificaciones. |
+| **Descripción** | El Operario visualiza la lista de incidencias registradas, pudiendo filtrar por tipo, gravedad, estado o fecha. Esta operación no genera notificaciones. |
 | **Precondiciones** | El Operario tiene acceso a EMI Suite. |
-| **Flujo principal** | 1. El Operario accede al módulo de actividades. 2. El sistema muestra la lista con descripción, operario asignado, fecha y estado. 3. El Operario puede filtrar por fecha, estado o asignación. |
-| **Flujo alternativo A** | Si no hay actividades registradas, el sistema muestra un mensaje informativo. |
-| **Postcondiciones** | El Operario puede ver el listado actualizado de actividades. No se generan notificaciones. |
+| **Flujo principal** | 1. El Operario accede al módulo de incidencias. 2. El sistema muestra la lista con descripción, gravedad y estado. 3. El Operario puede filtrar o buscar por cualquier campo. |
+| **Flujo alternativo A** | Si no hay incidencias registradas, el sistema muestra un mensaje informativo. |
+| **Postcondiciones** | El Operario puede ver el listado actualizado de incidencias. No se generan notificaciones. |
 
-![Consultar Actividades](../../imagenes/consultarIncidencias.png)
-
----
-
-### CU-05: Gestionar actividades
-
-| Campo | Descripción |
-|---|---|
-| Identificador | CU-05 |
-| Nombre | Gestionar actividades |
-| Actor principal | Operador |
-| Actor secundario | Responsable (le llega la notificación). |
-| Descripción | El Operario puede crear, consultar, editar y eliminar actividades asignadas en la planta. Cada operación de escritura genera una notificación en tiempo real para el Responsable. |
-| Precondiciones | El Operario tiene acceso a EMI Suite 4.0. Al menos un Responsable tiene la conexión WebSocket activa. |
-| Flujo principal - crear | 1. El Operario accede al módulo de actividades. <br>2. Selecciona crear nueva actividad. <br>3. Rellena los datos (descripción, operario asignado, fecha, herramientas necesarias). <br>4. Confirma. <br>5. El sistema registra la actividad y emite un evento WebSocket (CU-06). |
-| Flujo principal – consultar | 1. El Operario accede al módulo de actividades. <br>2. El sistema muestra la lista de actividades con su estado y asignación. |
-| Flujo principal – editar | 1. El Operario selecciona una actividad. <br>2. Modifica los datos. <br>3. Confirma. <br>4. El sistema actualiza la actividad y emite un evento WebSocket (CU-06). |
-| Flujo principal – eliminar | 1. El Operario selecciona una actividad completada. <br>2. Confirma la eliminación. <br>3. El sistema elimina el registro y emite un evento WebSocket (CU-06). |
-| Flujo alternativo A | Si en el momento de la emisión no hay ningún cliente conectado mediante WebSocket, el servidor genera el evento igualmente, pero no es recibido por ningún cliente. La operación de creación o modificación del documento no se ve afectada. |
-| Postcondiciones | La actividad ha sido creada, editada o eliminada. El Responsable ha recibido la notificación correspondiente. |
+![Consultar incidencias](../../imagenes/consultarIncidencias.png)
 
 ---
 
-### CU-07: Consultar historial de notificaciones
+### CU-19: Consultar historial de notificaciones
 
 | Campo | Descripción |
 |---|---|
-| Identificador | CU-07 |
+| Identificador | CU-19 |
 | Nombre | Consultar historial de notificaciones |
 | Actor principal | Responsable |
 | Descripción | El usuario visualiza la lista de todas las notificaciones recibidas durante la sesión activa, ordenadas de más reciente a más antigua. |
@@ -179,21 +160,34 @@
 
 ## 3.2.5 Prototipar casos de uso
 
-| Caso de uso | Elemento en la interfaz | Descripción visual |
-|---|---|---|
-| CU-01 (Iniciar sesión) | Panel de login | Una interfaz simple en donde el responsable de la aplicación deberá iniciar sesión para utilizarla. |
-| CU-02 (Gestionar operarios) | Módulo de operarios en EMI Suite | Lista de operarios con botones de crear, editar y eliminar. Formulario emergente para crear o editar con campos de nombre, rol y datos de contacto. |
-| CU-03 (Gestionar herramientas) | Módulo de herramientas en EMI Suite | Lista de herramientas con nombre, tipo y estado. Botones de crear, editar y eliminar. Formulario emergente para crear o editar. |
-| CU-04 (Gestionar incidencias) | Módulo de incidencias en EMI Suite | Lista de incidencias con descripción, gravedad y estado. Las de gravedad alta se destacan visualmente. Botones de crear, editar y eliminar. |
-| CU-05 (Gestionar actividades) | Módulo de actividades en EMI Suite | Lista de actividades con descripción, operario asignado y fecha. Botones de crear, editar y eliminar. |
-| CU-06 (Recibir notificación en tiempo real) | Tarjeta emergente | Aparece en la esquina inferior derecha al llegar una notificación nueva. Muestra título, mensaje y timestamp. |
-| CU-07 (Consultar historial de notificaciones) | Panel del historial | Lista vertical ordenada de más reciente a más antigua. Cada tarjeta muestra título, mensaje, timestamp y estado leída/no leída con diferenciación visual clara. |
-| CU-08 (Marcar notificación como leída) | Botón de “leídas” | Visible al entrar en el historial. Al pulsarlo, las demás notificaciones desaparecen y sale una tarjeta emergente informando de que se han leído. |
-| CU-09 (Eliminar notificación) | Botón de “limpiar” | También visible solo en el historial. Al pulsar, todas las notificaciones se borrarán. |
-| CU-10 (Enviar mensaje de incidencia mediante chat) | Ventana/panel de chat | Área de mensajes con listado de conversaciones, campo de texto para escribir, selector de destinatarios (operarios) y opción para adjuntar una notificación existente como referencia. |
-| CU-11 (Cerrar sesión) | Botón | Botón en el que está escrito cerrar sesión. Una vez pulsado, te dirige al CU-01 (Panel del login). |
+| CU | Caso de uso | Elemento de interfaz | Descripción visual |
+|----|-------------|----------------------|--------------------|
+| CU-01 | Iniciar sesión | Pantalla de login | Campo de usuario, campo de contraseña, botón "Entrar". Mensaje de error en rojo si las credenciales son incorrectas. |
+| CU-02 | Crear Herramienta | Formulario de nueva herramienta | Modal con campos: nombre, tipo, estado y ubicación. Botones "Cancelar" y "Guardar". |
+| CU-03 | Consultar Herramientas | Listado de herramientas | Tabla con columnas: nombre, tipo, estado, ubicación. Buscador y filtros en la parte superior. Botones de editar y eliminar en cada fila. |
+| CU-04 | Editar Herramienta | Formulario de edición | Modal con los mismos campos que el de creación, prellenados con los datos actuales. Botones "Cancelar" y "Guardar cambios". |
+| CU-05 | Eliminar Herramienta | Diálogo de confirmación | Modal con el texto "¿Eliminar esta herramienta?" y botones "Cancelar" y "Eliminar". |
+| CU-06 | Crear Incidencia | Formulario de nueva incidencia | Modal con campos: descripción, tipo, gravedad (selector: baja/media/alta) y elemento afectado. Las incidencias de gravedad alta se muestran con borde rojo. |
+| CU-07 | Consultar Incidencias | Listado de incidencias | Tabla con columnas: descripción, tipo, gravedad, estado y fecha. Filtros por gravedad y estado. Indicador visual de color según gravedad. |
+| CU-08 | Editar Incidencia | Formulario de edición | Modal con campos prellenados. Incluye selector de estado (abierta/en progreso/resuelta). Botones "Cancelar" y "Guardar cambios". |
+| CU-09 | Eliminar Incidencia | Diálogo de confirmación | Modal con el texto "¿Eliminar esta incidencia?" y botones "Cancelar" y "Eliminar". Si tiene actividades activas asociadas, el modal muestra un aviso adicional. |
+| CU-10 | Crear Actividad | Formulario de nueva actividad | Modal con campos: descripción, operario asignado (selector), fecha y herramientas necesarias. Botones "Cancelar" y "Guardar". |
+| CU-11 | Consultar Actividades | Listado de actividades | Tabla con columnas: descripción, operario asignado, fecha y estado. Filtros por estado y fecha. |
+| CU-12 | Editar Actividad | Formulario de edición | Modal con campos prellenados. Incluye selector de estado (pendiente/en progreso/completada). Botones "Cancelar" y "Guardar cambios". |
+| CU-13 | Eliminar Actividad | Diálogo de confirmación | Modal con el texto "¿Eliminar esta actividad?" y botones "Cancelar" y "Eliminar". |
+| CU-14 | Crear Operario | Formulario de nuevo operario | Modal con campos: nombre, rol (selector) y datos de contacto. Botones "Cancelar" y "Guardar". |
+| CU-15 | Consultar Operarios | Listado de operarios | Tabla con columnas: nombre, rol y estado. Buscador por nombre o rol. |
+| CU-16 | Editar Operario | Formulario de edición | Modal con campos prellenados. Botones "Cancelar" y "Guardar cambios". |
+| CU-17 | Eliminar Operario | Diálogo de confirmación | Modal con el texto "¿Eliminar este operario?" y botones "Cancelar" y "Eliminar". Si tiene elementos activos asignados, muestra un aviso adicional con el detalle. |
+| CU-18 | Recibir notificación | Toast emergente | Aparece en la esquina superior derecha. Muestra título, descripción y timestamp. Color según tipo: azul (info), naranja (advertencia), verde (éxito). |
+| CU-19 | Consultar historial | Panel de historial | Lista vertical de más reciente a más antigua. Cada tarjeta muestra título, descripción, tipo, timestamp y estado leída/no leída. |
+| CU-19 vacío | Historial vacío | Mensaje de estado | Icono y texto "No tienes notificaciones" centrado en el panel. |
+| CU-20 | Marcar como leída | Botón de check | Visible en cada tarjeta. Al pulsarlo la tarjeta cambia a apariencia atenuada. |
+| CU-21 | Eliminar notificación | Botón de papelera o X | Visible en cada tarjeta. Al pulsarlo desaparece con animación de salida. |
+| CU-22 | Enviar mensaje | Ventana de chat | Modal con nombre del contacto en la cabecera, historial de mensajes en el centro y campo de texto con botón de envío abajo. Mensajes del Responsable a la derecha, del contacto a la izquierda. Opción de adjuntar notificación bajo el campo de texto. |
+| CU-23 | Cerrar sesión | Diálogo de confirmación | Modal con el texto "¿Cerrar sesión?" y botones "Cancelar" y "Cerrar sesión". |
+| General | Estado de conexión | Indicador permanente | Punto de color siempre visible en la barra superior: verde = conectado, naranja = conectando, rojo = desconectado. |
 
-Además, fuera de los casos de uso, hay un **indicador de conexión**, en el que si estás conectado sale de color verde, mientras que si estás conectando o desconectado sale gris.
 
 ---
 
