@@ -1,0 +1,61 @@
+@startuml VerNotificacion
+
+skinparam linetype polyline
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+
+state verNotificacion as "verNotificacion()" {
+  state " " as SeleccionandoNotificacion
+  state " " as MostrandoDetalle
+  state " " as RevisandoInformacion
+  state " " as GestionandoNotificacion
+
+  [*] -[#green]-> SeleccionandoNotificacion
+  note on link
+    <b>Responsable</b> accede al historial
+    y selecciona una notificacion recibida
+  end note
+
+  SeleccionandoNotificacion -[#green]-> MostrandoDetalle
+  note on link
+    <b>Sistema</b> muestra la notificacion seleccionada
+    • Tipo de evento
+    • Titulo de la operacion
+    • Descripcion generada
+    • Fecha y hora de recepcion
+  end note
+
+  MostrandoDetalle -[#green]-> RevisandoInformacion
+  note on link
+    <b>Responsable</b> revisa la informacion de la incidencia
+    <b>Sistema</b> conserva el mensaje original recibido
+    y la operacion WebSocket asociada
+  end note
+
+  RevisandoInformacion -[#green]-> GestionandoNotificacion
+  note on link
+    <b>Sistema</b> permite actuar sobre la notificacion
+    • Marcar como leida
+    • Eliminar del historial
+    • Adjuntar al chat para comunicar incidencia
+    • Volver al listado del historial
+  end note
+
+  GestionandoNotificacion -[#green]-> [*]
+  note on link
+    <b>Responsable</b> finaliza la consulta
+    <b>Sistema</b> actualiza el estado de la notificacion
+  end note
+}
+
+verNotificacion -[#green]-> HISTORIAL_ABIERTO
+note on link
+  notificacion consultada
+end note
+
+verNotificacion -[#blue]-> HISTORIAL_ABIERTO
+note on link
+  volver o cancelar
+end note
+
+@enduml

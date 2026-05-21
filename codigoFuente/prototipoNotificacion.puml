@@ -1,0 +1,18 @@
+@startsalt PrototipoNotificacion
+title Notificacion
+
+{
+  {^ "<b>Notificacion recibida</b>" | [x] }
+  {#
+    Tipo | "warning / error / info / material / output"
+    Operacion | "Parada iniciada"
+    Descripcion | "Motivo: incidencia en puesto 123"
+    Fecha | "10:42"
+  }
+  {^ [Marcar leida] | [Eliminar] | [Enviar incidencia] }
+}
+@endsalt
+
+
+
+

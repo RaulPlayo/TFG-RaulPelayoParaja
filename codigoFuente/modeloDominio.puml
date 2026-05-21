@@ -1,0 +1,53 @@
+@startuml ModeloDominioSemantico
+
+title Sistema de Notificaciones - EMI Suite
+
+skinparam linetype polyline
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+class Responsable
+
+package "Sistema de notificaciones" {
+  class Conexion
+  class Notificacion
+  class HistorialNotificaciones
+}
+
+package "Gestion de planta" {
+  class Operario
+  class Herramienta
+  class Incidencia
+  class Actividad
+}
+
+package "Chat" {
+  class Conversacion
+  class Mensaje
+  class Contacto
+}
+
+Responsable --> Conexion : establece
+Responsable --> HistorialNotificaciones : consulta
+Responsable "1" o-- "0..*" Conversacion : mantiene
+
+Conexion --> Notificacion : recibe
+HistorialNotificaciones "1" *-- "0..*" Notificacion : almacena
+
+Operario --> Herramienta : gestiona
+Operario --> Incidencia : registra
+Operario --> Actividad : ejecuta
+Operario --> Operario : gestiona
+
+Herramienta ..> Notificacion : genera
+Incidencia ..> Notificacion : genera
+Actividad ..> Notificacion : genera
+
+Conversacion "1" *-- "1..*" Mensaje : contiene
+Conversacion "1" --> "1" Contacto : dirigida a
+Mensaje "0..*" --> "0..1" Notificacion : adjunta
+
+@enduml

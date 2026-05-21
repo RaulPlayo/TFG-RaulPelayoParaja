@@ -1,0 +1,59 @@
+@startuml EliminarNotificacion
+
+skinparam linetype polyline
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+
+state eliminarNotificacion as "eliminarNotificacion()" {
+  state " " as SeleccionandoNotificacion
+  state " " as SolicitandoEliminacion
+  state " " as EliminandoNotificacion
+  state " " as HistorialActualizado
+
+  [*] -[#green]-> SeleccionandoNotificacion
+  note on link
+    <b>Responsable</b> accede al historial
+    y selecciona la notificacion que desea eliminar
+  end note
+
+  SeleccionandoNotificacion -[#green]-> SolicitandoEliminacion
+  note on link
+    <b>Sistema</b> muestra la notificacion seleccionada
+    • Tipo de evento
+    • Titulo de la operacion
+    • Descripcion de la incidencia
+    • Accion para eliminarla del historial
+  end note
+
+  SolicitandoEliminacion -[#green]-> EliminandoNotificacion
+  note on link
+    <b>Responsable</b> solicita eliminar la notificacion
+    <b>Sistema</b> identifica la notificacion por su id
+    y la retira de la lista almacenada
+  end note
+
+  EliminandoNotificacion -[#green]-> HistorialActualizado
+  note on link
+    <b>Sistema</b> actualiza el historial
+    • La notificacion eliminada deja de mostrarse
+    • Se mantiene el resto de eventos
+    • Se recalcula el contador de notificaciones
+  end note
+
+  HistorialActualizado -[#green]-> [*]
+  note on link
+    notificacion eliminada correctamente
+  end note
+}
+
+eliminarNotificacion -[#green]-> HISTORIAL_ABIERTO
+note on link
+  notificacion eliminada
+end note
+
+eliminarNotificacion -[#blue]-> HISTORIAL_ABIERTO
+note on link
+  cancelar eliminacion
+end note
+
+@enduml

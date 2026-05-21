@@ -1,0 +1,12 @@
+@startuml
+title Diagrama de estados: Conexion WebSocket
+
+[*] --> Desconectado
+
+Desconectado --> Conectando : app cargada /\ninicia handshake WebSocket
+Conectando --> Desconectado : timeout o fallo de handshake /\nmostrar estado desconectado
+Conectando --> Conectado : servidor acepta conexion /\nactualizar estado a conectado
+Conectado --> Desconectado : perdida de red o cierre del servidor /\nmostrar estado desconectado
+Conectado --> Conectado : evento recibido /\nprocesar notificacion
+Conectado --> [*] : usuario cierra la aplicacion /\ncerrar conexion ordenadamente
+@enduml

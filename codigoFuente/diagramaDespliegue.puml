@@ -1,0 +1,58 @@
+@startuml DiagramaDespliegue
+
+title Diagrama de despliegue - Sistema de Notificaciones EMI Suite
+
+skinparam linetype polyline
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam nodeStyle rectangle
+
+actor Responsable
+
+node "Dispositivo del Responsable" as dispositivo {
+  node "Navegador web" as navegador {
+    artifact "SPA React\nEmiSuite Centro de Control" as spa
+    artifact "LocalStorage\nemployee_auth_session" as localstorage
+  }
+}
+
+node "Servidor web / hosting estatico" as hosting {
+  artifact "index.html" as index
+  artifact "assets JS/CSS" as assets
+  artifact "favicon / imagenes / sonidos" as publicos
+}
+
+cloud "Infraestructura EMI Suite" as emi {
+  node "Broker WebSocket/STOMP" as broker {
+    artifact "wss://desarrollo.emisuite.es:15673/ws" as endpoint
+    queue "/topic/notices" as notices
+    queue "/topic/updateui" as updateui
+    queue "/topic/outputtrigger" as outputtrigger
+  }
+
+  node "Sistema de produccion" as produccion {
+    component "Eventos de planta" as eventos
+  }
+}
+
+Responsable --> navegador : usa aplicacion
+
+navegador --> hosting : solicita aplicacion\nHTTPS
+hosting --> navegador : entrega HTML, JS, CSS\nimagenes y sonidos
+
+spa --> localstorage : guarda / lee token\nde sesion local
+
+spa --> endpoint : conecta\nSTOMP sobre WSS\n
+endpoint --> spa : envia eventos\nde notificacion
+
+eventos --> notices : publica avisos
+eventos --> updateui : publica actualizaciones
+eventos --> outputtrigger : publica produccion
+
+notices --> endpoint
+updateui --> endpoint
+outputtrigger --> endpoint
+
+@enduml

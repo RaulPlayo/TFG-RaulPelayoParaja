@@ -1,0 +1,45 @@
+@startuml casosUso
+
+title Diagrama de casos de uso - Sistema de Notificaciones EMI Suite
+
+left to right direction
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam shadowing false
+
+actor "Responsable" as responsable
+actor "Tiempo" as tiempo
+
+package "Notificaciones" {
+    usecase consultarHistorial as "consultarHistorial()"
+    usecase verNotificacion as "verNotificacion()"
+    usecase marcarLeida as "marcarLeida()"
+    usecase eliminarNotificacion as "eliminarNotificacion()"
+    usecase enviarNotificacion as "enviarNotificacion()"
+}
+
+package "Sesion" {
+    usecase cerrarSesion as "cerrarSesion()"
+}
+
+package "Chat" {
+    usecase enviarMensajeDeIncidencia as "enviarMensajeDeIncidencia()"
+}
+
+(consultarHistorial) <-- responsable
+(verNotificacion) <-- responsable
+(marcarLeida) <-- responsable
+(eliminarNotificacion) <-- responsable
+
+tiempo --> (enviarNotificacion)
+
+responsable --> (cerrarSesion)
+responsable --> (enviarMensajeDeIncidencia)
+
+verNotificacion .> consultarHistorial : <<extend>>
+marcarLeida .> consultarHistorial : <<extend>>
+eliminarNotificacion .> consultarHistorial : <<extend>>
+enviarMensajeDeIncidencia .> consultarHistorial : <<extend>>
+
+@enduml

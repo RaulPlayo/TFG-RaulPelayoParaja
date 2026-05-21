@@ -1,0 +1,87 @@
+@startuml
+title Diagrama de Objetos - Instancia del sistema en un momento concreto
+
+object "servidorSoincon : ServidorSoincon" as servidorSoincon
+
+object "ws : ConexionWebSocket" as ws {
+    estado = "conectado"
+    url = "ws://api.soincon.es/ws"
+}
+
+object "doc001 : Documento" as doc001 {
+    id = "doc001"
+    tipo = "MESSAGE subscription:sub-0 destination:/topic/notices"
+    contenido = "...priority":"HIGH","payload":{"noticeId":1729..."
+    fechaModificacion = "2026-04-01 10:32:05"
+}
+
+object "evt001 : Evento" as evt001 {
+    id = "evt001"
+    tipoEvento = "modificacion"
+    descripcion = "Documento actualizado"
+    timestamp = "2026-04-01 10:32:05"
+    documentoId = "doc001"
+}
+
+object "noti001 : Notificacion" as noti001 {
+    id = "noti001"
+    titulo = "Aviso recibido"
+    mensaje = "ID #1729, Puesto 3247; PRIORIDAD: HIGH"
+    tipo = "advertencia"
+    timestamp = "2026-04-01 10:32:05"
+    leida = false
+}
+
+object "noti002 : Notificacion" as noti002 {
+    id = "noti002"
+    titulo = "Nuevo documento creado"
+    mensaje = "Orden de trabajo OT-204 registrada"
+    tipo = "info"
+    timestamp = "2026-04-01 09:15:00"
+    leida = true
+}
+
+object "historial : HistorialNotificaciones" as historial {
+    notificaciones = [
+    noti001,
+    noti002
+    ]
+}
+
+object "responsable : Responsable" as responsable
+
+object "msg001 : MensajeChat" as msg001 {
+    id = "msg001"
+    contenido = "Ver que aviso ha surgido"
+    remitente = "Responsable"
+    timestamp = "2026-04-01 10:33:10"
+    notificacionId = "noti001"
+}
+
+object "msg002 : MensajeChat" as msg002 {
+    id = "msg002"
+    contenido = "Recibido, me pongo\ncon ello ahora"
+    remitente = "Mantenimiento"
+    timestamp = "2026-04-01 10:33:12"
+    notificacionId = null
+}
+
+object "conv001 : ConversacionChat" as conv001 {
+    contactoId = "op002"
+    contactoNombre = "Juan Perez -\nTecnico de Mantenimiento"
+    mensajes = [msg001, msg002]
+}
+
+servidorSoincon --> ws : gestiona
+servidorSoincon --> doc001 : gestiona
+ws --> evt001 : recibe
+doc001 --> evt001 : genera
+evt001 --> noti001 : transforma
+noti001 --> historial : almacena
+noti002 --> historial : almacena
+responsable --> historial : consulta
+responsable --> conv001 : abre
+msg001 --> conv001 : pertenece
+msg002 --> conv001 : pertenece
+
+@enduml

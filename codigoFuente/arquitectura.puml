@@ -1,0 +1,33 @@
+@startuml
+title Arquitectura general del sistema
+
+actor "Responsable" as admin
+
+package "Cliente Web" as webClient {
+    component LoginForm
+    component Dashboard
+    component "useAuth / AuthService" as useAuth
+    component "useWebSocket / WS Service" as useWS
+    component NotificationsContainer
+    component ChatPanel
+    
+    LoginForm -[hidden]right-> Dashboard
+    useAuth -[hidden]right-> useWS
+    
+    LoginForm --> useAuth
+    Dashboard ..> useWS
+    useWS -> NotificationsContainer
+    NotificationsContainer -> ChatPanel
+}
+
+database LocalStorage
+component "API REST\nServicios EMI Suite" as apiRest
+component "Broker WebSocket / STOMP" as brokerWS
+database "EMI Suite /\nSistema corporativo" as emiSuite
+
+admin --> webClient
+useAuth ..> LocalStorage : sesión local
+useAuth --> apiRest : HTTP/REST
+useWS <--> brokerWS : conexión\npersistente
+emiSuite --> brokerWS : eventos
+@enduml

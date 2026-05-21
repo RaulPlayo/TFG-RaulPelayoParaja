@@ -1,0 +1,24 @@
+@startsalt PrototipoPaginaPrincipal
+title Pagina principal
+
+{
+  {^ "<b>EmiSuite</b> / Centro de Control" | [Historial 12] | [Cerrar sesion] }
+  {^ "Resumen de operaciones" }
+  {^ "Panel de monitorizacion de Soincon." }
+
+  {#
+    Total | Notificaciones | Alertas
+    "12" | "9" | "3"
+  }
+
+  {^ "Acciones de simulacion" }
+
+  {#
+    Proceso | Paradas | Materiales
+    [Iniciar] | [Iniciar parada] | [Material]
+    [Pausar] | [Finalizar parada] | [Consumible]
+    [Finalizar] | [Registrar scrap] | [Lote]
+  }
+
+}
+@endsalt

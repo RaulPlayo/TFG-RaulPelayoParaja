@@ -1,0 +1,61 @@
+@startuml ConsultarHistorial
+
+skinparam linetype polyline
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+
+state consultarHistorial as "consultarHistorial()" {
+  state " " as SolicitandoHistorial
+  state " " as MostrandoEventos
+  state " " as RevisandoNotificaciones
+  state " " as GestionandoHistorial
+
+  [*] -[#green]-> SolicitandoHistorial
+  note on link
+    <b>Responsable</b> solicita consultar el historial
+    desde el boton de notificaciones
+  end note
+
+  SolicitandoHistorial -[#green]-> MostrandoEventos
+  note on link
+    <b>Sistema</b> abre el panel de historial
+    • Muestra el numero total de eventos
+    • Lista las notificaciones recibidas
+    • Indica tipo, titulo, descripcion y hora
+    • Permite cerrar el historial
+  end note
+
+  MostrandoEventos -[#green]-> RevisandoNotificaciones
+  note on link
+    <b>Responsable</b> revisa las notificaciones registradas
+    <b>Sistema</b> mantiene ordenados los eventos recientes
+    y conserva como maximo las ultimas 100 notificaciones
+  end note
+
+  RevisandoNotificaciones -[#green]-> GestionandoHistorial
+  note on link
+    <b>Sistema</b> permite gestionar el historial
+    • Marcar todas las notificaciones como leidas
+    • Eliminar una notificacion concreta
+    • Limpiar todo el historial
+    • Abrir chat para comunicar una incidencia
+  end note
+
+  GestionandoHistorial -[#green]-> [*]
+  note on link
+    <b>Responsable</b> finaliza la consulta
+    <b>Sistema</b> actualiza el estado del historial
+  end note
+}
+
+consultarHistorial -[#green]-> SISTEMA_DISPONIBLE
+note on link
+  historial consultado
+end note
+
+consultarHistorial -[#blue]-> SISTEMA_DISPONIBLE
+note on link
+  cancelar o cerrar historial
+end note
+
+@enduml

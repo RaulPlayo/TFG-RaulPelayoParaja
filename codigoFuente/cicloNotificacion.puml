@@ -1,0 +1,17 @@
+@startuml
+title Diagrama de estados: Ciclo de vida de la Notificacion
+
+[*] --> NoLeida : evento recibido /\ncrear notificacion en historial
+
+state NoLeida {
+    state "leida = false" as false_state
+}
+
+state Leida {
+    state "leida = true" as true_state
+}
+
+NoLeida --> Leida : usuario pulsa marcar como leida /\nactualizar estado visual
+NoLeida --> [*] : usuario elimina notificacion /\neliminar del historial
+Leida --> [*] : usuario elimina notificacion /\neliminar del historial
+@enduml

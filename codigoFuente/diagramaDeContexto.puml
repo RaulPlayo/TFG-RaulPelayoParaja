@@ -1,0 +1,87 @@
+@startuml
+title Diagrama de contexto - TFG WebSockets EmiSuite
+left to right direction
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam ArrowColor #222222
+skinparam StateBorderColor #222222
+skinparam StateBackgroundColor #F4F4F4
+skinparam StateFontColor #111111
+skinparam StateFontSize 12
+skinparam defaultFontName Arial
+
+[*] --> SESION_CERRADA
+
+SESION_CERRADA -->SISTEMA_DISPONIBLE : iniciarSesion(usuario, password)
+SISTEMA_DISPONIBLE --> SESION_CERRADA : cerrarSesion()
+
+SISTEMA_DISPONIBLE --> CONECTANDO_WS : conectarWebSocket(token)
+CONECTANDO_WS --> SISTEMA_CONECTADO : onConnect()
+CONECTANDO_WS --> ERROR_CONEXION : onStompError()
+ERROR_CONEXION --> CONECTANDO_WS : reconectar(5000ms)
+SISTEMA_CONECTADO --> SISTEMA_DESCONECTADO : onDisconnect()
+SISTEMA_DESCONECTADO --> CONECTANDO_WS : reconectar()
+
+SISTEMA_DISPONIBLE --> DASHBOARD_ABIERTO : abrirDashboard()
+DASHBOARD_ABIERTO --> SISTEMA_DISPONIBLE : completarGestion()
+
+DASHBOARD_ABIERTO --> SIMULACION_ABIERTA : abrirAccionesSimulacion()
+SIMULACION_ABIERTA --> EVENTO_SIMULADO : simularOperacion(operation, payload)
+EVENTO_SIMULADO --> MENSAJE_NORMALIZADO : dispatchEvent(simulate-socket-message)
+
+SISTEMA_CONECTADO --> TOPICS_SUSCRITOS : suscribirseTopics()
+TOPICS_SUSCRITOS --> TOPIC_NOTICES : escuchar(/topic/notices)
+TOPICS_SUSCRITOS --> TOPIC_UPDATEUI : escuchar(/topic/updateui)
+TOPICS_SUSCRITOS --> TOPIC_OUTPUTTRIGGER : escuchar(/topic/outputtrigger)
+
+TOPIC_NOTICES --> MENSAJE_NORMALIZADO : recibirAviso()
+TOPIC_UPDATEUI --> MENSAJE_NORMALIZADO : recibirActualizacionUI()
+TOPIC_OUTPUTTRIGGER --> MENSAJE_NORMALIZADO : recibirProduccion()
+
+MENSAJE_NORMALIZADO --> NOTIFICACION_CREADA : crearNotificacion()
+NOTIFICACION_CREADA --> HISTORIAL_ACTUALIZADO : guardarMax100()
+NOTIFICACION_CREADA --> TOAST_VISIBLE : mostrarToast()
+
+TOAST_VISIBLE --> NOTIFICACION_LEIDA : descartarNotificacion()
+HISTORIAL_ACTUALIZADO --> HISTORIAL_ABIERTO : abrirHistorial()
+HISTORIAL_ABIERTO --> NOTIFICACION_LEIDA : marcarComoLeida()
+HISTORIAL_ABIERTO --> HISTORIAL_VACIO : limpiarHistorial()
+HISTORIAL_ABIERTO --> SISTEMA_DISPONIBLE : cerrarHistorial()
+
+DASHBOARD_ABIERTO --> PROCESO_EVENTO : iniciarProceso()
+DASHBOARD_ABIERTO --> PROCESO_EVENTO : pausarProceso()
+DASHBOARD_ABIERTO --> PROCESO_EVENTO : finalizarProceso()
+DASHBOARD_ABIERTO --> PARADA_EVENTO : iniciarParada()
+DASHBOARD_ABIERTO --> PARADA_EVENTO : finalizarParada()
+DASHBOARD_ABIERTO --> PARADA_EVENTO : registrarScrap()
+DASHBOARD_ABIERTO --> MATERIAL_EVENTO : cambiarMaterial()
+DASHBOARD_ABIERTO --> MATERIAL_EVENTO : registrarConsumible()
+DASHBOARD_ABIERTO --> MATERIAL_EVENTO : cambiarLote()
+DASHBOARD_ABIERTO --> PRODUCCION_EVENTO : registrarProduccion()
+DASHBOARD_ABIERTO --> PRODUCCION_EVENTO : cambiarEmbalaje()
+DASHBOARD_ABIERTO --> PRODUCCION_EVENTO : registrarCaja()
+DASHBOARD_ABIERTO --> PERSONAL_EVENTO : actualizarOperarios()
+DASHBOARD_ABIERTO --> PERSONAL_EVENTO : iniciarIndirecto()
+DASHBOARD_ABIERTO --> PERSONAL_EVENTO : añadirComentario()
+DASHBOARD_ABIERTO --> PERSONAL_EVENTO : recibirAviso()
+
+PROCESO_EVENTO --> EVENTO_SIMULADO : STARTED/PAUSED/FINISHED
+PARADA_EVENTO --> EVENTO_SIMULADO : BEGIN_STOP/FINISH_STOP/SCRAP
+MATERIAL_EVENTO --> EVENTO_SIMULADO : MATERIAL/CONSUMABLE/BATCH_CHANGE
+PRODUCCION_EVENTO --> EVENTO_SIMULADO : OUTPUT/PACKAGING_CHANGE/REGISTER_BOX
+PERSONAL_EVENTO --> EVENTO_SIMULADO : OPERATORS_UPDATE/BEGIN_INDIRECT/COMMENT/notice
+
+SISTEMA_DISPONIBLE --> CHAT_ABIERTO : abrirChat()
+TOAST_VISIBLE --> CHAT_ABIERTO : contactarResponsable()
+HISTORIAL_ABIERTO --> CHAT_ABIERTO : adjuntarNotificacion()
+CHAT_ABIERTO --> MENSAJE_CHAT_ENVIADO : enviarMensaje(destinatario, texto, adjunto)
+MENSAJE_CHAT_ENVIADO --> RESPUESTA_CHAT_RECIBIDA : generarRespuestaSimulada()
+RESPUESTA_CHAT_RECIBIDA --> CHAT_ABIERTO : actualizarConversacion()
+CHAT_ABIERTO --> SISTEMA_DISPONIBLE : cerrarChat()
+
+SISTEMA_DISPONIBLE --> TEMA_CLARO : cambiarTema()
+TEMA_CLARO --> TEMA_OSCURO : cambiarTema()
+TEMA_OSCURO --> TEMA_CLARO : cambiarTema()
+
+@enduml

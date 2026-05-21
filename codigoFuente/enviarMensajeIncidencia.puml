@@ -1,0 +1,76 @@
+@startuml cuEnviarMensajeDeIncidencia
+
+skinparam linetype polyline
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+
+state enviarMensajeDeIncidencia as "enviarMensajeDeIncidencia()" {
+  state " " as SeleccionandoIncidencia
+  state " " as AbriendoChat
+  state " " as SeleccionandoDestinatario
+  state " " as RedactandoMensaje
+  state " " as MensajeEnviado
+  state " " as RespuestaRecibida
+
+  [*] -[#green]-> SeleccionandoIncidencia
+  note on link
+    <b>Empleado</b> solicita comunicar una incidencia
+    desde una notificacion o desde el boton de mensaje
+  end note
+
+  SeleccionandoIncidencia -[#green]-> AbriendoChat
+  note on link
+    <b>Sistema</b> abre el panel de conversacion
+    • Permite iniciar mensaje sin adjunto
+    • Permite adjuntar una notificacion reciente
+    • Permite retirar el adjunto seleccionado
+    • Permite cancelar cerrando el chat
+  end note
+
+  AbriendoChat -[#green]-> SeleccionandoDestinatario
+  note on link
+    <b>Sistema</b> presenta los destinatarios disponibles
+    • Tecnico de mantenimiento
+    • Jefe de seguridad
+    • Supervisora de planta
+    • Soporte TI
+  end note
+
+  SeleccionandoDestinatario -[#green]-> RedactandoMensaje
+  note on link
+    <b>Empleado</b> selecciona responsable y redacta el mensaje
+    <b>Sistema</b> mantiene, si existe, la incidencia adjunta
+  end note
+
+  RedactandoMensaje -[#green]-> MensajeEnviado
+  note on link
+    <b>Empleado</b> solicita enviar mensaje
+    <b>Sistema</b> registra el mensaje en la conversacion
+    • Texto introducido
+    • Destinatario seleccionado
+    • Incidencia adjunta, si existe
+  end note
+
+  MensajeEnviado -[#green]-> RespuestaRecibida
+  note on link
+    <b>Sistema</b> genera respuesta simulada del destinatario
+    y actualiza la conversacion
+  end note
+
+  RespuestaRecibida -[#green]-> [*]
+  note on link
+    incidencia comunicada correctamente
+  end note
+}
+
+enviarMensajeDeIncidencia -[#green]-> CHAT_ABIERTO
+note on link
+  mensaje enviado
+end note
+
+enviarMensajeDeIncidencia -[#blue]-> SISTEMA_DISPONIBLE
+note on link
+  cancelar o cerrar chat
+end note
+
+@enduml

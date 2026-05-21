@@ -1,0 +1,22 @@
+@startsalt
+{
+  title Chat de incidencia
+
+  { <b>Conversacion</b> | ^Tecnico de mantenimiento^ | [X] }
+  
+  {#
+    "Juan Perez" | "Recibido, reviso la incidencia."
+    "Responsable" | "Adjunto la notificacion del puesto 123."
+  }
+
+  {^"<b>Adjunto listo para enviar</b>"
+    {#
+      Notificacion | "Parada iniciada"
+      Detalle | "Motivo: incidencia en puesto 123"
+    }
+    [Quitar]
+  }
+
+  { [Adjuntar] | "Escribe un mensaje...                      " | [Enviar] }
+}
+@endsalt
