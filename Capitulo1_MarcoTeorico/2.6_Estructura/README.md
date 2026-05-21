@@ -18,4 +18,4 @@ El trabajo se organiza en cinco capitulos que siguen una estructura progresiva, 
 
 ---
 
-[Anterior: 2.5 Alcance](../2.5_Alcance/README.md) | [Siguiente: Capitulo 3 - Requerimientos](../../Capitulo3_Requerimientos/README.md)
+[Anterior: 2.5 Alcance](../2.5_Alcance/README.md) | [Siguiente: Capitulo 2 - Requerimientos](../../Capitulo2_Requerimientos/README.md)
