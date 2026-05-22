@@ -14,9 +14,6 @@ El sistema parte de que existen documentos que se manejan a través de la API de
 
 El responsable puede interactuar con las notificaciones de tres formas: puede verlas cuando llegan, puede marcarlas como leídas para indicar que ya las ha procesado, y puede borrarlas cuando ya no le hacen falta. Además, el responsable puede ver en todo momento el estado de la conexión WebSocket para saber si el sistema está recibiendo eventos o si hay algún problema de conexión.
 
-![Diagrama de objetos](../../imagenes/diagramaObjetos.svg)
-[Código fuente](../../codigoFuente/diagramaObjetos.puml)
-
 ---
 
 ## 3.1.2 Diagrama de estados
