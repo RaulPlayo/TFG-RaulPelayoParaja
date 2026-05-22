@@ -11,7 +11,7 @@
 | Responsable del centro de control | La persona que accede a la aplicación web desde el navegador. Consulta las notificaciones que llegan, las marca como leídas, las borra cuando le parece oportuno y también puede contactar con otros operarios mediante el chat. |
 
 
- *Operario del sistema de producción: persona encargada de registrar o modificar eventos operativos en el sistema externo de producción, provocando la emisión de notificaciones que son recibidas por la aplicación mediante WebSocket. Al no interactuar directamente con la aplicación, no es considerado un actor.
+ * Operario del sistema de producción: persona encargada de registrar o modificar eventos operativos en el sistema externo de producción, provocando la emisión de notificaciones que son recibidas por la aplicación mediante WebSocket. Al no interactuar directamente con la aplicación, no es considerado un actor.
 ---
 
 ## 3.2.2 Casos de uso
@@ -67,8 +67,8 @@ El flujo principal comienza con la conexion al WebSocket, la suscripcion a los t
 
 De esta forma, el diagrama resume como la aplicacion del TFG recibe eventos generados en EmiSuite y los convierte en informacion visible y gestionable para el usuario.
 
-![Diagrama de contexto](../../imagenes/diagramaContexto.svg)
-[Código fuente](../../codigoFuente/diagramaDeContexto.puml)
+![Diagrama de contexto](../../imagenes/diagramaContextoSimple.svg)
+[Código fuente](../../codigoFuente/diagramaDeContextoSimple.puml)
 
 
 ---

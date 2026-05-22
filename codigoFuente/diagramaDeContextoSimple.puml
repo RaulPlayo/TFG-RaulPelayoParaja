@@ -1,0 +1,69 @@
+@startuml diagrama-contexto-tfg-websockets
+
+title Diagrama de contexto - TFG WebSockets
+
+left to right direction
+skinparam linetype polyline
+skinparam nodesep 55
+skinparam ranksep 45
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam ArrowColor #222222
+skinparam StateBorderColor #222222
+skinparam StateBackgroundColor #F4F4F4
+skinparam StateFontColor #111111
+skinparam StateFontSize 12
+skinparam defaultFontName Arial
+
+state "SESION_CERRADA" as NoAuth
+state "SISTEMA_DISPONIBLE" as Menu
+state "EMISUITE\nSISTEMA_EXTERNO" as EmiSuite
+state "WEBSOCKET_CONECTADO" as WebSocket
+state "TOPICS_SUSCRITOS" as Topics
+state "MENSAJE_NORMALIZADO" as Message
+state "DASHBOARD_ABIERTO" as Dashboard
+state "NOTIFICACION_CREADA" as Notification
+state "HISTORIAL_ABIERTO" as History
+state "CHAT_ABIERTO" as Chat
+state "PREFERENCIAS_ABIERTAS" as Preferences
+
+[*] --> NoAuth
+
+NoAuth --> Menu : iniciarSesion(usuario, password)
+Menu --> NoAuth : cerrarSesion()
+
+Menu --> WebSocket : conectarWebSocket(token)
+WebSocket --> WebSocket : onStompError() / reconectar()
+WebSocket --> Topics : suscribirseTopics()
+EmiSuite --> Topics : enviarEventos(documentos)
+
+Topics --> Message : recibirEvento()\n/notices, /updateui, /outputtrigger
+Dashboard --> Message : simularEvento(operation, payload)
+Message --> Notification : crearNotificacion()
+
+Menu --> Dashboard : abrirDashboard()
+Dashboard --> Dashboard : proceso / parada / material\nproduccion / personal
+Dashboard --> Menu : completarGestion()
+
+Notification --> Dashboard : actualizarVista()
+Notification --> Notification : mostrarToast()\ndescartarNotificacion()
+Notification --> History : guardarHistorial(max100)
+Notification --> Chat : contactarResponsable()\nadjuntarNotificacion()
+
+Menu --> History : abrirHistorial()
+History --> History : marcarComoLeida()\nlimpiarHistorial()
+History --> Menu : cerrarHistorial()
+
+Menu --> Chat : abrirChat()
+Chat --> Chat : enviarMensaje()\ngenerarRespuestaSimulada()
+Chat --> Menu : cerrarChat()
+
+Menu --> Preferences : cambiarTema()
+Preferences --> Preferences : temaClaro / temaOscuro
+Preferences --> Menu : completarGestion()
+
+@enduml
+
+
+
