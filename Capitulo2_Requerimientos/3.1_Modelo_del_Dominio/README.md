@@ -45,7 +45,8 @@ La notificación puede estar en dos estados: **NoLeída** (`leida = false`) y **
 - Transición a **Leída**: el responsable pulsa "marcar como leída".
 - Desde cualquiera de los dos estados, el responsable puede borrar la notificación, y eso la lleva al estado final (eliminada del historial).
 
-![Diagrama de objetos](../../imagenes/cicloNotificacion.svg)
+
+![Ciclo de una notificacion](../../imagenes/cicloNotificacion.svg)
 [Código fuente](../../codigoFuente/cicloNotificacion.puml)
 
 ---
@@ -63,6 +64,19 @@ La notificación puede estar en dos estados: **NoLeída** (`leida = false`) y **
 | Historial de notificaciones | Colección ordenada por fecha de todas las notificaciones recibidas durante la sesión activa del usuario. Se guarda en el estado de React y se pierde al cerrar el navegador. |
 | Estado de la conexión | Indicador que dice si el canal WebSocket está activo y funcionando bien. Los posibles valores son: conectado, conectando o desconectado. |
 | Sesión | Periodo de tiempo durante el cual un usuario autenticado tiene acceso activo a la aplicación, desde que inicia sesión hasta que la cierra o se le acaba el tiempo. |
+
+---
+
+## 3.1.4 Descripción del diagrama de objetos
+
+El diagrama de objetos muestra una instancia concreta del sistema en un momento determinado, representando objetos reales y sus relaciones durante el flujo de recepción de una notificación. En este caso, el servidor de Soincon gestiona una conexión WebSocket activa y un documento modificado, que genera un evento de tipo modificación. Dicho evento se transforma posteriormente en una notificación visible para el usuario.
+
+El diagrama también refleja cómo las notificaciones se almacenan en el historial, diferenciando entre avisos pendientes de leer y notificaciones ya leídas. Además, se incluye la interacción con un responsable mediante una conversación de chat, donde una notificación puede dar lugar a mensajes asociados para consultar o resolver el aviso recibido.
+
+En conjunto, el diagrama permite ver cómo los elementos principales del sistema se relacionan en tiempo de ejecución: servidor externo, conexión WebSocket, documento, evento, notificación, historial y conversación de chat.
+
+![Diagrama de objetos](../../imagenes/diagramaObjetos.svg)
+[Código fuente](../../codigoFuente/diagramaObjetos.puml)
 
 ---
 
