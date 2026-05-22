@@ -16,6 +16,7 @@ El responsable puede interactuar con las notificaciones de tres formas: puede ve
 
 ![Diagrama de objetos](../../imagenes/diagramaObjetos.svg)
 [Código fuente](../../codigoFuente/diagramaObjetos.puml)
+
 ---
 
 ## 3.1.2 Diagrama de estados
@@ -46,6 +47,7 @@ La notificación puede estar en dos estados: **NoLeída** (`leida = false`) y **
 
 ![Diagrama de objetos](../../imagenes/cicloNotificacion.svg)
 [Código fuente](../../codigoFuente/cicloNotificacion.puml)
+
 ---
 ## 3.1.3 Glosario de términos
 
