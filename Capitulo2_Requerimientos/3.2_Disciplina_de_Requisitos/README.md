@@ -9,6 +9,7 @@
 | Actor | Descripción |
 |---|---|
 | Responsable del centro de control | La persona que accede a la aplicación web desde el navegador. Consulta las notificaciones que llegan, las marca como leídas, las borra cuando le parece oportuno y también puede contactar con otros operarios mediante el chat. |
+| Tiempo | Actor abstracto que representa el disparador automático externo al sistema. No es un usuario humano, sino el momento en el que la API de Soincon genera y envía un evento hacia la aplicación tras producirse una modificación en EmiSuite. Por ello, activa la recepción de notificaciones de forma automática. |
 
 
  * Operario del sistema de producción: persona encargada de registrar o modificar eventos operativos en el sistema externo de producción, provocando la emisión de notificaciones que son recibidas por la aplicación mediante WebSocket. Al no interactuar directamente con la aplicación, no es considerado un actor.
