@@ -10,9 +10,8 @@ En este capitulo se representan los conceptos más relevantes del sistema y las 
 
 - [3.1 Modelo del Dominio](./3.1_Modelo_del_Dominio/README.md)
 - [3.2 Disciplina de Requisitos](./3.2_Disciplina_de_Requisitos/README.md)
-- [3.3 Requisitos No Funcionales](./3.3_Requisitos_No_Funcionales/README.md)
-- [3.4 Mockups de la Aplicacion](./3.4_Mockups/README.md)
+
 
 ---
 
-[Anterior: Capitulo 1](../Capitulo2_MarcoTeorico/README.md) | [Siguiente: 3.1 Modelo del Dominio](./3.1_Modelo_del_Dominio/README.md)
+[Anterior: Capitulo 1](../Capitulo1_MarcoTeorico/README.md) | [Siguiente: 3.1 Modelo del Dominio](./3.1_Modelo_del_Dominio/README.md)
