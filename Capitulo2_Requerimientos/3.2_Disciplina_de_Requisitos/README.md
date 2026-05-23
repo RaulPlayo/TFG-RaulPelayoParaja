@@ -40,26 +40,28 @@ Se detallan a continuación cuatro casos de uso que cubren los flujos más repre
 
 ## 3.2.3 Prototipos de interfaz
 
-Aquí se encuentran unos prototipos de cómo me gustaría que quedara la aplicación. Validan la correspondencia entre los casos de uso detallados y la interfaz del sistema.
+Los prototipos de baja fidelidad validan la correspondencia entre los casos de uso detallados y la interfaz del sistema. Se presentan como wireframes funcionales centrados en la estructura de la pantalla y el flujo de interacción, no en el diseño visual final.
 
-### Prototipo de la página principal
-Aquí podemos observar lo que podrá ser el 'main dashboard'. Se pueden ver los botones de simulación de los diferentes eventos que podrán llegar mediante los WebSocket, un resumen del número de notificaciones que han llegado a la página, y en la parte superior un apartado de historial y el botón de Cerrar sesión.
+### "Main dashboard"
 
-![Prototipo de la página](../../imagenes/prototipoPagina.svg)
+Vista principal orientada al seguimiento del sistema. Presenta las acciones de simulación de eventos que pueden recibirse mediante WebSocket, un resumen del volumen de notificaciones recibidas y los accesos necesarios para consultar el historial o finalizar la sesión.
+
+![Prototipo de la página](../../imagenes/prototipoPagina.svg)  
 [Código fuente](../../codigoFuente/prototipoPagina.puml)
 
-Aquí podemos ver cual es la información y de qué manera va a llegar a la aplicación. Contiene el tipo de incidencia, operación, descripción, fecha y hora. Además se podrá marcar como leída o mandarsela a algún operario a través de un chat.
+### Notificación
 
-![Prototipo de una notificación](../../imagenes/prototipoNotificacion.svg)
+Vista centrada en el detalle de una notificación recibida. Muestra la información principal asociada al evento, como el tipo de incidencia, la operación, la descripción, la fecha y la hora. Desde esta vista se contempla la posibilidad de actualizar el estado de lectura de la notificación o iniciar la comunicación con un operario aportando el contexto del aviso.
+
+![Prototipo de una notificación](../../imagenes/prototipoNotificacion.svg)  
 [Código fuente](../../codigoFuente/prototipoNotificacion.puml)
 
-Finalmente aquí se puede ver cómo será el chat. Contendrá un contacto al que mandar la información, un mensaje y se le podrá adjuntar dicha información para un mejor contexto de la situación.
+### Chat
 
-![Prototipo de chat](../../imagenes/prototipoChat.svg)
+Vista destinada a la comunicación con un operario a partir de una incidencia. Permite seleccionar el destinatario, redactar el mensaje y asociar la información de la notificación para facilitar el contexto de la situación comunicada.
+
+![Prototipo de chat](../../imagenes/prototipoChat.svg)  
 [Código fuente](../../codigoFuente/prototipoChat.puml)
-
----
-
 ## 3.2.4 Diagrama de contexto
 
 El diagrama de contexto representa el sistema del TFG como una maquina de estados orientada a la recepcion de eventos procedentes de EmiSuite. `SESION_CERRADA` es el estado inicial y `SISTEMA_DISPONIBLE` actua como hub principal de la aplicacion, desde el que el usuario puede conectar el WebSocket, abrir el dashboard, consultar el historial, usar el chat o cambiar el tema visual. EmiSuite no se modela como una vista navegable del sistema, sino como el entorno externo donde se modifican documentos y se generan los eventos que posteriormente llegan a la aplicacion mediante los topics WebSocket.

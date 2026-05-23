@@ -14,8 +14,7 @@ state enviarMensajeDeIncidencia as "enviarMensajeDeIncidencia()" {
 
   [*] -[#green]-> SeleccionandoIncidencia
   note on link
-    <b>Empleado</b> solicita comunicar una incidencia
-    desde una notificacion o desde el boton de mensaje
+    <b>Responsable</b> solicita comunicar una incidencia
   end note
 
   SeleccionandoIncidencia -[#green]-> AbriendoChat
@@ -38,13 +37,13 @@ state enviarMensajeDeIncidencia as "enviarMensajeDeIncidencia()" {
 
   SeleccionandoDestinatario -[#green]-> RedactandoMensaje
   note on link
-    <b>Empleado</b> selecciona responsable y redacta el mensaje
+    <b>Responsable</b> selecciona responsable y redacta el mensaje
     <b>Sistema</b> mantiene, si existe, la incidencia adjunta
   end note
 
   RedactandoMensaje -[#green]-> MensajeEnviado
   note on link
-    <b>Empleado</b> solicita enviar mensaje
+    <b>Responsable</b> solicita enviar mensaje
     <b>Sistema</b> registra el mensaje en la conversacion
     • Texto introducido
     • Destinatario seleccionado

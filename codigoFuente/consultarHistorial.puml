@@ -13,7 +13,6 @@ state consultarHistorial as "consultarHistorial()" {
   [*] -[#green]-> SolicitandoHistorial
   note on link
     <b>Responsable</b> solicita consultar el historial
-    desde el boton de notificaciones
   end note
 
   SolicitandoHistorial -[#green]-> MostrandoEventos
