@@ -1,0 +1,45 @@
+@startuml colaboracionMarcarLeida
+
+title Diagrama de colaboracion - marcarLeida()
+
+left to right direction
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam shadowing false
+skinparam linetype polyline
+skinparam ArrowColor #222222
+skinparam rectangle {
+  BorderColor #666666
+  RoundCorner 5
+}
+
+frame "marcarLeida()" {
+  rectangle "Responsable" as responsable #FFFFFF
+  rectangle "VistaHistorialNotificaciones" as vistaHistorial #6EA8FE
+  rectangle "VistaNotificacion" as vistaNotificacion #6EA8FE
+  rectangle "ControladorLecturaNotificacion" as controladorLectura #B7C85B
+  rectangle "HistorialNotificaciones" as historial #F4A742
+  rectangle "Notificacion" as notificacion #F4A742
+
+  responsable --> vistaHistorial : marcarLeida(notificacionId)
+  vistaHistorial --> controladorLectura : solicitarMarcarLeida(notificacionId)
+  controladorLectura --> historial : buscarNotificacion(notificacionId)
+  historial --> notificacion : obtenerEstado()
+  notificacion --> historial : estadoActual
+  controladorLectura --> historial : marcarComoLeida(notificacionId)
+  historial --> notificacion : actualizarEstado(isRead=true)
+  notificacion --> historial : estadoActualizado
+  historial --> controladorLectura : confirmacionLectura
+  controladorLectura --> vistaNotificacion : actualizarIndicadorLectura(notificacionId)
+  controladorLectura --> vistaHistorial : refrescarHistorial()
+  vistaHistorial --> responsable : notificacionMarcadaComoLeida
+}
+
+rectangle ":HISTORIAL_ABIERTO" as historialAbierto #CDEFA6
+rectangle ":NOTIFICACION_LEIDA" as notificacionLeida #CDEFA6
+
+historialAbierto ..> notificacionLeida : marcarLeida()
+notificacionLeida ..> historialAbierto : historialActualizado()
+
+@enduml

@@ -27,7 +27,17 @@ Este diagrama representa el envio de un mensaje de incidencia asociado a una not
 ![](../../imagenes/colabNotificacion.svg)
 [Código fuente](../../codigoFuente/colabNotificacion.puml)
 
+[IMÁGEN EXTENDIDA](../../imagenes/colabNotificacionPNG.png)
+
 Este diagrama describe el proceso de visualizacion de una notificacion concreta. El responsable selecciona una notificacion del historial, la vista solicita sus datos al controlador y este recupera el detalle desde el historial. A continuacion, la notificacion se marca como leida y se muestra su informacion completa en la vista correspondiente.
 
+## marcarLeida()
+
+Este diagrama muestra como el responsable marca una notificacion como leida desde el historial. La vista envia la solicitud al controlador de lectura, que localiza la notificacion en `HistorialNotificaciones` y actualiza su estado a `isRead=true`. Finalmente, la vista refresca el historial y muestra la notificacion como leida.
+
+![](../../imagenes/colabLeida.svg)
+[Código fuente](../../codigoFuente/colabLeida.puml)
+
+[IMÁGEN EXTENDIDA](../../imagenes/colabLeidaPNG.png)
 
 [Anterior: 4.1 Análisis de la Arquitectura](../4.1_Analisis_Arquitectura/README.md) | [Siguiente: 4.3 Análisis de Clases](../4.3_Analisis_Clases/README.md)
