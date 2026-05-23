@@ -1,0 +1,39 @@
+@startuml colaboracionConsultarHistorial
+
+title Diagrama de colaboracion - consultarHistorial()
+
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam shadowing false
+skinparam linetype polyline
+skinparam ArrowColor #222222
+skinparam rectangle {
+  BorderColor #666666
+  RoundCorner 5
+}
+
+frame "consultarHistorial()" {
+  rectangle "Responsable" as responsable #FFFFFF
+  rectangle "VistaHistorialNotificaciones" as vistaHistorial #6EA8FE
+  rectangle "ControladorHistorial" as controladorHistorial #B7C85B
+  rectangle "HistorialNotificaciones" as historial #F4A742
+  rectangle "Notificacion[]" as notificaciones #F4A742
+
+  responsable --> vistaHistorial : consultarHistorial()
+  vistaHistorial --> controladorHistorial : solicitarHistorial()
+  controladorHistorial --> historial : obtenerNotificaciones()
+  historial --> notificaciones : recuperarLista(maximo=100)
+  notificaciones --> historial : listaNotificaciones
+  historial --> controladorHistorial : historialOrdenado
+  controladorHistorial --> vistaHistorial : mostrarHistorial(historialOrdenado)
+  vistaHistorial --> responsable : historialVisible
+}
+
+rectangle ":SISTEMA_DISPONIBLE" as sistemaDisponible #CDEFA6
+rectangle ":HISTORIAL_ABIERTO" as historialAbierto #CDEFA6
+
+sistemaDisponible ..> historialAbierto : consultarHistorial()
+historialAbierto ..> sistemaDisponible : cerrarHistorial()
+
+@enduml

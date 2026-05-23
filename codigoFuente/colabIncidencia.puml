@@ -1,0 +1,50 @@
+@startuml colaboracionEnviarMensajeIncidencia
+
+title Diagrama de colaboracion - enviarMensajeDeIncidencia()
+
+left to right direction
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam shadowing false
+skinparam linetype polyline
+skinparam ArrowColor #222222
+skinparam rectangle {
+  BorderColor #666666
+  RoundCorner 5
+}
+
+frame "enviarMensajeDeIncidencia()" {
+  rectangle "Responsable" as responsable #FFFFFF
+  rectangle "VistaNotificacion" as vistaNotificacion #6EA8FE
+  rectangle "VistaChatIncidencias" as vistaChat #6EA8FE
+  rectangle "ControladorChatIncidencias" as controladorChat #B7C85B
+  rectangle "HistorialNotificaciones" as historial #F4A742
+  rectangle "Notificacion" as notificacion #F4A742
+  rectangle "MensajeIncidencia" as mensaje #F4A742
+  rectangle "ResponsableTecnico" as destinatario #FFFFFF
+
+  responsable --> vistaNotificacion : enviarMensajeDeIncidencia(notificacionId)
+  vistaNotificacion --> controladorChat : adjuntarNotificacion(notificacionId)
+  controladorChat --> historial : buscarNotificacion(notificacionId)
+  historial --> notificacion : obtenerDetalle()
+  notificacion --> historial : detalleNotificacion
+  historial --> controladorChat : notificacionAdjunta
+  controladorChat --> vistaChat : abrirChat(notificacionAdjunta)
+  responsable --> vistaChat : introducirMensaje(destinatario, texto)
+  vistaChat --> controladorChat : enviarMensaje(destinatario, texto, notificacionAdjunta)
+  controladorChat --> mensaje : crear(texto, notificacionAdjunta)
+  mensaje --> destinatario : entregarMensaje()
+  destinatario --> mensaje : confirmarRecepcion()
+  mensaje --> controladorChat : mensajeRegistrado
+  controladorChat --> vistaChat : actualizarConversacion(mensajeRegistrado)
+  vistaChat --> responsable : mensajeEnviado
+}
+
+rectangle ":NOTIFICACION_CREADA" as notificacionCreada #CDEFA6
+rectangle ":CHAT_ABIERTO" as chatAbierto #CDEFA6
+
+notificacionCreada ..> chatAbierto : contactarResponsable()
+chatAbierto ..> chatAbierto : enviarMensaje()
+
+@enduml

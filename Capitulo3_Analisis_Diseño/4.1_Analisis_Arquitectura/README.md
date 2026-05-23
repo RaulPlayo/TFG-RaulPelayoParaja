@@ -6,8 +6,6 @@
 
 La solución planteada sigue una arquitectura cliente-servidor orientada a eventos. En ella, el cliente web actúa como consumidor de información en tiempo real y como punto de interacción del usuario, mientras que el sistema de EMI Suite actúa como generador de cambios de estado y fuente de los datos operativos.
 
-![Dashboard](../../imagenes/panel.png)
-
 ---
 
 ## Modelo de doble canal de comunicación
@@ -35,7 +33,7 @@ Desde el punto de vista de la implementación, el frontend hecho en React concen
 - Se centraliza la gestión de la conexión y de las notificaciones en servicios y hooks específicos para que sea más fácil de mantener.
 - Se mantiene la idea del canal REST en la arquitectura porque el sistema está pensado para convivir con servicios corporativos tradicionales, aunque en la versión actual esa parte esté parcialmente simulada.
 
-![DiagramaArquitectura](../../imagenes/diagramaArquitectura+.png)
+
 
 
 ---
