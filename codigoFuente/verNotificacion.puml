@@ -12,8 +12,7 @@ state verNotificacion as "verNotificacion()" {
 
   [*] -[#green]-> SeleccionandoNotificacion
   note on link
-    <b>Responsable</b> accede al historial
-    y selecciona una notificacion recibida
+    <b>Responsable</b> solicita ver una notificacion recibida
   end note
 
   SeleccionandoNotificacion -[#green]-> MostrandoDetalle
