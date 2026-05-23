@@ -16,6 +16,9 @@ Este diagrama muestra como el responsable solicita consultar el historial de not
 
 ![](../../imagenes/colabIncidencia.svg)
 [Código fuente](../../codigoFuente/colabIncidencia.puml)
+   
+[IMÁGEN EXTENDIDA](../../imagenes/colabIncidencia.png)
+
 
 Este diagrama representa el envio de un mensaje de incidencia asociado a una notificacion. El responsable selecciona una notificacion, el controlador de chat la recupera del historial y abre la vista de chat con la notificacion adjunta. Despues, se crea el mensaje de incidencia, se envia al responsable tecnico y se actualiza la conversacion.
 
