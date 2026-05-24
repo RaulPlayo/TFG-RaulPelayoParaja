@@ -6,10 +6,10 @@
 
 # Diagramas de secuencia
 
+## consultarHistorial()
+
 ![](../../imagenes/secuenciaHistorial.svg)
 [Código fuente](../../codigoFuente/secuenciaHistorial.puml)
-
-## consultarHistorial()
 
 El diagrama muestra como el responsable abre el historial desde el contenedor de notificaciones. La vista solicita a la logica de notificaciones el listado almacenado, que se obtiene desde el estado local `HistorialNotificaciones`. Despues, la logica ordena los eventos, aplica el limite maximo de notificaciones y devuelve el resultado a la vista para mostrar el historial al responsable.
 
@@ -20,6 +20,12 @@ El diagrama muestra como el responsable abre el historial desde el contenedor de
 
 El diagrama representa el envio de un mensaje de incidencia a partir de una notificacion. El responsable selecciona la opcion de responder desde una notificacion, la logica del chat guarda esa notificacion como adjunta y abre el panel de chat. Cuando el responsable escribe y envia el mensaje, se crea un `ChatMessage`, se registra en las conversaciones locales y se entrega al destinatario tecnico, que puede devolver una confirmacion o respuesta simulada.
 
+## verNotificacion()
+
+![](../../imagenes/secuenciaNotificacion.svg)
+[Código fuente](../../codigoFuente/secuenciaNotificacion.puml)
+
+El diagrama muestra como el responsable selecciona una notificacion concreta desde el historial. La vista solicita el detalle a la logica de notificaciones, que busca el elemento en `HistorialNotificaciones` y actualiza su estado como leida. Finalmente, el detalle se devuelve a la vista para mostrar la informacion completa de la notificacion al responsable.
 
 ---
 

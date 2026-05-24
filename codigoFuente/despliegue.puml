@@ -1,0 +1,59 @@
+@startuml diagramaDespliegue
+
+title Diagrama de Despliegue - Sistema de Notificaciones EMI Suite
+
+left to right direction
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam shadowing false
+skinparam linetype polyline
+skinparam ArrowColor #444444
+skinparam nodesep 90
+skinparam ranksep 80
+
+skinparam node {
+  BorderColor #333333
+  BackgroundColor #F7F7F7
+}
+skinparam artifact {
+  BorderColor #555555
+  BackgroundColor #FFFFFF
+}
+skinparam cloud {
+  BorderColor #555555
+  BackgroundColor #F0FDF4
+}
+
+node "Equipo del Responsable" as equipo {
+  node "Navegador Web" as navegador {
+    artifact "SPA React\nDashboard, historial,\nnotificaciones y chat" as spa
+    artifact "localStorage\nToken de sesion" as storage
+  }
+}
+
+node "Servidor Web\nHosting estatico" as hosting {
+  artifact "dist/\nHTML, CSS, JS y recursos" as dist
+}
+
+cloud "EMI Suite" as emiSuite {
+  node "API HTTPS" as api {
+    artifact "Autenticacion" as auth
+  }
+
+  node "Broker STOMP\nWebSocket Seguro" as broker {
+    artifact "Topics:\n/notices\n/updateui\n/outputtrigger" as topics
+  }
+}
+
+node "Eventos de Produccion\nEMI Suite" as eventos
+
+navegador --> hosting : descarga SPA
+navegador --> api : login HTTPS
+navegador --> broker : conexion WSS
+broker --> navegador : eventos
+eventos --> broker : publica eventos
+
+spa --> storage : guarda / lee token
+
+@enduml

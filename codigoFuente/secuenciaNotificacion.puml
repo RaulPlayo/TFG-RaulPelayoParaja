@@ -1,0 +1,51 @@
+@startuml secuenciaVerNotificacion
+
+title Diagrama de Secuencia - verNotificacion()
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+skinparam ParticipantBorderColor #444444
+skinparam ParticipantBackgroundColor #F2F2FA
+skinparam ActorBorderColor #444444
+skinparam ArrowColor #444444
+skinparam LifeLineBorderColor #999999
+
+hide footbox
+
+actor Responsable
+participant "NotificationsContainer\n(React Component)" as HistorialVista
+participant "NotificationItem\n(React Component)" as NotificacionVista
+participant "NotificationActions\n(useWebSocket)" as Accion
+database "HistorialNotificaciones\n(estado local)" as Historial
+
+Responsable -> HistorialVista : selecciona notificacion
+activate HistorialVista
+
+HistorialVista -> NotificacionVista : verNotificacion(notificacionId)
+activate NotificacionVista
+
+NotificacionVista -> Accion : obtenerDetalle(notificacionId)
+activate Accion
+
+Accion -> Historial : buscarNotificacion(notificacionId)
+activate Historial
+Historial --> Accion : NotificationItem
+deactivate Historial
+
+Accion -> Historial : marcarComoLeida(notificacionId)
+activate Historial
+Historial --> Accion : estadoActualizado
+deactivate Historial
+
+Accion --> NotificacionVista : detalleNotificacion
+deactivate Accion
+
+NotificacionVista --> HistorialVista : notificacionVisible
+deactivate NotificacionVista
+
+HistorialVista --> Responsable : muestra detalle de la notificacion
+deactivate HistorialVista
+
+@enduml
