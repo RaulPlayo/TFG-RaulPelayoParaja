@@ -1,0 +1,62 @@
+@startuml DiagramaClasesAnalisis
+
+title Diagrama de clases de analisis
+
+left to right direction
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 10
+skinparam class {
+  BorderColor #666666
+}
+
+package "Capa de Presentacion (Vistas)" as vistas #EBF3FC {
+  class VistaLogin #CCE5FF
+  class VistaHistorialNotificaciones #CCE5FF
+  class VistaEvento #CCE5FF
+  class VistaPanelPrincipal #CCE5FF
+  class VistaNotificacion #CCE5FF
+  class VistaChatIncidencias #CCE5FF
+  class VistaDocumento #CCE5FF
+}
+
+package "Capa de Control (Controladores)" as control #FFF8E7 {
+  class ControladorAutenticacion #FFE8CC
+  class ControladorHistorial #FFE8CC
+  class ControladorRecepcionEventos #FFE8CC
+  class ControladorEliminacionNotificacion #FFE8CC
+  class ControladorLecturaNotificacion #FFE8CC
+  class ControladorChatIncidencias #FFE8CC
+  class ControladorSincronizacionDocumento #FFE8CC
+}
+
+package "Capa de Modelo y Datos" as modelo #EBF7EE {
+  class ConexionWebSocket #D4EDDA
+  class Documento #D4EDDA
+  class Evento #D4EDDA
+  class HistorialNotificaciones #D4EDDA
+  class Notificacion #D4EDDA
+}
+
+VistaLogin --> ControladorAutenticacion
+VistaHistorialNotificaciones --> ControladorHistorial
+VistaEvento --> ControladorRecepcionEventos
+VistaPanelPrincipal --> ControladorRecepcionEventos
+VistaNotificacion --> ControladorEliminacionNotificacion
+VistaNotificacion --> ControladorLecturaNotificacion
+VistaChatIncidencias --> ControladorChatIncidencias
+VistaDocumento --> ControladorSincronizacionDocumento
+
+ControladorRecepcionEventos --> ConexionWebSocket
+ConexionWebSocket --> Evento : recibe
+Documento --> Evento : genera
+ControladorRecepcionEventos --> HistorialNotificaciones
+ControladorHistorial --> HistorialNotificaciones
+Evento --> Notificacion : se transforma en
+HistorialNotificaciones o-- Notificacion
+ControladorChatIncidencias --> Notificacion
+
+@enduml

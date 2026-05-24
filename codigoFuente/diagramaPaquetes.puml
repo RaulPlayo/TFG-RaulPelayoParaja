@@ -1,0 +1,88 @@
+@startuml diagramaPaquetes
+
+title Diagrama de paquetes - Sistema de Notificaciones EMI Suite
+
+left to right direction
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam linetype polyline
+skinparam ArrowColor #222222
+skinparam package {
+  BorderColor #666666
+}
+skinparam component {
+  BorderColor #666666
+  BackgroundColor #F7F7F7
+}
+
+package "Cliente Web React" as cliente #F2F2F2 {
+
+  package "Presentacion\n(src/components)" as presentacion #D9E8FF {
+    component "Auth" as pkgAuth
+    component "Dashboard" as pkgDashboard
+    component "Notifications" as pkgNotifications
+    component "Chat" as pkgChat
+  }
+
+  package "Control de aplicacion\n(src/hooks, src/context)" as control #E6F0B8 {
+    component "useAuth" as useAuth
+    component "useWebSocket" as useWebSocket
+    component "ChatContext" as chatContext
+    component "ThemeContext" as themeContext
+  }
+
+  package "Servicios\n(src/services)" as servicios #FFE0A6 {
+    component "auth.service" as authService
+    component "websocket.service" as wsService
+  }
+
+  package "Configuracion\n(src/config)" as configuracion #FFF2B8 {
+    component "api.config" as apiConfig
+    component "socket.config" as socketConfig
+  }
+
+  package "Modelo y tipos\n(src/types)" as modelo #FFD0D0 {
+    component "WebSocketMessage" as websocketMessage
+    component "NotificationItem" as notificationItem
+    component "ConnectionStatus" as connectionStatus
+    component "ChatMessage" as chatMessage
+  }
+
+  package "Recursos multimedia\n(src/images, src/sound)" as recursos #E8D9FF {
+    component "notifications.png" as imageNotifications
+    component "notification.mp3" as soundNotification
+    component "warning.mp3" as soundWarning
+  }
+}
+
+package "Sistema externo" as externo #CDEFA6 {
+  component "EMI Suite" as emiSuite
+  component "Broker STOMP\nWebSocket" as broker
+}
+
+pkgAuth --> useAuth : autenticar usuario
+pkgDashboard --> useWebSocket : recibir eventos
+pkgNotifications --> useWebSocket : consultar historial\ny estado de conexion
+pkgNotifications --> chatContext : abrir chat con\nnotificacion adjunta
+pkgChat --> chatContext : gestionar conversacion
+pkgChat --> useWebSocket : seleccionar\nnotificaciones recientes
+pkgDashboard --> recursos : mostrar imagenes
+pkgNotifications --> recursos : reproducir sonidos
+
+useAuth --> authService : login/logout/token
+useWebSocket --> wsService : conectar y suscribirse
+useWebSocket --> modelo : crear notificaciones
+chatContext --> modelo : almacenar mensajes
+
+authService --> apiConfig : usar endpoints
+wsService --> socketConfig : broker y topics
+wsService --> authService : obtener token
+wsService --> websocketMessage : normalizar mensajes
+
+emiSuite --> broker : publica eventos
+broker --> wsService : envia mensajes STOMP
+
+@enduml

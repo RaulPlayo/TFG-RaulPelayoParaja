@@ -17,7 +17,7 @@ Este diagrama muestra como el responsable solicita consultar el historial de not
 ![](../../imagenes/colabIncidencia.svg)
 [Código fuente](../../codigoFuente/colabIncidencia.puml)
    
-[IMÁGEN EXTENDIDA](../../imagenes/colabIncidenciaPNG.png)
+[IMAGEN EXTENDIDA](../../imagenes/colabIncidenciaPNG.png)
 
 
 Este diagrama representa el envio de un mensaje de incidencia asociado a una notificacion. El responsable selecciona una notificacion, el controlador de chat la recupera del historial y abre la vista de chat con la notificacion adjunta. Despues, se crea el mensaje de incidencia, se envia al responsable tecnico y se actualiza la conversacion.
@@ -27,7 +27,7 @@ Este diagrama representa el envio de un mensaje de incidencia asociado a una not
 ![](../../imagenes/colabNotificacion.svg)
 [Código fuente](../../codigoFuente/colabNotificacion.puml)
 
-[IMÁGEN EXTENDIDA](../../imagenes/colabNotificacionPNG.png)
+[IMAGEN EXTENDIDA](../../imagenes/colabNotificacionPNG.png)
 
 Este diagrama describe el proceso de visualizacion de una notificacion concreta. El responsable selecciona una notificacion del historial, la vista solicita sus datos al controlador y este recupera el detalle desde el historial. A continuacion, la notificacion se marca como leida y se muestra su informacion completa en la vista correspondiente.
 
@@ -38,6 +38,6 @@ Este diagrama muestra como el responsable marca una notificacion como leida desd
 ![](../../imagenes/colabLeida.svg)
 [Código fuente](../../codigoFuente/colabLeida.puml)
 
-[IMÁGEN EXTENDIDA](../../imagenes/colabLeidaPNG.png)
+[IMAGEN EXTENDIDA](../../imagenes/colabLeidaPNG.png)
 
 [Anterior: 4.1 Análisis de la Arquitectura](../4.1_Analisis_Arquitectura/README.md) | [Siguiente: 4.3 Análisis de Clases](../4.3_Analisis_Clases/README.md)

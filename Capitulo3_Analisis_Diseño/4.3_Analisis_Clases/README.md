@@ -7,6 +7,7 @@
 En la etapa de análisis definimos clases conceptuales, sin entrar todavía en detalles técnicos concretos. Estas clases no son aún componentes de React o servicios de TypeScript, sino entidades y roles lógicos del sistema.
 
 ![](../../imagenes/diagramaClases.svg)
+[Código fuente](../../codigoFuente/diagramaClases.puml)
 
 ---
 

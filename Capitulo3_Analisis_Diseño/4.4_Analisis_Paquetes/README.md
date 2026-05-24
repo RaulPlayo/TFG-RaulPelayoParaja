@@ -4,6 +4,9 @@
 
 ---
 
+![](../../imagenes/diagramaPaquetes.png)
+[Código fuente](../../codigoFuente/diagramaPaquetes.puml)
+
 Una vez que tenemos identificadas las clases, las agrupamos en paquetes lógicos. Esta agrupación nos ayuda a separar responsabilidades y hace más fácil que el sistema pueda crecer y cambiar. En el análisis hemos seguido una organización clásica en modelo, vista y controlador.
 
 **Paquete modelo:** contiene las entidades del dominio y la representación lógica de los eventos y las notificaciones.
@@ -12,13 +15,7 @@ Una vez que tenemos identificadas las clases, las agrupamos en paquetes lógicos
 
 **Paquete controlador:** conecta los dos anteriores, coordinando los casos de uso que hemos definido.
 
-# Diagrama simple de paquetes.
 
-![](../../imagenes/diagramaPaquetesPEQUE.png)
-
-# Diagrama completo de paquetes.
-
-![](../../imagenes/diagramaPaquetesGRANDE.png)
 
 ---
 
