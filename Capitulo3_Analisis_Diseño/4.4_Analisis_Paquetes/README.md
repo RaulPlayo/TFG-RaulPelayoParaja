@@ -7,15 +7,17 @@
 ![](../../imagenes/diagramaPaquetes.png)
 [Código fuente](../../codigoFuente/diagramaPaquetes.puml)
 
-Una vez que tenemos identificadas las clases, las agrupamos en paquetes lógicos. Esta agrupación nos ayuda a separar responsabilidades y hace más fácil que el sistema pueda crecer y cambiar. En el análisis hemos seguido una organización clásica en modelo, vista y controlador.
+# Descripcion del diagrama de paquetes
 
-**Paquete modelo:** contiene las entidades del dominio y la representación lógica de los eventos y las notificaciones.
+El diagrama de paquetes representa la organizacion principal del sistema de notificaciones desarrollado para EMI Suite. La aplicacion se estructura como un cliente web React dividido en paquetes funcionales, separando la interfaz de usuario, el control de estado, los servicios de comunicacion, la configuracion, los tipos de datos y los recursos multimedia.
 
-**Paquete vista:** reúne las interfaces con las que interactúa el usuario.
+El paquete **Presentacion** contiene las vistas y componentes visibles de la aplicacion: autenticacion, panel principal, historial de notificaciones y chat de incidencias. Estos componentes no gestionan directamente la conexion con el exterior, sino que delegan esa responsabilidad en el paquete **Control de aplicacion**, formado por hooks y contextos como `useWebSocket`, `useAuth`, `ChatContext` y `ThemeContext`.
 
-**Paquete controlador:** conecta los dos anteriores, coordinando los casos de uso que hemos definido.
+El paquete **Servicios** encapsula la logica de comunicacion. `auth.service` gestiona la autenticacion y el token de sesion, mientras que `websocket.service` establece la conexion STOMP/WebSocket, se suscribe a los topics configurados y normaliza los mensajes recibidos. Este paquete depende de **Configuracion**, donde se definen los endpoints, el broker WebSocket y los canales de suscripcion.
 
+El paquete **Modelo y tipos** agrupa las estructuras principales que circulan por la aplicacion, como `WebSocketMessage`, `NotificationItem`, `ConnectionStatus` y `ChatMessage`. Estas estructuras permiten transformar los eventos recibidos desde EMI Suite en notificaciones, historial y mensajes de incidencia.
 
+Por ultimo, el paquete **Sistema externo** representa EMI Suite y el broker STOMP/WebSocket. EMI Suite publica eventos en el broker, y la aplicacion los recibe mediante `websocket.service` para mostrarlos como notificaciones en tiempo real.
 
 ---
 

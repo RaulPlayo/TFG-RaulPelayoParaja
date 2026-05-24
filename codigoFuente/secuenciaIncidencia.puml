@@ -1,0 +1,59 @@
+@startuml secuenciaEnviarMensajeIncidencia
+
+title Diagrama de Secuencia - enviarMensajeDeIncidencia()
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+skinparam ParticipantBorderColor #444444
+skinparam ParticipantBackgroundColor #F2F2FA
+skinparam ActorBorderColor #444444
+skinparam ArrowColor #444444
+skinparam LifeLineBorderColor #999999
+
+hide footbox
+
+actor Responsable
+participant "NotificationItem\n(React Component)" as NotificacionVista
+participant "ChatPanel\n(React Component)" as ChatVista
+participant "ChatActions\n(ChatContext)" as ChatActions
+collections "Conversaciones\n(estado local)" as Conversaciones
+participant "ResponsableTecnico\n(destinatario)" as Destinatario
+
+Responsable -> NotificacionVista : selecciona responder incidencia
+activate NotificacionVista
+
+NotificacionVista -> ChatActions : openChatWithAttachment(notification)
+activate ChatActions
+ChatActions -> ChatActions : guarda notificacion adjunta
+ChatActions --> ChatVista : abre chat con adjunto
+deactivate ChatActions
+deactivate NotificacionVista
+
+Responsable -> ChatVista : escribe mensaje y pulsa enviar
+activate ChatVista
+
+ChatVista -> ChatActions : sendMessage(recipientId, text, attachment)
+activate ChatActions
+ChatActions -> Conversaciones : crear ChatMessage
+activate Conversaciones
+Conversaciones --> ChatActions : mensajeRegistrado
+deactivate Conversaciones
+
+ChatActions -> ChatActions : elimina adjunto temporal
+ChatActions --> ChatVista : actualiza conversacion
+deactivate ChatActions
+
+ChatVista --> Responsable : muestra mensaje enviado
+deactivate ChatVista
+
+ChatActions -> Destinatario : entrega mensaje de incidencia
+activate Destinatario
+Destinatario --> ChatActions : confirmacion / respuesta simulada
+deactivate Destinatario
+
+ChatActions -> Conversaciones : registrar respuesta
+Conversaciones --> ChatActions : conversacionActualizada
+
+@enduml

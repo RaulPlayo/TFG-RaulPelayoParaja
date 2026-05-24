@@ -1,0 +1,41 @@
+@startuml secuenciaConsultarHistorial
+
+title Diagrama de Secuencia - consultarHistorial()
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+skinparam ParticipantBorderColor #444444
+skinparam ParticipantBackgroundColor #F2F2FA
+skinparam ActorBorderColor #444444
+skinparam ArrowColor #444444
+skinparam LifeLineBorderColor #999999
+
+hide footbox
+
+actor Responsable
+participant "NotificationsContainer\n(React Component)" as Vista
+participant "NotificationActions\n(useWebSocket)" as Accion
+database "HistorialNotificaciones\n(estado local)" as Historial
+
+Responsable -> Vista : abre historial
+activate Vista
+
+Vista -> Accion : consultarHistorial()
+activate Accion
+
+Accion -> Historial : obtenerNotificaciones()
+activate Historial
+Historial --> Accion : NotificationItem[]
+deactivate Historial
+
+Accion -> Accion : ordenar por timestamp\nlimitar maximo 100
+Accion --> Vista : historialOrdenado
+deactivate Accion
+
+Vista -> Vista : calcula notificaciones no leidas
+Vista --> Responsable : muestra historial de eventos
+deactivate Vista
+
+@enduml

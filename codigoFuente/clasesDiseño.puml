@@ -1,0 +1,122 @@
+@startuml disenoClases
+
+title Diagrama de Clases de Diseño
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+skinparam classBorderThickness 1.5
+skinparam arrowThickness 1.2
+skinparam arrowColor #444444
+skinparam classAttributeIconSize 0
+
+hide circle
+
+top to bottom direction
+
+' ── Presentación ─────────────────────────────────────────────────────────────
+
+package "Presentación\n(React Components)" {
+  class LoginForm
+  class Dashboard
+  class NotificationsContainer
+  class ChatPanel
+}
+
+' ── Lógica ───────────────────────────────────────────────────────────────────
+
+package "Lógica\n(Hooks y Contextos)" {
+  class AuthActions {
+    + login(username, password): Promise<AuthResponse>
+    + logout(): void
+    + getToken(): string
+  }
+
+  class NotificationActions {
+    + connect(): void
+    + removeNotification(id): void
+    + dismissNotification(id): void
+    + markAllAsRead(): void
+    + clearAll(): void
+  }
+
+  class ChatActions {
+    + openChat(): void
+    + openChatWithAttachment(notification): void
+    + attachNotification(notification): void
+    + sendMessage(recipientId, text, attachment): void
+  }
+}
+
+' ── Contratos ────────────────────────────────────────────────────────────────
+
+package "Contratos\n(TypeScript Types)" {
+  class LoginCredentials
+  class AuthResponse
+  class WebSocketMessage
+  class NotificationItem
+  class ChatMessage
+}
+
+' ── Acceso a Servicios ───────────────────────────────────────────────────────
+
+package "Acceso a Servicios\n(Services)" {
+  interface IAuthService
+  interface IWebSocketService
+  interface IChatStore
+}
+
+' ── Infraestructura ──────────────────────────────────────────────────────────
+
+package "Infraestructura" {
+  class AuthService
+  class WebSocketService
+  class API_CONFIG
+  class SOCKET_CONFIG
+  class SocketHelpers
+  class LocalStorage
+}
+
+' ── Sistema Externo ──────────────────────────────────────────────────────────
+
+package "Sistema Externo\n(EMI Suite)" {
+  class EmiSuite
+  class BrokerSTOMP
+}
+
+' ── Dependencias ─────────────────────────────────────────────────────────────
+
+LoginForm ..> AuthActions
+Dashboard ..> NotificationActions
+NotificationsContainer ..> NotificationActions
+NotificationsContainer ..> ChatActions
+ChatPanel ..> ChatActions
+ChatPanel ..> NotificationActions
+
+AuthActions ..> LoginCredentials
+AuthActions ..> AuthResponse
+NotificationActions ..> WebSocketMessage
+NotificationActions ..> NotificationItem
+ChatActions ..> ChatMessage
+ChatActions ..> NotificationItem
+
+AuthActions --> IAuthService
+NotificationActions --> IWebSocketService
+ChatActions --> IChatStore
+
+IAuthService ..> AuthService
+IWebSocketService ..> WebSocketService
+IChatStore ..> LocalStorage
+
+AuthService ..> API_CONFIG
+AuthService ..> LocalStorage
+WebSocketService ..> SOCKET_CONFIG
+WebSocketService ..> AuthService
+WebSocketService ..> SocketHelpers
+
+SocketHelpers ..> WebSocketMessage
+SocketHelpers ..> NotificationItem
+
+EmiSuite --> BrokerSTOMP
+BrokerSTOMP --> WebSocketService
+
+@enduml

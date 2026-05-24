@@ -4,6 +4,9 @@
 
 ---
 
+![](../../imagenes/arquitectura.svg)
+[Código fuente](../../codigoFuente/arquitectura.puml)
+
 En la fase de diseño, la arquitectura que teníamos antes se concreta con las tecnologías que finalmente hemos elegido. El cliente se implementa como una SPA desarrollada con **React**, **TypeScript** y **Vite**. El sistema de eventos en tiempo real se implementa con WebSocket nativo del navegador, apoyado en STOMP a través de la librería `@stomp/stompjs`. La gestión del estado de la interacción se reparte entre hooks personalizados, contextos de React y componentes funcionales. Para la demostración y para poder acceder desde dispositivos móviles en la red local, usamos Node.js en scripts auxiliares de arranque.
 
 ---
