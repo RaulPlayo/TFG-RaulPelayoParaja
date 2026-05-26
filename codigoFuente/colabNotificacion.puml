@@ -2,7 +2,6 @@
 
 title Diagrama de colaboracion - verNotificacion()
 
-left to right direction
 
 skinparam defaultFontName Arial
 skinparam defaultFontSize 10
@@ -13,6 +12,9 @@ skinparam rectangle {
   BorderColor #666666
   RoundCorner 5
 }
+
+rectangle ":HISTORIAL_ABIERTO" as historialAbierto #CDEFA6
+rectangle ":NOTIFICACION_ABIERTA" as notificacionAbierta #CDEFA6
 
 frame "verNotificacion()" {
   rectangle "Responsable" as responsable #FFFFFF
@@ -35,10 +37,8 @@ frame "verNotificacion()" {
   vistaNotificacion --> responsable : notificacionVisible
 }
 
-rectangle ":HISTORIAL_ABIERTO" as historialAbierto #CDEFA6
-rectangle ":NOTIFICACION_ABIERTA" as notificacionAbierta #CDEFA6
-
-historialAbierto ..> notificacionAbierta : verNotificacion()
+historialAbierto ..> responsable : verNotificacion()
+vistaNotificacion ..> notificacionAbierta : notificacionVisible
 notificacionAbierta ..> historialAbierto : cerrarDetalle()
 
 @enduml

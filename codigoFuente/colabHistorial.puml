@@ -2,7 +2,6 @@
 
 title Diagrama de colaboracion - consultarHistorial()
 
-
 skinparam defaultFontName Arial
 skinparam defaultFontSize 10
 skinparam shadowing false
@@ -12,6 +11,9 @@ skinparam rectangle {
   BorderColor #666666
   RoundCorner 5
 }
+
+rectangle ":SISTEMA_DISPONIBLE" as sistemaDisponible #CDEFA6
+rectangle ":HISTORIAL_ABIERTO" as historialAbierto #CDEFA6
 
 frame "consultarHistorial()" {
   rectangle "Responsable" as responsable #FFFFFF
@@ -30,10 +32,8 @@ frame "consultarHistorial()" {
   vistaHistorial --> responsable : historialVisible
 }
 
-rectangle ":SISTEMA_DISPONIBLE" as sistemaDisponible #CDEFA6
-rectangle ":HISTORIAL_ABIERTO" as historialAbierto #CDEFA6
-
-sistemaDisponible ..> historialAbierto : consultarHistorial()
+sistemaDisponible ..> responsable : inicia consultarHistorial()
+vistaHistorial ..> historialAbierto : historialVisible
 historialAbierto ..> sistemaDisponible : cerrarHistorial()
 
 @enduml

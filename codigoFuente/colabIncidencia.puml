@@ -14,6 +14,9 @@ skinparam rectangle {
   RoundCorner 5
 }
 
+rectangle ":NOTIFICACION_CREADA" as notificacionCreada #CDEFA6
+rectangle ":CHAT_ABIERTO" as chatAbierto #CDEFA6
+
 frame "enviarMensajeDeIncidencia()" {
   rectangle "Responsable" as responsable #FFFFFF
   rectangle "VistaNotificacion" as vistaNotificacion #6EA8FE
@@ -41,10 +44,7 @@ frame "enviarMensajeDeIncidencia()" {
   vistaChat --> responsable : mensajeEnviado
 }
 
-rectangle ":NOTIFICACION_CREADA" as notificacionCreada #CDEFA6
-rectangle ":CHAT_ABIERTO" as chatAbierto #CDEFA6
-
-notificacionCreada ..> chatAbierto : contactarResponsable()
+notificacionCreada ..> responsable : contactarResponsable()
+vistaChat ..> chatAbierto : chatAbierto
 chatAbierto ..> chatAbierto : enviarMensaje()
 
-@enduml

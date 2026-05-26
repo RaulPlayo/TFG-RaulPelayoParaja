@@ -14,6 +14,9 @@ skinparam rectangle {
   RoundCorner 5
 }
 
+rectangle ":HISTORIAL_ABIERTO" as historialAbierto #CDEFA6
+rectangle ":NOTIFICACION_LEIDA" as notificacionLeida #CDEFA6
+
 frame "marcarLeida()" {
   rectangle "Responsable" as responsable #FFFFFF
   rectangle "VistaHistorialNotificaciones" as vistaHistorial #6EA8FE
@@ -36,10 +39,7 @@ frame "marcarLeida()" {
   vistaHistorial --> responsable : notificacionMarcadaComoLeida
 }
 
-rectangle ":HISTORIAL_ABIERTO" as historialAbierto #CDEFA6
-rectangle ":NOTIFICACION_LEIDA" as notificacionLeida #CDEFA6
-
-historialAbierto ..> notificacionLeida : marcarLeida()
+historialAbierto ..> responsable : marcarLeida()
+vistaHistorial ..> notificacionLeida : notificacionMarcadaComoLeida
 notificacionLeida ..> historialAbierto : historialActualizado()
 
-@enduml
