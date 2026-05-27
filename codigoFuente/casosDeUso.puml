@@ -8,7 +8,6 @@ skinparam defaultFontName Arial
 skinparam defaultFontSize 10
 skinparam shadowing false
 
-' Ajustes para aumentar la separación y evitar entrecruzamiento de flechas
 skinparam nodesep 120
 skinparam ranksep 100
 

@@ -6,9 +6,9 @@
  
 Este TFG consiste en la creación de un sistema web que permite la actualización en tiempo real de documentos almacenados en base de datos, evitando la recarga manual de la página por parte del usuario.
  
-Para ello, se utiliza una API de la empresa Soincon que gestiona las operaciones de crear, modificar y consultar documentos (CRUD). Cuando se produce una modificación en los datos, el servidor emite un evento que desencadena una notificación en la aplicación cliente. Estos eventos se transmiten mediante una conexión WebSocket, lo que permite una comunicación bidireccional e instantánea entre el servidor y el navegador.
+Para ello, se utiliza una API de la empresa Soincon que gestiona las operaciones de crear, modificar, eliminar y consultar documentos (CRUD). Cuando se produce una modificación en los datos, el servidor emite un evento que desencadena una notificación en la aplicación cliente. Estos eventos se transmiten mediante una conexión WebSocket, lo que permite una comunicación bidireccional e instantánea entre el servidor y el navegador.
  
-El proyecto abarca el diseño de la arquitectura, el backend y el frontend, además de pruebas para medir el rendimiento y facilidad de uso, comparando el comportamiento en tiempo real frente a un sistema tradicional basado en polling.
+El proyecto abarca el diseño de la arquitectura, el backend (en este caso propiedad de Soincon) y el frontend, además de pruebas para medir el rendimiento y facilidad de uso, comparando el comportamiento en tiempo real frente a un sistema tradicional basado en polling.
  
  
 ---
@@ -35,9 +35,7 @@ El proyecto abarca el diseño de la arquitectura, el backend y el frontend, adem
 ├── Capitulo2_Requerimientos/
 │   ├── README.md
 │   ├── 3.1_Modelo_del_Dominio/
-│   ├── 3.2_Disciplina_de_Requisitos/
-│   ├── 3.3_Requisitos_No_Funcionales/
-│   └── 3.4_Mockups/
+│   └── 3.2_Disciplina_de_Requisitos/
 │
 ├── Capitulo3_Analisis_Diseño/
 │   ├── README.md
@@ -48,18 +46,13 @@ El proyecto abarca el diseño de la arquitectura, el backend y el frontend, adem
 │   ├── 4.5_Diseño_Arquitectura/
 │   ├── 4.6_Diseño_Casos_de_Uso/
 │   ├── 4.7_Diseño_Clases/
-│   └── 4.8_Diseño_Paquetes/
+│   ├── 4.8_Diseño_Paquetes/
+│   └── 4.9_Diagrama_Despliegue/
 │
 ├── Capitulo4_Solucion_Propuesta/
 │   └── README.md
 │
-├── Capitulo5_Conclusiones/
-│   └── README.md
-│
-├── Capitulo7_Referencias/
-│   └── README.md
-│
-└── Capitulo8_Anexos/
+└── Capitulo5_Conclusiones/
     └── README.md
 ```
  

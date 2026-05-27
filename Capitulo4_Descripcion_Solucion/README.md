@@ -30,7 +30,7 @@ La solución se ha implementado con un stack moderno y orientado a frontend:
 - `lucide-react` para la iconografía de la interfaz.
 - `uuid` y generación local de identificadores para los elementos temporales de la sesión.
 
-Desde el punto de vista de despliegue y apoyo a la demostración, también se ha utilizado Node.js para scripts auxiliares, en especial uno orientado a servir la aplicación por red local y facilitar su apertura desde iPhone durante la exposición del proyecto.
+Desde el punto de vista de despliegue y apoyo a la demostración, también se ha utilizado Node.js para scripts auxiliares, en especial uno orientado a servir la aplicación por red local y facilitar su apertura desde un teléfono móvil durante la exposición del proyecto.
 
 ## 4.4 Estructura funcional de la aplicación
 
@@ -42,6 +42,8 @@ El acceso a la aplicación se realiza mediante un formulario de inicio de sesió
 
 Una vez autenticado, el usuario obtiene acceso al panel principal y se activa la conexión WebSocket. Del mismo modo, al cerrar sesión se eliminan los datos de sesión y se fuerza la desconexión del canal en tiempo real. Aunque esta capa cubre correctamente el caso de uso de control de acceso, se trata de una simplificación deliberada y no de una solución definitiva de seguridad corporativa.
 
+![Login y acceso](/imagenes/login.png)
+
 ### 4.4.2 Módulo de conexión en tiempo real
 
 El núcleo técnico del proyecto es el servicio `WebSocketService`, que encapsula la creación y gestión del cliente STOMP. La conexión se establece contra el broker remoto `wss://desarrollo.emisuite.es:15673/ws`, incorporando el token de sesión en la URL y suscribiéndose a varios tópicos de interés, entre ellos `/topic/notices`, `/topic/updateui` y `/topic/outputtrigger`.
@@ -49,6 +51,11 @@ El núcleo técnico del proyecto es el servicio `WebSocketService`, que encapsul
 Cuando el servicio recibe un mensaje, este se deserializa desde JSON y se normaliza en una estructura homogénea (`WebSocketMessage`). Esta normalización es importante porque los eventos procedentes del backend no siempre exponen la información con el mismo formato; en consecuencia, la lógica cliente unifica campos como `operation`, `message`, `payload` y `timestamp` para simplificar el tratamiento posterior en la interfaz.
 
 Además de la conexión real, la solución incorpora un mecanismo de simulación de eventos mediante `CustomEvent`, lo que permite probar localmente la representación de notificaciones sin depender continuamente del backend. Esto ha sido útil tanto para depuración como para demostraciones funcionales del sistema.
+
+![Conexión WebSocket inactiva](/imagenes/desconectado.png) ![Conexión WebSocket activa](/imagenes/conectado.png)
+
+
+
 
 ### 4.4.3 Módulo de procesamiento de notificaciones
 
@@ -60,6 +67,8 @@ La aplicación no se limita a mostrar literalmente el contenido técnico del eve
 - Traducción de códigos de operación a etiquetas legibles para el usuario.
 - Construcción inteligente de descripciones a partir del `payload`.
 - Recomendaciones contextuales sobre qué perfil debería ser contactado ante determinados eventos.
+
+![Sockets en F12](/imagenes/f12.png)
 
 Gracias a este procesamiento, la solución transforma mensajes de bajo nivel en información accionable. El usuario no ve únicamente que se ha producido una operación `BEGIN_STOP` o `SCRAP`, sino que recibe una descripción comprensible y alineada con el contexto operativo del centro de control.
 
@@ -74,11 +83,18 @@ Cada toast dispone de color, iconografía, sonido, tiempo de permanencia y barra
 
 En el historial, el usuario puede consultar el conjunto completo de eventos, marcar todos como leídos, borrar elementos individuales o vaciar la lista completa. El estado de lectura modifica la forma en que las notificaciones aparecen en pantalla, ayudando a distinguir entre incidencias pendientes y eventos ya revisados.
 
+![notif](/imagenes/scrap.png)     
+![notif2](/imagenes/parada.png)
+![notif3](/imagenes/operario.png)
+
+
 ### 4.4.5 Panel principal y simulación de eventos
 
 Tras el inicio de sesión, el usuario accede a un panel principal donde se resumen las operaciones recibidas y se agrupan acciones de simulación. Este panel cumple una doble función. Por una parte, actúa como vista de control con métricas sencillas como número total de eventos, notificaciones normales y alertas. Por otra, sirve como entorno de prueba para disparar manualmente operaciones representativas de producción, paradas, materiales, producción y personal.
 
 La presencia de este panel ha sido especialmente útil durante el desarrollo del TFG, ya que permite verificar el comportamiento visual y funcional del sistema ante distintas familias de eventos sin depender de que el backend genere cada escenario en el momento exacto de la prueba.
+
+![panel principal](/imagenes/panel.png)
 
 ### 4.4.6 Chat contextual de incidencias
 
@@ -86,11 +102,16 @@ Una de las extensiones más relevantes del prototipo es el chat integrado. Aunqu
 
 El chat incluye selección de destinatario, escritura de mensajes, visualización de conversaciones y adjuntos basados en notificaciones recibidas. Esto convierte cada notificación en un elemento reutilizable dentro de la comunicación interna: un aviso recibido puede reenviarse con contexto a mantenimiento, seguridad, supervisión o soporte. En la versión actual, las respuestas del interlocutor están simuladas, pero el diseño de interacción ya deja preparada la evolución hacia una mensajería real.
 
+![chat](/imagenes/chat.png)
+
 ### 4.4.7 Gestión del tema visual y experiencia de uso
 
 La solución incorpora un `ThemeContext` que permite alternar entre tema claro y oscuro, almacenando la preferencia en `localStorage`. Aunque esta funcionalidad es secundaria desde el punto de vista del problema técnico, mejora la usabilidad del sistema y refuerza la sensación de producto terminado.
 
 La interfaz se ha diseñado siguiendo criterios de legibilidad, jerarquía visual y respuesta inmediata. El estado de conexión siempre es visible mediante un indicador que distingue entre conectado, conectando, desconectado y error. Esta decisión responde directamente a uno de los requisitos no funcionales definidos, ya que en un sistema en tiempo real la confianza del usuario depende en gran medida de saber si el canal de comunicación está realmente activo.
+
+![temas](/imagenes/temas.png)
+
 
 ## 4.5 Flujo de funcionamiento de la solución
 
@@ -104,6 +125,8 @@ El flujo operativo final del sistema puede resumirse del siguiente modo:
 6. El responsable puede consultar el evento, marcarlo como leído, eliminarlo o utilizarlo como adjunto dentro del chat para notificar una incidencia a otro operario.
 
 Este flujo confirma que la solución elimina la necesidad de recarga manual y reduce la dependencia de estrategias de polling. La actualización es reactiva y guiada por eventos, que era precisamente la hipótesis de partida del trabajo.
+
+![diagrama de flujo](path/to/conexion-realtime.png)
 
 ## 4.6 Validación técnica de la solución
 
