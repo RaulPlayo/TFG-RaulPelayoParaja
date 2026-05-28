@@ -1,4 +1,4 @@
-# Capítulo 4. Descripción de la solución
+# Capítulo 4 - Descripción de la solución
 
 ## 4.1 Visión general de la solución
 
@@ -18,6 +18,11 @@ En el lado cliente, la aplicación se organiza en cuatro capas principales:
 4. Capa de presentación, compuesta por componentes funcionales que renderizan autenticación, panel principal, historial, notificaciones emergentes y chat.
 
 Esta organización favorece el desacoplamiento entre la infraestructura de comunicaciones y la interfaz. Como resultado, el sistema puede evolucionar sin necesidad de rehacer por completo la lógica de visualización ni la gestión del estado.
+
+![](../imagenes/diagramaPaquetes.png) [Código fuente](../../codigoFuente/despliegue.puml)
+
+![](../imagenes/SRC-1.png) ![](../imagenes/SRC-2.png)
+
 
 ## 4.3 Tecnologías empleadas
 
@@ -83,9 +88,12 @@ Cada toast dispone de color, iconografía, sonido, tiempo de permanencia y barra
 
 En el historial, el usuario puede consultar el conjunto completo de eventos, marcar todos como leídos, borrar elementos individuales o vaciar la lista completa. El estado de lectura modifica la forma en que las notificaciones aparecen en pantalla, ayudando a distinguir entre incidencias pendientes y eventos ya revisados.
 
-![notif](/imagenes/scrap.png)     
+![notif](/imagenes/scrap.png)     ![notif](/imagenes/consumible.png)     
+
 ![notif2](/imagenes/parada.png)
 ![notif3](/imagenes/operario.png)
+
+
 
 
 ### 4.4.5 Panel principal y simulación de eventos
@@ -126,7 +134,6 @@ El flujo operativo final del sistema puede resumirse del siguiente modo:
 
 Este flujo confirma que la solución elimina la necesidad de recarga manual y reduce la dependencia de estrategias de polling. La actualización es reactiva y guiada por eventos, que era precisamente la hipótesis de partida del trabajo.
 
-![diagrama de flujo](path/to/conexion-realtime.png)
 
 ## 4.6 Validación técnica de la solución
 
@@ -143,3 +150,8 @@ Finalmente, se revisó el estado del proyecto mediante tareas de build y lint so
 
 Por tanto, puede afirmarse que el prototipo es funcional desde el punto de vista de la interacción y de la recepción de eventos, aunque todavía presenta margen de endurecimiento técnico antes de considerarse una versión plenamente cerrada para producción.
 
+## 4.7 Trazas de código de la aplicación
+
+No tengo permitido compartir nada del código de esta aplicación debido a que cuando me encontraba de prácticas en la empresa Soincon, firmé un documento de confidencialidad en el que se estipulaba que aquella información técnica, tecnológica y documental era parte de la empresa, y con lo cual confidencial.
+
+[Anterior: 4.9 Diagrama de despliegue](../Capitulo3_Analisis_Diseño/4.9_Diagrama_Despliegue/README.md) | [Siguiente: 5 Conclusiones](../Capitulo5_Conclusiones/README.md)

@@ -19,6 +19,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 /
 ├── README.md                          <- Este archivo
 ├── imagenes/                          <- Diagramas en PlantUML e imágenes
+├── codigoFuente/                      <- Código fuente de los diagramas
 │
 ├── Capitulo1_Introduccion/
 │   └── README.md
@@ -49,7 +50,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 │   ├── 4.8_Diseño_Paquetes/
 │   └── 4.9_Diagrama_Despliegue/
 │
-├── Capitulo4_Solucion_Propuesta/
+├── Capitulo4_Descripcion_Solucion/
 │   └── README.md
 │
 └── Capitulo5_Conclusiones/
