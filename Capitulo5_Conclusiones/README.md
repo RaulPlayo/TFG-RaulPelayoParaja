@@ -1,5 +1,7 @@
 # Capítulo 5. Conclusiones, discusión de resultados, recomendaciones y futuras líneas de actuación
 
+[Volver al índice principal](../README.md) 
+
 ## 5.1 Conclusiones
 
 El desarrollo realizado permite concluir que el uso conjunto de React y WebSockets constituye una base adecuada para construir interfaces web de monitorización en tiempo real dentro de un contexto industrial. La solución obtenida cumple el objetivo fundamental del TFG: recibir eventos generados por el servidor y reflejarlos en la interfaz del usuario sin recarga manual, de manera inmediata y comprensible.
@@ -60,3 +62,5 @@ Finalmente, una línea imprescindible para consolidar el trabajo sería la indus
 ## 5.5 Cierre final
 
 En conjunto, el trabajo demuestra que es viable construir un sistema modular de notificaciones en tiempo real para entornos industriales utilizando tecnologías web actuales. La solución desarrollada no solo valida la hipótesis de partida, sino que deja una base práctica y extensible sobre la que seguir construyendo. El principal valor del proyecto radica en haber transformado una necesidad real de comunicación inmediata en un prototipo funcional con aplicación directa, mostrando además un camino claro de evolución hacia escenarios de uso más completos y próximos a producción.
+
+[Anterior: Capítulo 4 - Descripcion de la solución](../Capitulo4_Descripcion_Solucion/README.md)

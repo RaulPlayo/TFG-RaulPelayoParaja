@@ -1,5 +1,7 @@
 # Capítulo 4 - Descripción de la solución
 
+[Volver al índice principal](../README.md) 
+
 ## 4.1 Visión general de la solución
 
 La solución desarrollada en este Trabajo Fin de Grado consiste en una aplicación web de monitorización orientada a un centro de control industrial, cuyo objetivo principal es recibir y mostrar eventos en tiempo real generados en EMI Suite 4.0, evitando los retrasos e ineficiencias propios de los mecanismos tradicionales de consulta periódica. Para ello se ha construido una SPA basada en React, TypeScript y Vite, conectada a un broker remoto mediante WebSockets y STOMP.
@@ -144,7 +146,7 @@ Durante el desarrollo se han utilizado varios mecanismos de validación. En prim
 
 En segundo lugar, la propia aplicación incorpora simulación de eventos para validar el comportamiento de la interfaz en distintos escenarios funcionales. Esta simulación ha permitido revisar la clasificación de mensajes, el pintado de tarjetas, la persistencia del historial y la integración con el chat.
 
-En tercer lugar, se ha preparado un script de arranque en red local para demostrar la aplicación desde dispositivos móviles dentro de la misma Wi-Fi, lo que ha sido especialmente útil para la defensa del TFG.
+En tercer lugar, se ha preparado un script de arranque en red local para demostrar la aplicación desde dispositivos móviles dentro de la misma Wi-Fi, lo que podría ayudarme especialmente para la defensa del TFG.
 
 Finalmente, se revisó el estado del proyecto mediante tareas de build y lint sobre el código actual. La revisión mostró dos hechos relevantes:
 

@@ -1,5 +1,8 @@
 # Diagrama de despliegue
 
+[Volver al capítulo 3](../README.md) | [Volver al índice principal](../../README.md)
+
+
 Este documento describe el despliegue de la aplicacion de notificaciones desarrollada para EMI Suite. El sistema es una aplicacion web React construida con Vite que se ejecuta en el navegador del responsable y se comunica con servicios externos de EMI Suite mediante HTTPS y WebSocket seguro.
 
 ![](../../imagenes/despliegue.svg)
@@ -131,5 +134,6 @@ La aplicacion requiere acceso de red a:
 - `wss://desarrollo.emisuite.es:15673/ws`
 
 Tambien debe permitirse la conexion WebSocket segura desde el navegador del responsable hacia el broker externo.
+
  [Anterior : 4.8 Diseño de Paquetes](../4.8_Diseño_Paquetes/README.md)
 | [Siguiente: Capítulo 4 - Descripcion de la solución](../../Capitulo4_Descripcion_Solucion/README.md)
