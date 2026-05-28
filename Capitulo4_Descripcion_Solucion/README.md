@@ -51,7 +51,7 @@ Una vez autenticado, el usuario obtiene acceso al panel principal y se activa la
 
 ### 4.4.2 Módulo de conexión en tiempo real
 
-El núcleo técnico del proyecto es el servicio `WebSocketService`, que encapsula la creación y gestión del cliente STOMP. La conexión se establece contra el broker remoto `wss://desarrollo.emisuite.es:15673/ws`, incorporando el token de sesión en la URL y suscribiéndose a varios tópicos de interés, entre ellos `/topic/notices`, `/topic/updateui` y `/topic/outputtrigger`.
+El núcleo técnico del proyecto es el servicio `WebSocketService`, que encapsula la creación y gestión del cliente STOMP. La conexión se establece contra el broker remoto , incorporando el token de sesión en la URL y suscribiéndose a varios tópicos de interés, entre ellos `/topic/notices`, `/topic/updateui` y `/topic/outputtrigger`.
 
 Cuando el servicio recibe un mensaje, este se deserializa desde JSON y se normaliza en una estructura homogénea (`WebSocketMessage`). Esta normalización es importante porque los eventos procedentes del backend no siempre exponen la información con el mismo formato; en consecuencia, la lógica cliente unifica campos como `operation`, `message`, `payload` y `timestamp` para simplificar el tratamiento posterior en la interfaz.
 
@@ -103,6 +103,9 @@ Tras el inicio de sesión, el usuario accede a un panel principal donde se resum
 La presencia de este panel ha sido especialmente útil durante el desarrollo del TFG, ya que permite verificar el comportamiento visual y funcional del sistema ante distintas familias de eventos sin depender de que el backend genere cada escenario en el momento exacto de la prueba.
 
 ![panel principal](/imagenes/panel.png)
+
+![panel principal](/imagenes/movil.jpeg)
+
 
 ### 4.4.6 Chat contextual de incidencias
 
