@@ -112,10 +112,10 @@ Los eventos generados por EMI Suite llegan al broker y despues al navegador. El 
 
 ## Consideraciones de despliegue
 
-Para produccion, basta con compilar la aplicacion y publicar la carpeta `dist` en un servidor capaz de servir contenido estatico:
+Para produccion, basta con:
 
 ```text
-npm run build
+npm run dev
 ```
 
 El servidor debe entregar correctamente `index.html` y los assets generados. Si se configura routing del lado cliente en el futuro, sera necesario redirigir las rutas no encontradas hacia `index.html`.
