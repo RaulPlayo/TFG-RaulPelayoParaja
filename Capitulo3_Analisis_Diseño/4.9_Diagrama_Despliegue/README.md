@@ -49,16 +49,12 @@ Estos nodos no forman parte obligatoria del despliegue final, pero ayudan a docu
 
 ### EMI Suite
 
-Representa el sistema externo con el que se integra la aplicacion. Segun la configuracion del proyecto, la URL base es:
-
-```text
-https://desarrollo.emisuite.es
-```
+Representa el sistema externo con el que se integra la aplicacion. 
 
 Dentro de EMI Suite aparecen dos elementos relevantes:
 
-- Servicio de autenticacion: `/snc-security-ws/authenticate`.
-- Broker STOMP/WebSocket: `wss://desarrollo.emisuite.es:15673/ws`.
+- Servicio de autenticacion.
+- Broker STOMP/WebSocket.
 
 El frontend usa estos servicios para autenticarse y recibir eventos en tiempo real.
 
@@ -84,11 +80,7 @@ La aplicacion realiza la autenticacion contra EMI Suite mediante HTTPS. Cuando o
 
 ### Conexion WebSocket
 
-Una vez autenticado el usuario, la aplicacion abre una conexion segura:
-
-```text
-wss://desarrollo.emisuite.es:15673/ws
-```
+Una vez autenticado el usuario, la aplicacion abre una conexion segura con el entorno de desarrollo de la empresa.
 
 El token se adjunta a la conexion y el cliente STOMP se suscribe a los topics configurados. Si la conexion se interrumpe, la configuracion contempla un retardo de reconexion de `5000 ms`.
 
@@ -128,10 +120,7 @@ npm run build
 
 El servidor debe entregar correctamente `index.html` y los assets generados. Si se configura routing del lado cliente en el futuro, sera necesario redirigir las rutas no encontradas hacia `index.html`.
 
-La aplicacion requiere acceso de red a:
-
-- `https://desarrollo.emisuite.es`
-- `wss://desarrollo.emisuite.es:15673/ws`
+La aplicacion requiere acceso de red a su pagina de desarrollo y a su enlace desde mandan los WebSockets.
 
 Tambien debe permitirse la conexion WebSocket segura desde el navegador del responsable hacia el broker externo.
 
