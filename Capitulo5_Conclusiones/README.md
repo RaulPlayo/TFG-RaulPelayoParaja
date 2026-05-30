@@ -25,7 +25,7 @@ No obstante, los resultados también dejan ver algunas limitaciones. La autentic
 De cara a una evolución real del sistema, se recomienda:
 
 1. Sustituir la autenticación simulada por un flujo real contra la API corporativa, con gestión segura de tokens, expiración y renovación de sesión.
-2. Formalizar el contrato de mensajes WebSocket con un esquema estable compartido entre backend y frontend, reduciendo la necesidad de normalización ad hoc en cliente.
+2. Formalizar el contrato de mensajes WebSocket con un esquema estable compartido entre backend y frontend, reduciendo la necesidad de normalización para el cliente.
 3. Reforzar la calidad interna del código eliminando usos de `any`, corrigiendo advertencias de lint y endureciendo el tipado de payloads.
 4. Incorporar pruebas automáticas unitarias e integradas sobre servicios, hooks y componentes críticos.
 5. Persistir el historial de notificaciones en backend o almacenamiento duradero cuando el caso de uso requiera trazabilidad más allá de la sesión local.
