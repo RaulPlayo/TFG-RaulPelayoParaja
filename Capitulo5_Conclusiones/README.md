@@ -2,65 +2,83 @@
 
 [Volver al índice principal](../README.md) 
 
-## 5.1 Conclusiones
+## Contenido
 
-El desarrollo realizado permite concluir que el uso conjunto de React y WebSockets constituye una base adecuada para construir interfaces web de monitorización en tiempo real dentro de un contexto industrial. La solución obtenida cumple el objetivo fundamental del TFG: recibir eventos generados por el servidor y reflejarlos en la interfaz del usuario sin recarga manual, de manera inmediata y comprensible.
+- [5.1. Qué hemos conseguido (Cumplimiento de objetivos)](#51-qué-hemos-conseguido-cumplimiento-de-objetivos)
+- [5.2. Discusión: Lo que ha funcionado y lo que se ha quedado corto](#52-discusión-lo-que-ha-funcionado-y-lo-que-se-ha-quedado-corto)
+- [5.3. Recomendaciones para el futuro](#53-recomendaciones-para-el-futuro)
+- [5.4. Próximos pasos y líneas de actuación](#54-próximos-pasos-y-líneas-de-actuación)
+- [5.5. Cierre del trabajo](#55-cierre-del-trabajo)
 
-Asimismo, el trabajo no se ha limitado a una prueba técnica mínima, sino que ha derivado en un prototipo con valor funcional real. La aplicación integra autenticación de acceso, historial de eventos, categorización de avisos, indicador de conexión, persistencia de preferencias visuales y un canal de chat contextual. Esto demuestra que la incorporación de tiempo real no tiene por qué quedar aislada como una característica técnica, sino que puede estructurar una experiencia de usuario completa alrededor de la gestión de incidencias.
+Con este capítulo cerramos el documento. La idea aquí es volver a mirar la hipótesis y los objetivos que nos marcamos en el **apartado 2.4 - Objetivos** y poner sobre la mesa lo que se ha conseguido de verdad, basándonos en el prototipo real. Es el cierre lógico del trabajo: si al principio planteábamos cómo resolver el problema, aquí analizamos cómo ha respondido la solución.
 
-## 5.2 Discusión de resultados
+La hipótesis de la que partíamos era clara: *demostrar que usar React junto a WebSockets es una combinación sólida y eficiente para crear pantallas de monitorización en tiempo real en la industria, superando los problemas del polling tradicional*. Vamos a ver, punto por punto, cómo ha ido.
 
-Desde la perspectiva de los objetivos definidos al inicio del trabajo, los resultados son positivos.
 
-En relación con la disciplina de requisitos y diseño, se ha conseguido traducir una necesidad empresarial concreta en una arquitectura modular clara. La separación entre servicios, hooks, contextos y componentes facilita el mantenimiento y deja una base razonable para ampliaciones futuras.
+## 5.1. Qué hemos conseguido (Cumplimiento de objetivos)
 
-Respecto al objetivo de construir un producto mínimo viable, el resultado puede considerarse satisfactorio. La aplicación recibe mensajes, los interpreta, los muestra de forma visual y permite al usuario actuar sobre ellos. Además, el uso de eventos simulados ha hecho posible validar con rapidez numerosos escenarios.
+La conclusión principal es que la aplicación funciona y cumple de sobra con el objetivo central del TFG: recibe los avisos del servidor al instante y los pinta en la pantalla del usuario sin necesidad de que este tenga que recargar la página a mano. Pero además, el proyecto ha ido un paso más allá de una simple prueba técnica de concepto. Se ha construido un prototipo que incluye control de acceso, un historial para revisar eventos pasados, niveles de importancia para los avisos, un indicador visual de si la conexión está activa, guardado de preferencias del usuario y hasta un chat integrado para hablar de las incidencias. 
 
-En cuanto al objetivo comparativo frente al polling, aunque en el estado actual del proyecto no se ha incorporado una batería experimental extensa con métricas automatizadas, sí se constata una mejora conceptual y operativa clara. El modelo WebSocket evita consultas periódicas innecesarias, reduce tráfico redundante y desplaza la lógica desde la pregunta continua del cliente hacia la notificación directa por parte del servidor. En sistemas donde la información cambia de forma irregular pero crítica, este enfoque resulta especialmente adecuado.
+Así es como ha respondido el proyecto a los objetivos específicos que nos fijamos:
 
-No obstante, los resultados también dejan ver algunas limitaciones. La autenticación actual es local y simplificada; el chat todavía no está conectado a una infraestructura real de mensajería; y el análisis estático del código evidencia aspectos de calidad interna pendientes de refactorización. Esto no invalida la solución, pero sí sitúa correctamente su grado de madurez: se trata de un prototipo funcional avanzado, no de un producto corporativo totalmente cerrado.
+### 5.1.1. Gestión de requisitos y diseño estructurado
+Se ha logrado aterrizar una necesidad real de una planta industrial en una estructura de software limpia y modular. Toda la separación que se detalla en el **apartado 4.4 - Análisis de paquetes** (servicios, hooks propios, contextos y componentes) no se hizo por rellenar, sino para que el código sea fácil de entender, mantener y ampliar el día de mañana por cualquier otro desarrollador.
 
-## 5.3 Recomendaciones
+### 5.1.2. Desarrollo del Producto Mínimo Viable (MVP)
+El prototipo es totalmente functional. La aplicación escucha el canal de WebSockets, procesa los mensajes, los clasifica según su urgencia y permite al operario interactuar con ellos. Además, haber montado un sistema para simular eventos ha sido un acierto total, ya que ha permitido probar decenas de situaciones distintas en minutos sin necesidad de estar conectados a una máquina real en la fábrica.
 
-De cara a una evolución real del sistema, se recomienda:
+### 5.1.3. WebSockets frente al Polling tradicional
+Al usar WebSockets nos olvidamos de estar preguntando al servidor cada pocos segundos si hay algo nuevo. Eliminamos tráfico absurdo en la red y es el servidor el que avisa a la aplicación solo cuando pasa algo. Para entornos industriales donde la información cambia de golpe y de forma impredecible, este enfoque es, sin duda, el correcto.
 
-1. Sustituir la autenticación simulada por un flujo real contra la API corporativa, con gestión segura de tokens, expiración y renovación de sesión.
-2. Formalizar el contrato de mensajes WebSocket con un esquema estable compartido entre backend y frontend, reduciendo la necesidad de normalización para el cliente.
-3. Reforzar la calidad interna del código eliminando usos de `any`, corrigiendo advertencias de lint y endureciendo el tipado de payloads.
-4. Incorporar pruebas automáticas unitarias e integradas sobre servicios, hooks y componentes críticos.
-5. Persistir el historial de notificaciones en backend o almacenamiento duradero cuando el caso de uso requiera trazabilidad más allá de la sesión local.
-6. Evaluar la incorporación de observabilidad más completa, con métricas de reconexión, errores y latencia real de extremo a extremo.
 
-## 5.4 Futuras líneas de actuación
+## 5.2. Discusión: Lo que ha funcionado y lo que se ha quedado corto
 
-Las líneas de evolución más naturales del trabajo son las siguientes.
+Hacer ingeniería también significa ser crítico con lo que uno programa. Aquí analizo los aciertos del desarrollo y también los puntos donde el proyecto contiene limitaciones.
 
-### 5.4.1 Integración corporativa completa
+### Por qué React ha encajado bien
+Elegir React para este tipo de proyectos ha sido una de las mejores decisiones. La forma en que maneja la interfaz se lleva de maravilla con los flujos de datos en tiempo real. En cuanto el servicio de WebSockets caza un evento del servidor, el estado de la aplicación cambia y la pantalla se actualiza sola al milisegundo. Además, meter toda la lógica de la conexión dentro de *hooks* personalizados ayudó un montón a mantener los componentes visuales limpios y ordenados.
 
-La primera línea de actuación consiste en sustituir las piezas simuladas por integración real con los servicios corporativos de Soincon. Esto incluye autenticación contra backend, recuperación de operarios desde API y mensajería de incidencias conectada a servicios internos o canales empresariales.
+### Las limitaciones reales del prototipo
+Como es lógico en un proyecto de esta envergadura, el prototipo tiene puntos que necesitan mejorar antes de pensar en un entorno real:
+* **La seguridad está bajo mínimos:** El sistema de login actual es una simulación local. Para producción, esto es inviable y habría que rehacerlo de cero.
+* **El chat funciona "con pinzas":** Los mensajes del chat se gestionan en la memoria del navegador. Funciona genial para la demo, pero no hay una base de datos real detrás guardando esas conversaciones en el servidor.
 
-### 5.4.2 Persistencia y trazabilidad
+Siendo realistas, lo que tenemos entre manos es un **prototipo funcional muy avanzado**, no un producto cerrado y listo para vender a una gran empresa.
 
-Actualmente el historial de notificaciones se mantiene en memoria durante la sesión. Una ampliación lógica sería almacenar los eventos en una base de datos o servicio de auditoría, permitiendo búsquedas, filtros, exportación y trazabilidad histórica para análisis operativos.
 
-### 5.4.3 Comparativa experimental con polling
+## 5.3. Recomendaciones para el futuro
 
-Sería recomendable diseñar una evaluación formal que compare WebSockets y polling bajo una misma carga de eventos, midiendo latencia, consumo de red, uso de CPU y experiencia percibida por el usuario. Esta línea reforzaría empíricamente una hipótesis que en el presente trabajo ha quedado demostrada sobre todo desde el plano funcional y arquitectónico.
+Si mañana llega otro programador, coge este repositorio y se pone a trabajar en él, mis consejos directos después de haber estado meses picando este código serían estos:
 
-### 5.4.4 Gestión avanzada de alertas
+* **Sellar la seguridad:** Quitar cuanto antes el login de local y conectarlo a la API corporativa real usando tokens seguros (JWT) ya que la seguridad en planta es un tema muy serio.
+* **Fijar el formato de los mensajes:** Hay que definir un contrato cerrado y estricto para los datos que viajan por WebSockets. Si el backend cambia una coma del mensaje, el frontend no debería romperse.
+* **Empezar a guardar los datos:** Si la empresa necesita saber qué pasó hace tres días, no podemos dejar los avisos en la memoria del navegador. Hay que implementar una base de datos en el servidor para almacenar el histórico.
 
-Otra evolución interesante sería incorporar reglas de prioridad, agrupación de eventos, filtrado por criticidad, confirmación explícita de incidencias y escalado automático a distintos perfiles cuando una alerta no haya sido atendida en un tiempo determinado.
 
-### 5.4.5 Notificaciones multicanal
+## 5.4. Próximas líneas de actuación
 
-Aunque el alcance del TFG se ha centrado en el navegador, en un contexto industrial podría resultar muy útil extender el sistema hacia notificaciones push, correo electrónico, mensajería móvil o integración con herramientas corporativas como Microsoft Teams o similares.
+Gracias a que la aplicación se pensó como un puzle de piezas independientes (arquitectura modular), añadir nuevas funciones es bastante agradecido. Si el proyecto continuara, estos serían los pasos lógicos a seguir, ordenados por importancia:
 
-### 5.4.6 Preparación para producción
+### 5.4.1. Conexión real con Soincon (Prioridad: Alta)
+La prioridad absoluta sería quitar todos los datos simulados y conectar el frontend con los servicios e infraestructura real de Soincon: operarios de verdad, alertas reales de las máquinas y sistemas de mensajería internos de la empresa.
 
-Finalmente, una línea imprescindible para consolidar el trabajo sería la industrialización del prototipo: revisión de seguridad, pruebas de carga, endurecimiento del proceso de build, despliegue continuo, control de errores y monitorización operativa.
+### 5.4.2. El experimento pendiente con el Polling (Prioridad: Alta)
+Para darle un respaldo científico incuestionable a este trabajo, lo ideal sería montar una prueba de laboratorio limpia. Consistiría en poner a funcionar a la vez este sistema de WebSockets y uno tradicional de polling bajo la misma cantidad de alertas, midiendo con datos reales cosas como:
 
-## 5.5 Cierre final
+* El retraso real en recibir el aviso (Latencia).
+* Cuántos datos consume cada opción en la red.
+* Cuánto sufre el procesador del ordenador del operario.
 
-En conjunto, el trabajo demuestra que es viable construir un sistema modular de notificaciones en tiempo real para entornos industriales utilizando tecnologías web actuales. La solución desarrollada no solo valida la hipótesis de partida, sino que deja una base práctica y extensible sobre la que seguir construyendo. El principal valor del proyecto radica en haber transformado una necesidad real de comunicación inmediata en un prototipo funcional con aplicación directa, mostrando además un camino claro de evolución hacia escenarios de uso más completos y próximos a producción.
+### 5.4.3. Filtros y alertas inteligentes (Prioridad: Media)
+En una fábrica de verdad pueden saltar cientos de avisos pequeños a la vez. Sería muy útil añadir un sistema que agrupe las alertas para no volver loco al usuario, además de programar alertas visuales más agresivas o que avisen a un responsable superior si un operario no atiende una incidencia grave en un tiempo límite.
+
+### 5.4.4. Notificaciones en el móvil e industrialización (Prioridad: Media)
+Llevar los avisos fuera de la pantalla del ordenador: configurar alertas push en el móvil, correos automáticos o mensajes directos por Microsoft Teams. Por último, automatizar las subidas de código con herramientas de despliegue continuo (CI/CD) para que actualizar la aplicación en la fábrica sea pulsar un botón.
+
+## 5.5. Cierre del trabajo
+
+En resumen, lo más valioso de este proceso no es solo el código que se ha escrito, sino haber transformado una necesidad real de una empresa en un prototipo que funciona, se entiende y marca un camino clarísimo para convertirse en un producto de producción.
+
+---
 
 [Anterior: Capítulo 4 - Descripcion de la solución](../Capitulo4_Descripcion_Solucion/README.md)
