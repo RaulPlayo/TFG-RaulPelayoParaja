@@ -42,7 +42,7 @@ Al usar WebSockets nos olvidamos de estar preguntando al servidor cada pocos seg
 Hacer ingeniería también significa ser crítico con lo que uno programa. Aquí analizo los aciertos del desarrollo y también los puntos donde el proyecto contiene limitaciones.
 
 ### Por qué React ha encajado bien
-Elegir React para este tipo de proyectos ha sido una de las mejores decisiones. La forma en que maneja la interfaz se lleva de maravilla con los flujos de datos en tiempo real. En cuanto el servicio de WebSockets caza un evento del servidor, el estado de la aplicación cambia y la pantalla se actualiza sola al milisegundo. Además, meter toda la lógica de la conexión dentro de *hooks* personalizados ayudó un montón a mantener los componentes visuales limpios y ordenados.
+Elegir React para este tipo de proyectos ha sido una de las mejores decisiones. La forma en que maneja la interfaz se lleva de maravilla con los flujos de datos en tiempo real. En cuanto el servicio de WebSockets caza un evento del servidor, el estado de la aplicación cambia y la pantalla se actualiza sola al milisegundo. Además, meter toda la lógica de la conexión dentro de *hooks* personalizados ayudó un montón a mantener los componentes visuales limpios y ordenados **(Apartado 4.2 - Arquitectura final del sistema)**.
 
 ### Las limitaciones reales del prototipo
 Como es lógico en un proyecto de esta envergadura, el prototipo tiene puntos que necesitan mejorar antes de pensar en un entorno real:
