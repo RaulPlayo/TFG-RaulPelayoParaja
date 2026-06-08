@@ -10,19 +10,25 @@
 - [5.4. Próximos pasos y líneas de actuación](#54-próximos-pasos-y-líneas-de-actuación)
 - [5.5. Cierre del trabajo](#55-cierre-del-trabajo)
 
-Con este capítulo cerramos el documento. La idea aquí es volver a mirar la hipótesis y los objetivos que nos marcamos en el **apartado 2.4 - Objetivos** y poner sobre la mesa lo que se ha conseguido de verdad, basándonos en el prototipo real. Es el cierre lógico del trabajo: si al principio planteábamos cómo resolver el problema, aquí analizamos cómo ha respondido la solución.
+Con este capítulo cerramos el documento. La idea aquí es volver a mirar la hipótesis y los objetivos que vimos en el **apartado 2.4 - Objetivos** y poner sobre la mesa lo que se ha conseguido de verdad, basándonos en el prototipo real. 
 
-La hipótesis de la que partíamos era clara: *demostrar que usar React junto a WebSockets es una combinación sólida y eficiente para crear pantallas de monitorización en tiempo real en la industria, superando los problemas del polling tradicional*. Vamos a ver, punto por punto, cómo ha ido.
+La hipótesis de la que partíamos era clara: *demostrar que usar React junto a WebSockets es una combinación sólida y eficiente para crear pantallas de monitorización en tiempo real en la industria, superando los problemas del polling tradicional*. 
+
+Además, la estructura de: Escenario (Cap. 1) → Requisitos (Cap. 2) → Análisis y diseño (Cap. 3) → Descripción de la solución (Cap. 4) → Conclusiones (Cap. 5) ha sido realizada correctamente cómo se organizó en el **apartado 2.6 - Estructura del trabajo.**
+
 
 
 ## 5.1. Qué hemos conseguido (Cumplimiento de objetivos)
 
 La conclusión principal es que la aplicación funciona y cumple de sobra con el objetivo central del TFG: recibe los avisos del servidor al instante y los pinta en la pantalla del usuario sin necesidad de que este tenga que recargar la página a mano. Pero además, el proyecto ha ido un paso más allá de una simple prueba técnica de concepto. Se ha construido un prototipo que incluye control de acceso, un historial para revisar eventos pasados, niveles de importancia para los avisos, un indicador visual de si la conexión está activa, guardado de preferencias del usuario y hasta un chat integrado para hablar de las incidencias. 
 
-Así es como ha respondido el proyecto a los objetivos específicos que nos fijamos:
+Así es como ha respondido el proyecto a los objetivos que hemos especificado **(apartado 2.4 - Objetivos)**:
 
 ### 5.1.1. Gestión de requisitos y diseño estructurado
 Se ha logrado aterrizar una necesidad real de una planta industrial en una estructura de software limpia y modular. Toda la separación que se detalla en el **apartado 4.4 - Análisis de paquetes** (servicios, hooks propios, contextos y componentes) no se hizo por rellenar, sino para que el código sea fácil de entender, mantener y ampliar el día de mañana por cualquier otro desarrollador.
+
+También, tanto los actores como los casos de uso han sido detallados fieles a lo que puede hacer la aplicación **(apartado 3.2 - Disciplina de requisitos).**
+
 
 ### 5.1.2. Desarrollo del Producto Mínimo Viable (MVP)
 El prototipo es totalmente functional. La aplicación escucha el canal de WebSockets, procesa los mensajes, los clasifica según su urgencia y permite al operario interactuar con ellos. Además, haber montado un sistema para simular eventos ha sido un acierto total, ya que ha permitido probar decenas de situaciones distintas en minutos sin necesidad de estar conectados a una máquina real en la fábrica.
