@@ -61,4 +61,4 @@ En la etapa de análisis definimos clases conceptuales, sin entrar todavía en d
 
 ---
 
-[Anterior: 4.2 Análisis de Casos de Uso](../4.2_Analisis_Casos_de_Uso/README.md) | [Siguiente: 4.4 Análisis de Paquetes](../4.4_Analisis_Paquetes/README.md)
+[Anterior: 4.2 Análisis de Casos de Uso](../4.2_Analisis_Casos_de_Uso/README.md) | [Siguiente: 4.4 Análisis de Paquetes](../4.4_Analisis_Paquetes/README.md) | [Presentación del trabajo](../PRESENTACION.md)

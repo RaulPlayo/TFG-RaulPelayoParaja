@@ -159,4 +159,4 @@ Por tanto, puede afirmarse que el prototipo es funcional desde el punto de vista
 
 No tengo permitido compartir nada del código de esta aplicación debido a que cuando me encontraba de prácticas en la empresa Soincon, firmé un documento de confidencialidad en el que se estipulaba que aquella información técnica, tecnológica y documental era parte de la empresa, y con lo cual confidencial.
 
-[Anterior: 4.9 Diagrama de despliegue](../Capitulo3_Analisis_Diseño/4.9_Diagrama_Despliegue/README.md) | [Siguiente: 5 Conclusiones](../Capitulo5_Conclusiones/README.md)
+[Anterior: 4.9 Diagrama de despliegue](../Capitulo3_Analisis_Diseño/4.9_Diagrama_Despliegue/README.md) | [Siguiente: 5 Conclusiones](../Capitulo5_Conclusiones/README.md) | [Presentación del trabajo](../PRESENTACION.md)

@@ -38,4 +38,4 @@ Desde el punto de vista de la implementación, el frontend hecho en React concen
 
 ---
 
-[Anterior: Capítulo 4 (intro)](../README.md) | [Siguiente: 4.2 Análisis de Casos de Uso](../4.2_Analisis_Casos_de_Uso/README.md)
+[Anterior: Capítulo 4 (intro)](../README.md) | [Siguiente: 4.2 Análisis de Casos de Uso](../4.2_Analisis_Casos_de_Uso/README.md) | [Presentación del trabajo](../PRESENTACION.md)

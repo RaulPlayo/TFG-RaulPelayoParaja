@@ -125,4 +125,4 @@ La aplicacion requiere acceso de red a su pagina de desarrollo y a su enlace des
 Tambien debe permitirse la conexion WebSocket segura desde el navegador del responsable hacia el broker externo.
 
  [Anterior : 4.8 Diseño de Paquetes](../4.8_Diseño_Paquetes/README.md)
-| [Siguiente: Capítulo 4 - Descripcion de la solución](../../Capitulo4_Descripcion_Solucion/README.md)
+| [Siguiente: Capítulo 4 - Descripcion de la solución](../../Capitulo4_Descripcion_Solucion/README.md) | [Presentación del trabajo](../PRESENTACION.md)

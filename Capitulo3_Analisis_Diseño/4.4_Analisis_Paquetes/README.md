@@ -21,4 +21,4 @@ Por ultimo, el paquete **Sistema externo** representa EMI Suite y el broker STOM
 
 ---
 
-[Anterior: 4.3 Análisis de Clases](../4.3_Analisis_Clases/README.md) | [Siguiente: 4.5 Diseño de la Arquitectura](../4.5_Diseño_Arquitectura/README.md)
+[Anterior: 4.3 Análisis de Clases](../4.3_Analisis_Clases/README.md) | [Siguiente: 4.5 Diseño de la Arquitectura](../4.5_Diseño_Arquitectura/README.md) | [Presentación del trabajo](../PRESENTACION.md)

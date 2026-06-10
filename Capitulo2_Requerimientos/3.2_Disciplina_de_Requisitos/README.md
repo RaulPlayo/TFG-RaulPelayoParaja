@@ -120,5 +120,5 @@ Los requisitos no funcionales describen las propiedades de calidad que debe cump
 
 ---
 
-[Anterior: 3.1 Modelo del Dominio](../3.1_Modelo_del_Dominio/README.md) | [Siguiente: Capítulo 3 - Análisis y Diseño](../../Capitulo3_Analisis_Diseño/README.md)
+[Anterior: 3.1 Modelo del Dominio](../3.1_Modelo_del_Dominio/README.md) | [Siguiente: Capítulo 3 - Análisis y Diseño](../../Capitulo3_Analisis_Diseño/README.md) | [Presentación del trabajo](../PRESENTACION.md)
 

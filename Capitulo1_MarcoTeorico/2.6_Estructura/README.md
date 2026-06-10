@@ -17,5 +17,5 @@ El trabajo se organiza en cinco capitulos que siguen una estructura progresiva, 
 **Capitulo 5 - Conclusiones:** recoge las conclusiones del proyecto. Incluye una valoracion del grado de cumplimiento de los objetivos, una reflexion sobre las lecciones aprendidas durante el desarrollo y una propuesta de posibles lineas de trabajo futuro para extender o mejorar el sistema.
 
 ---
-
-[Anterior: 2.5 Alcance](../2.5_Alcance/README.md) | [Siguiente: Capitulo 2 - Requerimientos](../../Capitulo2_Requerimientos/README.md)
+ 
+[Anterior: 2.5 Alcance](../2.5_Alcance/README.md) | [Siguiente: Capitulo 2 - Requerimientos](../../Capitulo2_Requerimientos/README.md) | [Presentación del trabajo](../PRESENTACION.md)

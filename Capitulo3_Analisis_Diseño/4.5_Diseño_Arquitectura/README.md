@@ -25,4 +25,5 @@ React aporta modularidad y reutilización; los WebSockets ofrecen inmediatez; y 
 
 ---
 
-[Anterior: 4.4 Análisis de Paquetes](../4.4_Analisis_Paquetes/README.md) | [Siguiente: 4.6 Diseño de Casos de Uso](../4.6_Diseño_Casos_de_Uso/README.md)
+[Anterior: 4.4 Análisis de Paquetes](../4.4_Analisis_Paquetes/README.md) | [Siguiente: 4.6 Diseño de Casos de Uso](../4.6_Diseño_Casos_de_Uso/README.md) | [Presentación del trabajo](../PRESENTACION.md)
+ 

@@ -28,4 +28,4 @@ El objetivo principal es diseñar y montar un sistema de notificaciones en tiemp
 
 ---
 
-[Anterior: 2.3 Solución Propuesta](../2.3_Solucion_Propuesta/README.md) | [Siguiente: 2.5 Alcance](../2.5_Alcance/README.md)
+[Anterior: 2.3 Solución Propuesta](../2.3_Solucion_Propuesta/README.md) | [Siguiente: 2.5 Alcance](../2.5_Alcance/README.md) | [Presentación del trabajo](../PRESENTACION.md)

@@ -77,4 +77,4 @@ En conjunto, el diagrama permite ver cómo los elementos principales del sistema
 
 ---
 
-[Anterior: Capítulo 2 (intro)](../README.md) | [Siguiente: 3.2 Disciplina de Requisitos](../3.2_Disciplina_de_Requisitos/README.md)
+[Anterior: Capítulo 2 (intro)](../README.md) | [Siguiente: 3.2 Disciplina de Requisitos](../3.2_Disciplina_de_Requisitos/README.md) | [Presentación del trabajo](../PRESENTACION.md)

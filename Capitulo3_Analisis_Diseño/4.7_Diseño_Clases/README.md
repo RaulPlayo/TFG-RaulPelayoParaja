@@ -92,4 +92,4 @@
 
 ---
 
-[Anterior: 4.6 Diseño de Casos de Uso](../4.6_Diseño_Casos_de_Uso/README.md) | [Siguiente: 4.8 Diseño de Paquetes](../4.8_Diseño_Paquetes/README.md)
+[Anterior: 4.6 Diseño de Casos de Uso](../4.6_Diseño_Casos_de_Uso/README.md) | [Siguiente: 4.8 Diseño de Paquetes](../4.8_Diseño_Paquetes/README.md) | [Presentación del trabajo](../PRESENTACION.md)

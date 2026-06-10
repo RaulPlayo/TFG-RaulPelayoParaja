@@ -38,4 +38,4 @@ Este diagrama muestra como el responsable marca una notificacion como leida desd
 [Código fuente](../../codigoFuente/colabLeida.puml)
 
 
-[Anterior: 4.1 Análisis de la Arquitectura](../4.1_Analisis_Arquitectura/README.md) | [Siguiente: 4.3 Análisis de Clases](../4.3_Analisis_Clases/README.md)
+[Anterior: 4.1 Análisis de la Arquitectura](../4.1_Analisis_Arquitectura/README.md) | [Siguiente: 4.3 Análisis de Clases](../4.3_Analisis_Clases/README.md) | [Presentación del trabajo](../PRESENTACION.md)

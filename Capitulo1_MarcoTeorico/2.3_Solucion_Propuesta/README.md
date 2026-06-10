@@ -58,4 +58,4 @@ Este flujo es fundamentalmente diferente al modelo antiguo del polling, ya que a
 
 ---
 
-[Anterior: 2.2 Estado del Arte](../2.2_Estado_del_Arte/README.md) | [Siguiente: 2.4 Objetivos](../2.4_Objetivos/README.md)
+[Anterior: 2.2 Estado del Arte](../2.2_Estado_del_Arte/README.md) | [Siguiente: 2.4 Objetivos](../2.4_Objetivos/README.md) | [Presentación del trabajo](../PRESENTACION.md)

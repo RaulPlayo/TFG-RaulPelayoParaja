@@ -29,4 +29,4 @@ El diagrama muestra como el responsable selecciona una notificacion concreta des
 
 ---
 
-[Anterior: 4.5 Diseño de la Arquitectura](../4.5_Diseño_Arquitectura/README.md) | [Siguiente: 4.7 Diseño de Clases](../4.7_Diseño_Clases/README.md)
+[Anterior: 4.5 Diseño de la Arquitectura](../4.5_Diseño_Arquitectura/README.md) | [Siguiente: 4.7 Diseño de Clases](../4.7_Diseño_Clases/README.md) | [Presentación del trabajo](../PRESENTACION.md)

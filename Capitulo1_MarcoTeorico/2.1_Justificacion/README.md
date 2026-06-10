@@ -14,4 +14,4 @@ Por ultimo, he elegido React, Vite y WebSockets ya que las tres herramientas cue
 
 ---
 
-[Anterior: Marco Teorico (intro)](../README.md) | [Siguiente: 2.2 Estado del Arte](../2.2_Estado_del_Arte/README.md)
+[Anterior: Marco Teorico (intro)](../README.md) | [Siguiente: 2.2 Estado del Arte](../2.2_Estado_del_Arte/README.md) | [Presentación del trabajo](../../PRESENTACION.md)

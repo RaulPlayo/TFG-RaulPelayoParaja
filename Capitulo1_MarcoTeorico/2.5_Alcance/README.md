@@ -48,4 +48,4 @@ El proyecto asume que el usuario tiene un navegador moderno que soporte WebSocke
 
 ---
 
-[Anterior: 2.4 Objetivos](../2.4_Objetivos/README.md) | [Siguiente: 2.6 Estructura](../2.6_Estructura/README.md)
+[Anterior: 2.4 Objetivos](../2.4_Objetivos/README.md) | [Siguiente: 2.6 Estructura](../2.6_Estructura/README.md) | [Presentación del trabajo](../PRESENTACION.md)
