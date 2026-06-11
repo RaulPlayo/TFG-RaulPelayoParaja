@@ -59,7 +59,7 @@ Cuando el servicio recibe un mensaje, este se deserializa desde JSON y se normal
 
 Además de la conexión real, la solución incorpora un mecanismo de simulación de eventos mediante `CustomEvent`, lo que permite probar localmente la representación de notificaciones sin depender continuamente del backend. Esto ha sido útil tanto para depuración como para demostraciones funcionales del sistema.
 
-![Conexión WebSocket inactiva](/imagenes/desconectado.png) ![Conexión WebSocket activa](/imagenes/conectado.png)
+![Conexión WebSocket inactiva](/imagenes/desconectado.png) ![Conexión WebSocket activa](/imagenes/conectado.png) ![Fallo de broker](/imagenes/Error.png)
 
 
 

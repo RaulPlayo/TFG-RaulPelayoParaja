@@ -9,4 +9,7 @@ Conectando --> Conectado : servidor acepta conexion /\nactualizar estado a conec
 Conectado --> Desconectado : perdida de red o cierre del servidor /\nmostrar estado desconectado
 Conectado --> Conectado : evento recibido /\nprocesar notificacion
 Conectado --> [*] : usuario cierra la aplicacion /\ncerrar conexion ordenadamente
+Conectando --> Error :  broker no disponible
+Error --> Conectando : intento de recarga
+
 @enduml

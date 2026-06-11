@@ -22,13 +22,14 @@ Aquí están los diagramas de estados de los dos elementos del sistema que tiene
 
 ### Diagrama de estados: Conexión WebSocket
 
-La conexión WebSocket puede estar en tres estados: **Desconectado**, **Conectando** y **Conectado**.
+La conexión WebSocket puede estar en tres estados: **Desconectado**, **Conectando** (internamente) , **Conectado** y **Error**.
 
 - Estado inicial: Desconectado.
 - Al cargar la aplicación, se inicia el handshake de WebSocket y pasa a **Conectando**.
 - Si el servidor acepta la conexión, pasa a **Conectado**. En estado conectado, los eventos que llegan se procesan como notificaciones (la conexión se queda igual).
 - Si hay timeout o falla el handshake, vuelve a **Desconectado**.
 - Si se pierde la red o el servidor se cierra, vuelve a **Desconectado**.
+- Si el broker o "intermediario" no está disponible, aparecerá el estado **Error**.
 - Cuando el responsable cierra la aplicación, se cierra la conexión de forma ordenada y se llega al estado final.
 
 ![Diagrama de objetos](../../imagenes/conexionWebsocket.svg)
@@ -59,7 +60,7 @@ La notificación puede estar en dos estados: **NoLeída** (`leida = false`) y **
 | Servidor | Componente backend que ofrece la API REST y gestiona las conexiones WebSocket. Lanza eventos a los clientes que estén conectados cuando se producen cambios en los datos. |
 | API REST de Soincon | Interfaz de programación que da Soincon para consultar y modificar los documentos guardados en EMI Suite 4.0 mediante peticiones HTTP estándar. |
 | Historial de notificaciones | Colección ordenada por fecha de todas las notificaciones recibidas durante la sesión activa del usuario. Se guarda en el estado de React y se pierde al cerrar el navegador. |
-| Estado de la conexión | Indicador que dice si el canal WebSocket está activo y funcionando bien. Los posibles valores son: conectado, conectando o desconectado. |
+| Estado de la conexión | Indicador que dice si el canal WebSocket está activo y funcionando bien. Los posibles valores son: conectado, conectando (internamente), desconectado y error. |
 | Sesión | Periodo de tiempo durante el cual un usuario autenticado tiene acceso activo a la aplicación, desde que inicia sesión hasta que la cierra o se le acaba el tiempo. |
 
 ---

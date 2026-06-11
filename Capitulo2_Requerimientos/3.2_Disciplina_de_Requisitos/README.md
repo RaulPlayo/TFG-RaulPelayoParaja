@@ -83,7 +83,7 @@ Los requisitos no funcionales describen las propiedades de calidad que debe cump
 | RNF02 | Capacidad de procesamiento | Rendimiento | Media | El sistema podrá procesar varios eventos por segundo sin que el administrador note que la interfaz se resiente. |
 | RNF03 | Tiempo de carga inicial | Rendimiento | Media | La aplicación estará lista para usarse en menos de 3 segundos con una conexión de banda ancha normal. |
 | RNF04 | Usabilidad sin formación técnica | Usabilidad | Alta | La interfaz seguirá las convenciones visuales estándar para que el administrador pueda usarla sin que le tengan que explicar nada. |
-| RNF05 | Indicador de estado de conexión | Usabilidad | Media | El estado de la conexión WebSocket (conectado / desconectado) se verá siempre en la interfaz. |
+| RNF05 | Indicador de estado de conexión | Usabilidad | Media | El estado de la conexión WebSocket (conectado / desconectado / error) se verá siempre en la interfaz. |
 | RNF06 | Modularidad del componente | Mantenibilidad | Media | El componente de notificaciones estará desacoplado del resto de la aplicación y seguirá las convenciones de React. |
 | RNF07 | Compatibilidad con navegadores | Compatibilidad | Alta | La aplicación funcionará bien en las versiones actuales de Chrome, Firefox, Safari y Edge, con un diseño responsive que se adapte a tablets. |
 | RNF08 | Gestión de fallos de conexión | Confiabilidad | Alta | Ante una pérdida de conexión o mensajes mal formados, el sistema avisará al administrador sin que se bloquee la interfaz. |
