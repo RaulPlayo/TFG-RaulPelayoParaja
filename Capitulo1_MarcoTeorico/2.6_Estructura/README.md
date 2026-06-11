@@ -12,7 +12,7 @@ El trabajo se organiza en cinco capitulos que siguen una estructura progresiva, 
 
 **Capitulo 3 - Analisis y diseño:** aborda el analisis y diseno del sistema. Incluye los diagramas de arquitectura, la descripcion detallada de cada modulo, las decisiones de diseño tomadas y su justificacion, y el diseño de la interfaz de usuario.
 
-**Capitulo 4 - Descripción de la solucion Propuesta:** presenta la implementacion de la solucion. Describe el proceso de desarrollo, los fragmentos de codigo mas relevantes, las decisiones tecnicas tomadas durante la implementacion y los resultados de las pruebas realizadas para validar el comportamiento del sistema.
+**Capitulo 4 - Descripción de la solucion Propuesta:** presenta la implementacion de la solucion. Describe el proceso de desarrollo, los fragmentos de codigo mas relevantes y las decisiones tecnicas tomadas durante la implementacion.
 
 **Capitulo 5 - Conclusiones:** recoge las conclusiones del proyecto. Incluye una valoracion del grado de cumplimiento de los objetivos, una reflexion sobre las lecciones aprendidas durante el desarrollo y una propuesta de posibles lineas de trabajo futuro para extender o mejorar el sistema.
 
