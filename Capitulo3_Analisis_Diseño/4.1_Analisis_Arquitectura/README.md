@@ -22,7 +22,6 @@ En el contexto de este TFG, esta arquitectura funciona muy bien porque el objeti
 
 Desde el punto de vista de la implementación, el frontend hecho en React concentra la lógica de presentación, la gestión del estado de las notificaciones, el historial, el chat con contexto y el indicador de conexión. La conexión con el broker de eventos se hace mediante WebSocket con STOMP, lo que permite suscribirse a distintos temas y recibir los mensajes de forma estructurada.
 
----
 
 ## Decisiones de arquitectura y justificación
 
