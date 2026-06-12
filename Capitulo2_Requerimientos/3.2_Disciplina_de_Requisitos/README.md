@@ -42,13 +42,6 @@ Se detallan a continuación cuatro casos de uso que cubren los flujos más repre
 
 Los prototipos de baja fidelidad validan la correspondencia entre los casos de uso detallados y la interfaz del sistema. Se presentan como wireframes funcionales centrados en la estructura de la pantalla y el flujo de interacción, no en el diseño visual final.
 
-### "Main dashboard"
-
-Vista principal orientada al seguimiento del sistema. Presenta las acciones de simulación de eventos que pueden recibirse mediante WebSocket, un resumen del volumen de notificaciones recibidas y los accesos necesarios para consultar el historial o finalizar la sesión.
-
-![Prototipo de la página](../../imagenes/prototipoPagina.svg)  
-[Código fuente](../../codigoFuente/prototipoPagina.puml)
-
 ### Notificación
 
 Vista centrada en el detalle de una notificación recibida. Muestra la información principal asociada al evento, como el tipo de incidencia, la operación, la descripción, la fecha y la hora. Desde esta vista se contempla la posibilidad de actualizar el estado de lectura de la notificación o iniciar la comunicación con un operario aportando el contexto del aviso.

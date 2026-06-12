@@ -146,17 +146,11 @@ Durante el desarrollo se han utilizado varios mecanismos de validación. En prim
 
 En segundo lugar, la propia aplicación incorpora simulación de eventos para validar el comportamiento de la interfaz en distintos escenarios funcionales. Esta simulación ha permitido revisar la clasificación de mensajes, el pintado de tarjetas, la persistencia del historial y la integración con el chat.
 
-En tercer lugar, se ha preparado un script de arranque en red local para demostrar la aplicación desde dispositivos móviles dentro de la misma Wi-Fi, lo que podría ayudarme especialmente para la defensa del TFG.
+Finalmente, se ha preparado un script de arranque en red local para demostrar la aplicación desde dispositivos móviles dentro de la misma Wi-Fi, lo que podría ayudarme especialmente para la defensa del TFG.
 
-Finalmente, se revisó el estado del proyecto mediante tareas de build y lint sobre el código actual. La revisión mostró dos hechos relevantes:
-
-- La build quedó condicionada por una limitación del entorno de ejecución local (`spawn EPERM` al cargar la configuración de Vite), por lo que no puede interpretarse como un fallo funcional directo de la aplicación.
-- El lint detectó deuda técnica pendiente, principalmente relacionada con usos de `any`, algunas advertencias de pureza en React y ajustes de organización de exports.
-
-Por tanto, puede afirmarse que el prototipo es funcional desde el punto de vista de la interacción y de la recepción de eventos, aunque todavía presenta margen de endurecimiento técnico antes de considerarse una versión plenamente cerrada para producción.
 
 ## 4.7 Trazas de código de la aplicación
 
-No tengo permitido compartir nada del código de esta aplicación debido a que cuando me encontraba de prácticas en la empresa Soincon, firmé un documento de confidencialidad en el que se estipulaba que aquella información técnica, tecnológica y documental era parte de la empresa, y con lo cual confidencial.
+No tengo permitido compartir nada del código de esta aplicación debido a que cuando me encontraba de prácticas en la empresa Soincon, firmé un documento de confidencialidad en el que se estipulaba que aquella información técnica, tecnológica y documental era propiedad de la empresa.
 
 [Anterior: 4.9 Diagrama de despliegue](../Capitulo3_Analisis_Diseño/4.9_Diagrama_Despliegue/README.md) | [Siguiente: 5 Conclusiones](../Capitulo5_Conclusiones/README.md) | [Presentación del trabajo](../PRESENTACION.md)

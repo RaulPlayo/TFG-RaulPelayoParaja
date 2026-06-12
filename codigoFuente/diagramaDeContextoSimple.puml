@@ -40,23 +40,23 @@ EmiSuite --> Topics : enviarEventos(documentos)
 
 Topics --> Message : recibirEvento()\n/notices, /updateui, /outputtrigger
 Dashboard --> Message : simularEvento(operation, payload)
-Message --> Notification : crearNotificacion()
+Message --> Notification : enviarNotificacion()
 
 Menu --> Dashboard : abrirDashboard()
 Dashboard --> Dashboard : proceso / parada / material\nproduccion / personal
 Dashboard --> Menu : completarGestion()
 
 Notification --> Dashboard : actualizarVista()
-Notification --> Notification : mostrarToast()\ndescartarNotificacion()
+Notification --> Notification : verNotificacion()\neliminarNotificacion()
 Notification --> History : guardarHistorial(max100)
 Notification --> Chat : contactarResponsable()\nadjuntarNotificacion()
 
-Menu --> History : abrirHistorial()
-History --> History : marcarComoLeida()\nlimpiarHistorial()
+Menu --> History : consultarHistorial()
+History --> History : marcarLeida()\nlimpiarHistorial()
 History --> Menu : cerrarHistorial()
 
 Menu --> Chat : abrirChat()
-Chat --> Chat : enviarMensaje()\ngenerarRespuestaSimulada()
+Chat --> Chat : enviarMensajeDeIncidencia()\ngenerarRespuestaSimulada()
 Chat --> Menu : cerrarChat()
 
 Menu --> Preferences : cambiarTema()
@@ -64,6 +64,3 @@ Preferences --> Preferences : temaClaro / temaOscuro
 Preferences --> Menu : completarGestion()
 
 @enduml
-
-
-
