@@ -140,30 +140,35 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ![Consultar el historial](/imagenes/consultarHistorial.svg)
 [Código fuente](/codigoFuente/consultarHistorial.puml)
 
-![Enviar mensaje de incidencia](/imagenes/enviarMensajeDeIncidencia.svg)
-[Código fuente](/codigoFuente/enviarMensajeDeIncidencia.puml)
+![Ver notificación](/imagenes/verNotificacion.svg)
+[Código fuente](/codigoFuente/verNotificacion.puml)
 
+## 5. Diagramas de colaboración
 
-## 5. Diagramas de secuencia
+![](/imagenes/colabHistorial.svg)
+[Código fuente](/codigoFuente/colabHistorial.puml)
 
-[Diagramas de secuencia](./Capitulo3_Analisis_Diseño/4.6_Diseño_Casos_De_Uso/README.md)
+![](/imagenes/colabNotificacion.svg)
+[Código fuente](/codigoFuente/colabNotificacion.puml)
 
 
 
 ## 6. Diagrama Modelo Vista Controlador
+>- El sistema tiene tres capas lógicas: las Vistas para la interfaz de usuario, los Controladores que gestionan la lógica de interacción, y el Modelo que encapsula los datos, eventos y conexiones en tiempo real
 
-[Modelo Vista Controlador (MVC)](./Capitulo3_Analisis_Diseño/4.3_Analisis_Clases/README.md)
+![Diagrama de clases (análisis)](./imagenes/diagramaClases.svg)
 
 
+## 7. Diagramas de secuencia
 
-## 11. Análisis de clases
+> - Diagramas de **secuencia**: flujo temporal paso a paso.
+> - Ya no son clases conceptuales, son componentes reales del sistema.
 
 > - Clases conceptuales, aún no son componentes técnicos.
 > - **Modelo**: Documento, Evento, Notificación, HistorialNotificaciones, ConexiónWebSocket.
 > - **Vista**: Login, Panel, Historial, Notificación, Chat, Documento, Evento.
 > - **Controlador**: Autenticación, RecepciónEventos, Historial, Lectura, Eliminación, Chat, Sincronización.
 
-![Diagrama de clases (análisis)](./imagenes/diagramaClases.svg)
 
 ---
 
@@ -257,3 +262,5 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 > - Lo más valioso no es solo el código, sino haber transformado una **necesidad real** de una empresa en un prototipo que funciona, se entiende y marca un camino claro para producción.
 
 ---
+
+
