@@ -120,15 +120,6 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ![Diagrama de objetos](/imagenes/cicloNotificacion.svg)
 [Código fuente](/codigoFuente/cicloNotificacion.puml)
 
----
-
-
-![Diagrama de objetos](/imagenes/diagramaObjetos.svg)
-[Código fuente](/codigoFuente/diagramaObjetos.puml)
-> - Instancia del sistema en un momento determinado.
-
-
-
 ## 4. Requisitos , casos de uso y diagrama de contexto
 
 > - Dos actores: Responsable y tiempo
@@ -144,13 +135,16 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ![Ver notificación](/imagenes/verNotificacion.svg)
 [Código fuente](/codigoFuente/verNotificacion.puml)
 
+![Contexto](/imagenes/diagramacontextoSimple.svg)
+[Código fuente](/codigoFuente/diagramaDeContextoSimple.puml)
+
 ## 5. Diagramas de colaboración
 
 ![](/imagenes/colabHistorial.svg)
 [Código fuente](/codigoFuente/colabHistorial.puml)
 
-![](/imagenes/colabNotificacion.svg)
-[Código fuente](/codigoFuente/colabNotificacion.puml)
+![](/imagenes/colabLeidavertical.svg)
+[Código fuente](/codigoFuente/colabLeida.puml)
 
 
 
