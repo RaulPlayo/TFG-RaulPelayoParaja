@@ -164,46 +164,6 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 > - Diagramas de **secuencia**: flujo temporal paso a paso.
 > - Ya no son clases conceptuales, son componentes reales del sistema.
 
-> - Clases conceptuales, aún no son componentes técnicos.
-> - **Modelo**: Documento, Evento, Notificación, HistorialNotificaciones, ConexiónWebSocket.
-> - **Vista**: Login, Panel, Historial, Notificación, Chat, Documento, Evento.
-> - **Controlador**: Autenticación, RecepciónEventos, Historial, Lectura, Eliminación, Chat, Sincronización.
-
-
----
-
-## 12. Análisis de paquetes
-
-> - Organización del sistema en paquetes funcionales.
-> - **Presentación**: vistas y componentes (autenticación, panel, historial, chat).
-> - **Control de aplicación**: hooks y contextos (`useWebSocket`, `useAuth`, `ChatContext`, `ThemeContext`).
-> - **Servicios**: `auth.service` y `websocket.service` (STOMP/WebSocket).
-> - **Configuración**: endpoints, broker, canales.
-> - **Modelo y tipos**: `WebSocketMessage`, `NotificationItem`, `ConnectionStatus`, `ChatMessage`.
-> - **Sistema externo**: EMI Suite + Broker STOMP.
-
-![Diagrama de paquetes](./imagenes/diagramaPaquetes.png)
-
----
-
-## 13. Diseño de la arquitectura
-
-> - La arquitectura de análisis se concreta con tecnologías reales.
-> - **SPA**: React 19 + TypeScript + Vite.
-> - **Tiempo real**: WebSocket nativo + STOMP (`@stomp/stompjs`).
-> - **Estado**: hooks personalizados + contextos React + componentes funcionales.
-> - **Demo móvil**: Node.js para scripts de arranque en red local.
-> - Canal REST reservado para autenticación. Canal WS dedicado a eventos. Navegador como contenedor de estado local.
-
-![Arquitectura de diseño](./imagenes/arquitectura.svg)
-
----
-
-## 14. Diseño de casos de uso (secuencia)
-
-> - Diagramas de **secuencia**: flujo temporal paso a paso.
-> - Ya no son clases conceptuales, son componentes reales del sistema.
-
 ### consultarHistorial()
 
 > El responsable abre el historial → la vista pide el listado → se ordena → se muestra.
@@ -216,15 +176,32 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 
 ![Secuencia — Enviar incidencia](./imagenes/secuenciaIncidencia.svg)
 
-### verNotificacion()
 
-> El responsable selecciona notificación → se busca en el historial → se marca como leída → se muestra el detalle.
+## 8. Diagrama de paquetes
 
-![Secuencia — Ver notificación](./imagenes/secuenciaNotificacion.svg)
+> - Organización del sistema en paquetes funcionales.
+> - **Presentación**: vistas y componentes (autenticación, panel, historial, chat).
+> - **Control de aplicación**: hooks y contextos (`useWebSocket`, `useAuth`, `ChatContext`, `ThemeContext`).
+> - **Servicios**: `auth.service` y `websocket.service` (STOMP/WebSocket).
+> - **Configuración**: endpoints, broker, canales.
+> - **Modelo y tipos**: `WebSocketMessage`, `NotificationItem`, `ConnectionStatus`, `ChatMessage`.
+> - **Sistema externo**: EMI Suite + Broker STOMP.
 
----
+![Diagrama de paquetes](./imagenes/diagramaPaquetes.png)
 
-## 15. Diagrama de despliegue
+
+## 9. Diseño de la arquitectura
+
+> - La arquitectura de análisis se concreta con tecnologías reales.
+> - **SPA**: React 19 + TypeScript + Vite.
+> - **Tiempo real**: WebSocket nativo + STOMP (`@stomp/stompjs`).
+> - **Estado**: hooks personalizados + contextos React + componentes funcionales.
+> - Canal REST reservado para autenticación. Canal WS dedicado a eventos. Navegador como contenedor de estado local.
+
+![Arquitectura de diseño](./imagenes/arquitectura.svg)
+
+
+## 10. Diagrama de despliegue
 
 > - **Equipo del responsable**: navegador ejecuta la SPA + localStorage (token).
 > - **Servidor web**: sirve `dist/` (archivos estáticos de Vite: HTML, JS, CSS).
@@ -235,19 +212,14 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 
 ![Diagrama de despliegue](./imagenes/despliegue.svg)
 
----
-
-
----
-
-## 17. Conclusiones y líneas futuras
+## 11. Conclusiones y líneas futuras
 
 > - ✅ **Funciona**: recibe eventos al instante y los pinta sin recargar. Va más allá de una prueba de concepto.
 > - ✅ **Objetivos cumplidos**: requisitos, análisis y diseño, MVP funcional, documentación reutilizable.
 > - ✅ **React encaja perfecto**: cambio de estado → re-render automático. Hooks personalizados mantienen los componentes limpios.
 > - ✅ **WebSockets vs Polling**: eliminamos tráfico innecesario, el servidor avisa solo cuando pasa algo.
 
-> **Limitaciones honestas:**
+> **Limitaciones :**
 > - Seguridad bajo mínimos (login simulado, no JWT real).
 > - Chat en memoria del navegador, sin persistencia en servidor.
 > - Es un **prototipo funcional avanzado**, no un producto de producción cerrado.
@@ -256,11 +228,13 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 > 1. 🔴 Conexión real con Soincon (quitar datos simulados).
 > 2. 🔴 Experimento formal polling vs WebSocket (latencia, ancho de banda, CPU).
 > 3. 🟡 Filtros y alertas inteligentes (agrupación, escalado a supervisores).
-> 4. 🟡 Notificaciones push móvil, integración Teams/email, CI/CD.
+> 4. 🟡 Notificaciones push móvil, integración Microsoft Teams/email.
+> 5. 🟡 Posibilidad de enviar documentos PDF a través de WebSocket.
 
-> **Cierre:**
+
+> **Como conclusión:**
 > - Lo más valioso no es solo el código, sino haber transformado una **necesidad real** de una empresa en un prototipo que funciona, se entiende y marca un camino claro para producción.
 
----
+
 
 
