@@ -71,7 +71,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 1. [Introducción, el problema y su solución](#1-introducción)
 2. [Objetivos](#2-objetivos)
 3. [Modelo del dominio](#3-modelo-del-dominio)
-4. [Requisitos , casos de uso y diagrama de contexto](#4-requisitos-y-casos-de-uso)
+4. [Requisitos , casos de uso y diagrama de contexto](#4-requisitos-,-casos-de-uso-y-diagrama-de-contexto)
 5. [Diagramas de colaboración](#5-diagramas-de-colaboración)
 6. [Diagrama MVC](#6-diagrama-modelo-vista-controlador)
 7. [Diagramas de secuencia](#7-diagramas-de-secuencia)
@@ -135,7 +135,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ![Ver notificación](/imagenes/verNotificacion.svg)
 [Código fuente](/codigoFuente/verNotificacion.puml)
 
-![Contexto](/imagenes/diagramacontextoSimple.svg)
+![Contexto](/imagenes/diagramaContextoSimple.svg)
 [Código fuente](/codigoFuente/diagramaDeContextoSimple.puml)
 
 ## 5. Diagramas de colaboración
@@ -143,7 +143,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ![](/imagenes/colabHistorial.svg)
 [Código fuente](/codigoFuente/colabHistorial.puml)
 
-![](/imagenes/colabLeidavertical.svg)
+![](/imagenes/colabLeidaVertical.svg)
 [Código fuente](/codigoFuente/colabLeida.puml)
 
 
