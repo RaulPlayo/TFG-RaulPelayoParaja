@@ -143,7 +143,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ![](/imagenes/colabHistorial.svg)
 [Código fuente](/codigoFuente/colabHistorial.puml)
 
-![](/imagenes/colabLeidaVertical.svg)
+![](/imagenes/colabLeidaVERTICAL.svg)
 [Código fuente](/codigoFuente/colabLeida.puml)
 
 
