@@ -68,16 +68,17 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ---
 
 ## Índice
-1. [Introducción, el problema y su solución](#1-introducción-y-motivación)
+1. [Introducción, el problema y su solución](#1-introducción)
 2. [Objetivos](#2-objetivos)
 3. [Modelo del dominio](#3-modelo-del-dominio)
 4. [Requisitos , casos de uso y diagrama de contexto](#4-requisitos-y-casos-de-uso)
-5. [Diagramas de secuencia](#14-diseño-de-casos-de-uso-secuencia)
-6. [Diagrama MVC]()
-7. [Prototipos de interfaz](#7-prototipos-de-interfaz)
-8. [Análisis y diseño de la arquitectura](#13-diseño-de-la-arquitectura)
-9. [Descripción de la solución](#16-demostración-de-la-solución)
-10. [Conclusiones y líneas futuras](#17-conclusiones-y-líneas futuras)
+5. [Diagramas de colaboración](#5-diagramas-de-colaboración)
+6. [Diagrama MVC](#6-diagrama-modelo-vista-controlador)
+7. [Diagramas de secuencia](#7-diagramas-de-secuencia)
+8. [Diagrama de paquetes](#8-diagrama-de-paquetes)
+9. [Diseño de la arquitectura](#9-diseño-de-la-arquitectura)
+10. [Diagrama de despliegue](#10-diagrama-de-despliegue)
+11. [Conclusiones y líneas futuras](#11-Conclusiones-y-líneas-futuras)
 
 
 
