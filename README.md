@@ -132,8 +132,8 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ![Consultar el historial](/imagenes/consultarHistorial.svg)
 [Código fuente](/codigoFuente/consultarHistorial.puml)
 
-![Ver notificación](/imagenes/verNotificacion.svg)
-[Código fuente](/codigoFuente/verNotificacion.puml)
+![Enviar mensaje de incidencia](/imagenes/enviarMensajeDeIncidencia.svg)
+[Código fuente](/codigoFuente/enviarMensajeDeIncidencia.puml)
 
 ![Contexto](/imagenes/diagramaContextoSimple.svg)
 [Código fuente](/codigoFuente/diagramaDeContextoSimple.puml)
