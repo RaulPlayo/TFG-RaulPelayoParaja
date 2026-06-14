@@ -220,7 +220,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 > - Es un **prototipo funcional avanzado**, no un producto de producción cerrado.
 
 > **Líneas futuras (por prioridad):**
-> 1. 🔴 Conexión real con Soincon (quitar datos simulados).
+> 1. 🔴 Conexión real con Soincon (usar su entorno real, no un entorno de desarrollo de pruebas).
 > 2. 🔴 Experimento formal polling vs WebSocket (latencia, ancho de banda, CPU).
 > 3. 🟡 Filtros y alertas inteligentes (agrupación, escalado a supervisores).
 > 4. 🟡 Notificaciones push móvil, integración Microsoft Teams/email.
