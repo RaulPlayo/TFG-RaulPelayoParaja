@@ -219,10 +219,11 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 
 > **Líneas futuras (por prioridad):**
 > 1. 🔴 Conexión real con Soincon (usar su entorno real, no un entorno de desarrollo de pruebas).
-> 2. 🔴 Experimento formal polling vs WebSocket (latencia, ancho de banda, CPU).
-> 3. 🟡 Filtros y alertas inteligentes (agrupación, escalado a supervisores).
-> 4. 🟡 Notificaciones push móvil, integración Microsoft Teams/email.
-> 5. 🟡 Posibilidad de enviar documentos PDF a través de WebSocket.
+> 2. 🔴 Que las propias máquinas envíen sus incidencias y necesidades, sin depender de un operario (intermediario).
+> 3. 🔴 Experimento formal polling vs WebSocket (latencia, ancho de banda, CPU).
+> 4. 🟡 Filtros y alertas inteligentes (agrupación, escalado a supervisores).
+> 5. 🟡 Notificaciones push móvil, integración Microsoft Teams/email.
+> 6. 🟡 Posibilidad de enviar documentos PDF a través de WebSocket.
 
 
 > **Como conclusión:**
