@@ -71,7 +71,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 1. [Introducción, el problema y su solución](#1-introducción)
 2. [Objetivos](#2-objetivos)
 3. [Modelo del dominio](#3-modelo-del-dominio)
-4. [Requisitos , casos de uso y diagrama de contexto](#4-requisitos-,-casos-de-uso-y-diagrama-de-contexto)
+4. [Casos de uso y diagrama de contexto](#4-casos-de-uso-y-diagrama-de-contexto)
 5. [Diagramas de colaboración](#5-diagramas-de-colaboración)
 6. [Diagrama MVC](#6-diagrama-modelo-vista-controlador)
 7. [Diagramas de secuencia](#7-diagramas-de-secuencia)
@@ -120,7 +120,7 @@ El proyecto abarca el diseño de la arquitectura, el backend (en este caso propi
 ![Diagrama de objetos](/imagenes/cicloNotificacion.svg)
 [Código fuente](/codigoFuente/cicloNotificacion.puml)
 
-## 4. Requisitos , casos de uso y diagrama de contexto
+## 4. Casos de uso y diagrama de contexto
 
 > - Dos actores: Responsable y tiempo
 > - "Tiempo" es un actor abstracto, representa el momento en el que la API de Soincon genera y envía un evento hacia la aplicación tras producirse una modificación en EmiSuite.
