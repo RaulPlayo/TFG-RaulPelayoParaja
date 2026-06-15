@@ -8,10 +8,8 @@ Este TFG consiste en la creación de un sistema web que permite la actualizació
  
 Para ello, se utiliza una API de la empresa Soincon que gestiona las operaciones de crear, modificar, eliminar y consultar documentos (CRUD). Cuando se produce una modificación en los datos, el servidor emite un evento que desencadena una notificación en la aplicación cliente. Estos eventos se transmiten mediante una conexión WebSocket, lo que permite una comunicación bidireccional e instantánea entre el servidor y el navegador.
  
-El proyecto abarca el diseño de la arquitectura, el backend (en este caso propiedad de Soincon) y el frontend, además de pruebas para medir el rendimiento y facilidad de uso, comparando el comportamiento en tiempo real frente a un sistema tradicional basado en polling.
+El proyecto abarca el diseño de la arquitectura, el backend (en este caso propiedad de Soincon) y el frontend.
  
- 
----
  
 ## Estructura del repositorio
  
